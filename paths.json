@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/Pearson-RFP-Demo/:/",
+    "/content/Pearson-RFP-Demo/configuration:/.helix/config.json",
+    "/content/Pearson-RFP-Demo/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/Pearson-RFP-Demo/"
   ]
 }
