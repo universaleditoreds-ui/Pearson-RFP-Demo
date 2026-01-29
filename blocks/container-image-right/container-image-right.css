@@ -1,35 +1,46 @@
-/* ===== Section wrapper ===== */
+/* ================================
+   SECTION BASE
+================================ */
 .section.containerimageleft-container {
   padding: 0;
-  background: #0b004f; /* fallback */
+  background-color: #0b004f;
   overflow: hidden;
 }
 
-/* Remove Franklin max-width */
-.containerimageleft-wrapper {
+/* Remove Franklin width constraint */
+.section.containerimageleft-container .containerimageleft-wrapper {
   max-width: 100% !important;
   margin: 0;
   padding: 0;
 }
 
-/* ===== Main block layout ===== */
+/* ================================
+   MAIN BLOCK LAYOUT
+================================ */
+.section.containerimageleft-container
+.containerimageleft-wrapper
 .containerimageleft.block {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   align-items: center;
   min-height: 520px;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
-/* ===== LEFT CONTENT ===== */
-.containerimageleft.block > div:first-child {
+/* ================================
+   LEFT CONTENT COLUMN
+================================ */
+.section.containerimageleft-container
+.containerimageleft.block
+> div:first-child {
   padding: 5rem 4rem;
-  color: #fff;
+  color: #ffffff;
   z-index: 2;
 }
 
 /* Headings */
+.section.containerimageleft-container
 .containerimageleft.block h2 {
   font-size: 3rem;
   line-height: 1.2;
@@ -38,6 +49,7 @@
   color: #ffffff;
 }
 
+.section.containerimageleft-container
 .containerimageleft.block h5 {
   font-size: 1.4rem;
   font-weight: 600;
@@ -45,7 +57,8 @@
   color: #d6d4ff;
 }
 
-/* Body text */
+/* Body copy */
+.section.containerimageleft-container
 .containerimageleft.block p {
   font-size: 1.05rem;
   line-height: 1.6;
@@ -53,11 +66,15 @@
   max-width: 520px;
 }
 
-/* ===== CTA ===== */
+/* ================================
+   CTA BUTTON
+================================ */
+.section.containerimageleft-container
 .containerimageleft.block .button-container {
   margin-top: 2rem;
 }
 
+.section.containerimageleft-container
 .containerimageleft.block .button.primary {
   background: #ffcc00;
   color: #000;
@@ -67,58 +84,75 @@
   text-decoration: none;
 }
 
-/* ===== RIGHT IMAGE ===== */
-.containerimageleft.block > div:last-child {
+/* ================================
+   RIGHT IMAGE COLUMN
+================================ */
+.section.containerimageleft-container
+.containerimageleft.block
+> div:last-child {
   position: relative;
   height: 100%;
 }
 
 /* Image fill */
+.section.containerimageleft-container
 .containerimageleft.block picture,
+.section.containerimageleft-container
 .containerimageleft.block img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ===== GRADIENT OVERLAY ===== */
-.containerimageleft.block > div:last-child::before {
+/* ================================
+   GRADIENT OVERLAY
+================================ */
+.section.containerimageleft-container
+.containerimageleft.block
+> div:last-child::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
     rgba(11, 0, 79, 0.95) 0%,
-    rgba(11, 0, 79, 0.85) 25%,
-    rgba(11, 0, 79, 0.4) 50%,
-    rgba(11, 0, 79, 0) 70%
+    rgba(11, 0, 79, 0.85) 30%,
+    rgba(11, 0, 79, 0.45) 55%,
+    rgba(11, 0, 79, 0) 75%
   );
   z-index: 1;
 }
 
-/* Keep image below gradient */
-.containerimageleft.block > div:last-child picture {
+/* Keep image below overlay */
+.section.containerimageleft-container
+.containerimageleft.block
+picture {
   position: relative;
   z-index: 0;
 }
 
-/* ===== Responsive ===== */
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 900px) {
+  .section.containerimageleft-container
   .containerimageleft.block {
     grid-template-columns: 1fr;
   }
 
+  .section.containerimageleft-container
   .containerimageleft.block > div:first-child {
     padding: 3rem 2rem;
     text-align: center;
   }
 
+  .section.containerimageleft-container
   .containerimageleft.block p {
     margin: 0 auto;
   }
 
+  .section.containerimageleft-container
   .containerimageleft.block > div:last-child {
     min-height: 300px;
   }
 }
-
