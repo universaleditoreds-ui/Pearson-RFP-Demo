@@ -118,9 +118,8 @@ export default async function decorate(block) {
 
   const navTexts = textKeys
     .map((key) => {
-      const el = block.querySelector(
-        `[data-aue-prop="${key}"] p`,
-      );
+      const selector = `[data-aue-prop="${key}"] p`;
+      const el = block.querySelector(selector);
       return el ? el.textContent.trim() : null;
     })
     .filter(Boolean);
@@ -134,78 +133,70 @@ export default async function decorate(block) {
     : 'United States';
 
   const navItemsHTML = navTexts
-    .map((text) => (
-      `<li class="dropdown mega-nav-full-width">
-        <a
-          href="#"
-          role="link"
-          class="dropdown-toggle js-opacity-0"
-        >
-          ${text}
-        </a>
-      </li>`
-    ))
+    .map((text) => {
+      return (
+        '<li class="dropdown mega-nav-full-width">' +
+        '<a ' +
+        'href="#" ' +
+        'role="link" ' +
+        'class="dropdown-toggle js-opacity-0">' +
+        `${text}` +
+        '</a>' +
+        '</li>'
+      );
+    })
     .join('');
 
-  const headertopHTML = `
-<section
-  class="column-control aem-GridColumn
-    aem-GridColumn--default--12
-    he-navigation-topnav"
->
-  <div class="container">
-    <div class="row">
+  const headertopHTML =
+    '<section class="column-control aem-GridColumn ' +
+    'aem-GridColumn--default--12 he-navigation-topnav">' +
+    '<div class="container">' +
+    '<div class="row">' +
 
-      <div class="col-sm-9 col-xs-12">
-        <div
-          role="navigation"
-          class="mega-nav navbar navbar-default section"
-        >
+    '<div class="col-sm-9 col-xs-12">' +
+    '<div role="navigation" ' +
+    'class="mega-nav navbar navbar-default section">' +
 
-          <div class="navbar-header">
-            <button
-              aria-label="items"
-              data-toggle="collapse"
-              data-target="#navbar-collapse-grid"
-              class="navbar-toggle"
-              aria-expanded="false"
-            >
-              <span class="fa fa-bars"></span>
-            </button>
-          </div>
+    '<div class="navbar-header">' +
+    '<button ' +
+    'aria-label="items" ' +
+    'data-toggle="collapse" ' +
+    'data-target="#navbar-collapse-grid" ' +
+    'class="navbar-toggle" ' +
+    'aria-expanded="false">' +
+    '<span class="fa fa-bars"></span>' +
+    '</button>' +
+    '</div>' +
 
-          <div
-            id="navbar-collapse-grid"
-            class="navbar-collapse collapse"
-          >
-            <ul class="nav navbar-nav">
-              ${navItemsHTML}
-            </ul>
-          </div>
+    '<div id="navbar-collapse-grid" ' +
+    'class="navbar-collapse collapse">' +
+    '<ul class="nav navbar-nav">' +
+    navItemsHTML +
+    '</ul>' +
+    '</div>' +
 
-        </div>
-      </div>
+    '</div>' +
+    '</div>' +
 
-      <div class="col-sm-3 col-xs-12">
-        <div class="locale-selection section">
-          <div>
-            <button
-              class="locale-selection__button selected_en-US"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              ${selectedCountry}
-            </button>
-          </div>
-        </div>
-      </div>
+    '<div class="col-sm-3 col-xs-12">' +
+    '<div class="locale-selection section">' +
+    '<div>' +
+    '<button ' +
+    'class="locale-selection__button selected_en-US" ' +
+    'aria-haspopup="true" ' +
+    'aria-expanded="false">' +
+    selectedCountry +
+    '</button>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
 
-    </div>
-  </div>
-</section>
-`;
+    '</div>' +
+    '</div>' +
+    '</section>';
 
   block.innerHTML = headertopHTML;
+
 
   const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
