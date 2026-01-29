@@ -108,7 +108,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-const navcontainer = document.querySelector('.navigation-container');
+  const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
     '<section class="column-control he-pr-nav__wrapper has-padding-top--none has-padding-bottom--none ls-search-enabled aem-GridColumn nav-content-selector aem-GridColumn--default--12 isAuthenticated">',
     '<div class="container">',
@@ -167,8 +167,33 @@ const navcontainer = document.querySelector('.navigation-container');
     '<div class="row"><div class="col-12"><div class="parsys section">',
 
     '<div class="he-header-desktop-cart section">',
-    '<a href="/store/en-us/cart" class="cart-link"><span class="cart-products-indicator">0</span></a>',
+    '  <a href="/store/en-us/cart" class="cart-link">',
+    '    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"',
+    '      stroke="currentColor" stroke-width="2"',
+    '      stroke-linecap="round" stroke-linejoin="round">',
+    '      <circle cx="9" cy="21" r="1"></circle>',
+    '      <circle cx="20" cy="21" r="1"></circle>',
+    '      <path d="M1 1h4l2.6 13.4a2 2 0 0 0 2 1.6h9.4a2 2 0 0 0 2-1.6L23 6H6"></path>',
+    '    </svg>',
+    '    <span class="cart-products-indicator">0</span>',
+    '  </a>',
     '</div>',
+
+    '<div role="navigation" class="mega-nav navbar navbar-default he-header-help-nav he-icon-dropdown he-drop-down-nav on-left section" aria-label="Support">',
+    '  <div class="navbar-header">',
+    '    <button aria-label="Support items" title="Support" data-toggle="collapse"',
+    '      data-target="#Support" class="navbar-toggle" aria-expanded="false">',
+    '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"',
+    '        stroke="currentColor" stroke-width="2"',
+    '        stroke-linecap="round" stroke-linejoin="round">',
+    '        <circle cx="12" cy="12" r="10"></circle>',
+    '        <path d="M9.09 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"></path>',
+    '        <line x1="12" y1="17" x2="12.01" y2="17"></line>',
+    '      </svg>',
+    '    </button>',
+    '  </div>',
+    '  <div id="Support" class="navbar-collapse collapse"></div>',
+    '</div>'
 
     '<div class="custom-header he-user-navigation section">',
     '<div class="custom-header__container container">',
