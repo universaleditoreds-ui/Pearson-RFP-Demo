@@ -39,15 +39,7 @@
       "button",
       "title"
     ]
-  },
-  {
-    "id": "containerimageleft",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
   }
+
   
 ]
