@@ -193,7 +193,7 @@ export default async function decorate(block) {
     '    </button>',
     '  </div>',
     '  <div id="Support" class="navbar-collapse collapse"></div>',
-    '</div>'
+    '</div>',
 
     '<div class="custom-header he-user-navigation section">',
     '<div class="custom-header__container container">',
