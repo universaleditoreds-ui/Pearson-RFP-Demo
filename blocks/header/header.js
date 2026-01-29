@@ -39,7 +39,8 @@ export default async function decorate(block) {
       '</li>',
     ].join(''))
     .join('');
-
+console.log(navItemsHTML);
+console.log(block);
   const headerTopHTML = [
     '<section class="column-control aem-GridColumn aem-GridColumn--default--12 he-navigation-topnav">',
     '<div class="container">',
