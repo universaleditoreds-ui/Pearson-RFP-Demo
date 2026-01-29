@@ -296,7 +296,7 @@
         "valueType": "string"
       },
       {
-        "component": "aem-content",
+        "component": "text",
         "name": "video-transcript-link",
         "value": "",
         "label": "Video Transcript Link",
