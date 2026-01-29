@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "containerimageleft"
     ]
   },
   {
@@ -38,5 +39,15 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "twocoloumwithimage",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
   }
+  
 ]
