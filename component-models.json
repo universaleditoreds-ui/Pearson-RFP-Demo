@@ -262,6 +262,40 @@
         "multi": false
       }
     ]
+  },
+  {
+    "id": "container-video",
+    "title": "Container Video",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "video-title",
+        "value": "",
+        "label": "Video Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "video-desc",
+        "value": "",
+        "label": "Video Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "video-id",
+        "value": "",
+        "label": "Video ID",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "video-transcript-link",
+        "value": "",
+        "label": "Video Transcript Link",
+        "valueType": "string"
+      }
+    ]
   }
   
 ]
