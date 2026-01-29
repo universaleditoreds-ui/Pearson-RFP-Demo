@@ -296,6 +296,42 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "container-image-left-buttons",
+    "title": "container-image-left-buttons",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "select",
+        "name": "linkType",
+        "label": "Type",
+        "options": [
+          
+          {
+            "name": "primarybutton",
+            "value": "primarybutton"
+          },
+          {
+            "name": "secondarybutton",
+            "value": "secondarybutton"
+          }
+        ]
+      }
+    ]
   }
-  
+
 ]
