@@ -108,7 +108,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-
+const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
     '<section class="column-control he-pr-nav__wrapper has-padding-top--none has-padding-bottom--none ls-search-enabled aem-GridColumn nav-content-selector aem-GridColumn--default--12 isAuthenticated">',
     '<div class="container">',
@@ -181,7 +181,7 @@ export default async function decorate(block) {
 
     '</div></div></div></section>',
   ].join('');
-  block.insertAdjacentHTML('afterend', headerHTML);
+  navcontainer.insertAdjacentHTML('afterend', headerHTML);
 
   // load nav as fragment
   const navMeta = getMetadata('nav');
