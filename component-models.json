@@ -137,7 +137,7 @@
             "name": "Highlight",
             "value": "highlight"
           },
-           {
+          {
             "name": "container-image-left",
             "value": "container-image-left"
           },
@@ -315,8 +315,72 @@
         "label": "Image",
         "multi": false
       }
-  
+    ]
+  },
+  {
+    "id": "navigation",
+    "title": "navigation",
+    "fields": [
+      {
+        "name": "items",
+        "label": "Navigation Links",
+        "component": "container",
+        "multi": true,
+        "fields": [
+          {
+            "name": "label",
+            "label": "Link Text",
+            "component": "text",
+            "valueType": "string"
+          },
+          {
+            "name": "url",
+            "label": "Link URL",
+            "component": "text",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "name": "locale",
+        "label": "Country Selector",
+        "component": "container",
+        "multi": false,
+        "fields": [
+          {
+            "name": "selected",
+            "label": "Selected Country",
+            "component": "text",
+            "valueType": "string"
+          },
+          {
+            "name": "countries",
+            "label": "Country List",
+            "component": "container",
+            "multi": true,
+            "fields": [
+              {
+                "name": "label",
+                "label": "Country Name",
+                "component": "text",
+                "valueType": "string"
+              },
+              {
+                "name": "url",
+                "label": "Country URL",
+                "component": "text",
+                "valueType": "string"
+              },
+              {
+                "name": "lang",
+                "label": "Language Code",
+                "component": "text",
+                "valueType": "string"
+              }
+            ]
+          }
+        ]
+      }
     ]
   }
-
 ]

@@ -19,7 +19,8 @@
       "container-image-left",
       "container-image-right",
       "container-video",
-      "container-image-left-buttons"
+      "container-image-left-buttons",
+      "navigation"
     ]
   },
   {
