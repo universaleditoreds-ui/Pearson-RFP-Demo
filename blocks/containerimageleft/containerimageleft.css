@@ -1,6 +1,5 @@
 .section.container-image-left {
-  padding: 6rem 0;
-  background: #f5f6fb;
+
 }
 
 .containerimageleft-wrapper {
@@ -13,16 +12,15 @@
 .containerimageleft.block {
   display: flex;
   flex-direction: row-reverse; /* image left, text right */
-  align-items: center;
-  gap: 6rem;
+  gap: 10rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding-inline: 2rem;
+ 
 }
 
 /* Image */
 .containerimageleft.block img {
-  max-width: 420px;
+  max-width: 500px;
   width: 100%;
   height: auto;
 }
