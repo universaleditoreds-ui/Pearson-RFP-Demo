@@ -4269,17 +4269,6 @@ header.isSticky .he-pr-nav__wrapper>.container {
   }
 }
 
-html[class*="aem-AuthorLayer-"] body:not(.headerIsTransparent) .he-pr-nav__wrapper {
-  position: relative
-}
-
-@media(min-width: 992px) {
-  html[class*="aem-AuthorLayer-"] .he-header-mobile-nav {
-    display: none
-  }
-}
-
-html[class*="aem-AuthorLayer-"] .cq-Editable-dom--container:not(.column-control) {
-  padding-top: 0;
-  padding-bottom: 0
+.navigation-container {
+  display: none;
 }

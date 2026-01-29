@@ -18,7 +18,7 @@ export default async function decorate(block) {
       return el ? el.textContent.trim() : null;
     })
     .filter(Boolean);
-
+  console.log(navTexts);
   const countryEl = block.querySelector(
     '[data-aue-prop="selectedCountry"]',
   );
