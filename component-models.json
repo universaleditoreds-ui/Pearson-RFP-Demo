@@ -344,12 +344,6 @@
         "name": "text4",
         "label": "Text 4",
         "valueType": "string"
-      },
-      {
-        "name": "selectedCountry",
-        "label": "Selected Country",
-        "component": "text",
-        "valueType": "string"
       }
     ]
   }
