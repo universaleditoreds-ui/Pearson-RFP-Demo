@@ -322,19 +322,19 @@
     "title": "navigation",
     "fields": [
       {
-        "name": "items",
+        "name": "navItems",
         "label": "Navigation Links",
         "component": "container",
         "multi": true,
         "fields": [
           {
-            "name": "label",
+            "name": "navItemLabel",
             "label": "Link Text",
             "component": "text",
             "valueType": "string"
           },
           {
-            "name": "url",
+            "name": "navItemUrl",
             "label": "Link URL",
             "component": "text",
             "valueType": "string"
@@ -342,37 +342,36 @@
         ]
       },
       {
-        "name": "locale",
+        "name": "localeSelector",
         "label": "Country Selector",
         "component": "container",
-        "multi": false,
         "fields": [
           {
-            "name": "selected",
+            "name": "selectedCountry",
             "label": "Selected Country",
             "component": "text",
             "valueType": "string"
           },
           {
-            "name": "countries",
+            "name": "countryItems",
             "label": "Country List",
             "component": "container",
             "multi": true,
             "fields": [
               {
-                "name": "label",
+                "name": "countryLabel",
                 "label": "Country Name",
                 "component": "text",
                 "valueType": "string"
               },
               {
-                "name": "url",
+                "name": "countryUrl",
                 "label": "Country URL",
                 "component": "text",
                 "valueType": "string"
               },
               {
-                "name": "lang",
+                "name": "countryLang",
                 "label": "Language Code",
                 "component": "text",
                 "valueType": "string"
