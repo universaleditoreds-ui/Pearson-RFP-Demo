@@ -147,7 +147,7 @@ export default async function decorate(block) {
     ))
     .join('');
 
-  const headerHTML = `
+  const headertopHTML = `
 <section
   class="column-control aem-GridColumn
     aem-GridColumn--default--12
@@ -205,7 +205,7 @@ export default async function decorate(block) {
 </section>
 `;
 
-  block.innerHTML = headerHTML;
+  block.innerHTML = headertopHTML;
 
   const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
