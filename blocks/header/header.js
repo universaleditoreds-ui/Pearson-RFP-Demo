@@ -109,48 +109,75 @@
  */
 export default async function decorate(block) {
 
-  // 1. Read nav texts from UE DOM
-  const navTexts = ['text1', 'text2', 'text3', 'text4']
-    .map((key) =>
-      block.querySelector(`[data-aue-prop="${key}"] p`)?.textContent?.trim()
-    )
+  const textKeys = [
+    'text1',
+    'text2',
+    'text3',
+    'text4',
+  ];
+
+  const navTexts = textKeys
+    .map((key) => {
+      const el = block.querySelector(
+        `[data-aue-prop="${key}"] p`,
+      );
+      return el ? el.textContent.trim() : null;
+    })
     .filter(Boolean);
 
-  const selectedCountry =
-    block.querySelector('[data-aue-prop="selectedCountry"]')?.textContent?.trim() ||
-    'United States';
+  const countryEl = block.querySelector(
+    '[data-aue-prop="selectedCountry"]',
+  );
 
-  // 2. Build <li> list
+  const selectedCountry = countryEl
+    ? countryEl.textContent.trim()
+    : 'United States';
+
   const navItemsHTML = navTexts
-    .map(
-      (text) => `
-        <li class="dropdown mega-nav-full-width">
-          <a href="#" role="link" class="dropdown-toggle js-opacity-0">
-            ${text}
-          </a>
-        </li>`
-    )
+    .map((text) => (
+      `<li class="dropdown mega-nav-full-width">
+        <a
+          href="#"
+          role="link"
+          class="dropdown-toggle js-opacity-0"
+        >
+          ${text}
+        </a>
+      </li>`
+    ))
     .join('');
 
-  // 3. Final HTML (YOUR structure, unchanged)
-  const headertopHTML = `
-<section class="column-control aem-GridColumn aem-GridColumn--default--12 he-navigation-topnav">
+  const headerHTML = `
+<section
+  class="column-control aem-GridColumn
+    aem-GridColumn--default--12
+    he-navigation-topnav"
+>
   <div class="container">
     <div class="row">
 
       <div class="col-sm-9 col-xs-12">
-        <div role="navigation" class="mega-nav navbar navbar-default section">
+        <div
+          role="navigation"
+          class="mega-nav navbar navbar-default section"
+        >
 
           <div class="navbar-header">
-            <button aria-label="items" data-toggle="collapse"
+            <button
+              aria-label="items"
+              data-toggle="collapse"
               data-target="#navbar-collapse-grid"
               class="navbar-toggle"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               <span class="fa fa-bars"></span>
             </button>
           </div>
 
-          <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+          <div
+            id="navbar-collapse-grid"
+            class="navbar-collapse collapse"
+          >
             <ul class="nav navbar-nav">
               ${navItemsHTML}
             </ul>
@@ -165,7 +192,8 @@ export default async function decorate(block) {
             <button
               class="locale-selection__button selected_en-US"
               aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               ${selectedCountry}
             </button>
           </div>
@@ -174,10 +202,11 @@ export default async function decorate(block) {
 
     </div>
   </div>
-</section>`;
+</section>
+`;
 
-  // 4. Replace block content ONLY
-  block.innerHTML = headertopHTML;
+  block.innerHTML = headerHTML;
+
   const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
     '<section class="column-control he-pr-nav__wrapper has-padding-top--none has-padding-bottom--none ls-search-enabled aem-GridColumn nav-content-selector aem-GridColumn--default--12 isAuthenticated">',
