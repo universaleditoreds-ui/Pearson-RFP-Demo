@@ -995,7 +995,8 @@ header .locale-selection__button {
   block-size: 100%;
   position: relative;
   border: 1.5px solid transparent;
-  padding: 0
+  padding: 0;
+  margin:0;
 }
 
 header .locale-drpdown__button:active,
@@ -1432,17 +1433,20 @@ html.wf-active body>.container {
 }
 
 .he-navigation-topnav .row {
+  display:flex;
   justify-content: center;
   margin-inline: calc(var(--space--x1) * -4)
 }
 
 .he-navigation-topnav .col-sm-9 {
-  position: unset
+  position: unset;
+  width:75%;
 }
 
 .he-navigation-topnav .col-sm-3 {
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
+  width:25%
 }
 
 .he-navigation-topnav .mega-nav {
