@@ -289,12 +289,20 @@
         "valueType": "string"
       },
       {
-        "component": "reference",
+        "component": "text",
+        "name": "video-transcript-title",
+        "value": "",
+        "label": "Video Transcript Title",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
         "name": "video-transcript-link",
         "value": "",
         "label": "Video Transcript Link",
         "valueType": "string"
       }
+
     ]
   }
   
