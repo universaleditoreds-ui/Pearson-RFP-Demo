@@ -78,7 +78,7 @@ export default async function decorate(block) {
     '</section>',
   ].join('');
 
-  block.innerHTML = headertopHTML;
+  block.innerHTML = headerTopHTML;
 
   const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
