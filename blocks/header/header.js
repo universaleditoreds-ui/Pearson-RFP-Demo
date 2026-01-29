@@ -10,16 +10,17 @@ export default async function decorate(block) {
     'text3',
     'text4',
   ];
+  const navcontainer = document.querySelector('.navigation-container');
 
   const navTexts = textKeys
     .map((key) => {
       const selector = `[data-aue-prop="${key}"] p`;
-      const el = block.querySelector(selector);
+      const el = navcontainer.querySelector(selector);
       return el ? el.textContent.trim() : null;
     })
     .filter(Boolean);
   console.log(navTexts);
-  const countryEl = block.querySelector(
+  const countryEl = navcontainer.querySelector(
     '[data-aue-prop="selectedCountry"]',
   );
 
