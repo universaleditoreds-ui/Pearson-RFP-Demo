@@ -1,1 +1,157 @@
 
+/* ================================
+   SECTION BASE
+================================ */
+.section.container-image-right-container {
+  background-color: #0b004f;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Remove default Franklin wrapper width */
+.section.container-image-right-container
+.container-image-right-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   MAIN LAYOUT
+================================ */
+.section.container-image-right-container
+.container-image-right.block {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  min-height: 520px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ================================
+   LEFT TEXT COLUMN
+================================ */
+.section.container-image-right-container
+.container-image-right.block
+> div:first-child {
+  padding: 5rem 4rem;
+  color: #ffffff;
+  z-index: 2;
+}
+
+/* Headings */
+.section.container-image-right-container
+.container-image-right.block h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.section.container-image-right-container
+.container-image-right.block h5 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #d6d4ff;
+}
+
+/* Body text */
+.section.container-image-right-container
+.container-image-right.block p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e6e6f2;
+  max-width: 520px;
+}
+
+/* CTA */
+.section.container-image-right-container
+.container-image-right.block .button-container {
+  margin-top: 2rem;
+}
+
+.section.container-image-right-container
+.container-image-right.block .button.primary {
+  background: #ffcc00;
+  color: #000;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ================================
+   RIGHT IMAGE COLUMN
+================================ */
+.section.container-image-right-container
+.container-image-right.block
+> div:last-child {
+  position: relative;
+  height: 100%;
+}
+
+/* Image fill */
+.section.container-image-right-container
+.container-image-right.block picture,
+.section.container-image-right-container
+.container-image-right.block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   GRADIENT OVERLAY (LEFT → RIGHT)
+================================ */
+.section.container-image-right-container
+.container-image-right.block
+> div:last-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(11, 0, 79, 0.95) 0%,
+    rgba(11, 0, 79, 0.85) 35%,
+    rgba(11, 0, 79, 0.45) 60%,
+    rgba(11, 0, 79, 0) 78%
+  );
+  z-index: 1;
+}
+
+/* Ensure image stays behind overlay */
+.section.container-image-right-container
+.container-image-right.block picture {
+  position: relative;
+  z-index: 0;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .section.container-image-right-container
+  .container-image-right.block {
+    grid-template-columns: 1fr;
+  }
+
+  .section.container-image-right-container
+  .container-image-right.block
+  > div:first-child {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .section.container-image-right-container
+  .container-image-right.block p {
+    margin: 0 auto;
+  }
+
+  .section.container-image-right-container
+  .container-image-right.block
+  > div:last-child {
+    min-height: 320px;
+  }
+}
