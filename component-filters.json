@@ -18,7 +18,8 @@
       "fragment",
       "container-image-left",
       "container-image-right",
-      "container-video"
+      "container-video",
+      "container-image-left-buttons"
     ]
   },
   {
