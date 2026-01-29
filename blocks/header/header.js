@@ -39,16 +39,14 @@ export default async function decorate(block) {
       '</li>',
     ].join(''))
     .join('');
-console.log(navItemsHTML);
-console.log(block);
+  console.log(navItemsHTML);
+  console.log(block);
   const headerTopHTML = [
     '<section class="column-control aem-GridColumn aem-GridColumn--default--12 he-navigation-topnav">',
     '<div class="container">',
     '<div class="row">',
-
     '<div class="col-sm-9 col-xs-12">',
     '<div role="navigation" class="mega-nav navbar navbar-default section">',
-
     '<div class="navbar-header">',
     '<button aria-label="items" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle" aria-expanded="false">',
     '<span class="fa fa-bars"></span>',
@@ -81,7 +79,7 @@ console.log(block);
 
   block.innerHTML = headerTopHTML;
 
-  const navcontainer = document.querySelector('.navigation-container');
+  const headercontainer = document.querySelector('.header.block');
   const headerHTML = [
     '<section class="column-control he-pr-nav__wrapper has-padding-top--none has-padding-bottom--none ls-search-enabled aem-GridColumn nav-content-selector aem-GridColumn--default--12 isAuthenticated">',
     '<div class="container">',
@@ -186,5 +184,7 @@ console.log(block);
 
     '</div></div></div></section>',
   ].join('');
-  navcontainer.insertAdjacentHTML('afterend', headerHTML);
+  if (headercontainer) {
+    headercontainer.insertAdjacentHTML('beforeend', headerHTML);
+  }
 }
