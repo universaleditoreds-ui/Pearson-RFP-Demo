@@ -308,7 +308,115 @@
   --shadow-blur: 0px 0px 20px rgba(0, 0, 0, 0.15)
 }
 
-/* Shadows and Gradients for RTL languages */
+.container {
+  --grid-margin-xs: var(--space--x7);
+  --grid-margin-sm: var(--space--x10);
+  --grid-margin-md: var(--space--x14);
+  --grid-margin-lg: var(--space--x16);
+  max-inline-size: 100%;
+  padding-inline: var(--grid-gutters)
+}
+
+@media(max-width: 375px) {
+  .container {
+    --grid-gutters: var(--grid-margin-xs)
+  }
+}
+
+@media(min-width: 376px) and (max-width:768px) {
+  .container {
+    --grid-gutters: var(--grid-margin-sm)
+  }
+}
+
+@media(min-width: 769px) and (max-width:1439px) {
+  .container {
+    --grid-gutters: var(--grid-margin-md)
+  }
+}
+
+@media(min-width: 1440px) {
+  .container {
+    --grid-gutters: var(--grid-margin-lg);
+    max-inline-size: 1440px
+  }
+}
+
+.container-fluid {
+  padding-inline: calc(var(--space--x1) * 4)
+}
+
+.row {
+  --row-gutter: calc(var(--space--x1) * -4);
+  margin-inline: var(--row-gutter)
+}
+
+.col-12,
+.col-xs-12 {
+  --column-gutter: calc(var(--space--x1) * 4);
+  padding-inline: var(--column-gutter)
+}
+
+@media(max-width: 767px) {
+  main .row {
+    row-gap: var(--space--x5)
+  }
+}
+
+@media(min-width: 768px) {
+  main .row {
+    row-gap: var(--space--x8)
+  }
+}
+
+@media(max-width: 767px) {
+  main .col-12:empty {
+    display: none !important
+  }
+}
+
+.corners-square {
+  border-radius: var(--corner--x0) !important
+}
+
+.corners-semiround-sm {
+  border-radius: var(--corner--x1) !important
+}
+
+.corners-semiround-md {
+  border-radius: var(--corner--x2) !important
+}
+
+.corners-semiround-lg {
+  border-radius: var(--corner--x4) !important
+}
+
+.corners-semiround-card {
+  border-radius: var(--corner--x6) !important
+}
+
+.corners-semiround-card-lg {
+  border-radius: var(--corner--x10) !important
+}
+
+.icon-right::after {
+  margin-inline-start: var(--space--x3)
+}
+
+.icon-left {
+  padding-inline-start: 2.875em !important
+}
+
+.icon-left::after {
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%) !important;
+  inset-inline-start: 1.25em
+}
+
+.icon-left::after {
+  margin-inline-end: var(--space--x3)
+}
 
 header {
   --locale-selector-src-display: none;
