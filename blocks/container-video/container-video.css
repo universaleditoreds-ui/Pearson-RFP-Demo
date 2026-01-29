@@ -1,0 +1,104 @@
+/* Outer spacing: you can tune depending on section background */
+.section.container-video-container {
+  padding: 48px 16px;
+  background: #f3f1ff; /* light lavender-like background from UX */
+}
+
+/* Center everything and limit width */
+.container-video.block .container-video__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header spacing */
+.container-video.block .container-video__header {
+  margin-bottom: 24px;
+}
+
+/* Title styling */
+.container-video.block .container-video__title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Description styling */
+.container-video.block .container-video__desc {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+/* --- Link styling (Transcript + any links inside the block) --- */
+.container-video.block a {
+  color: #2a2ad6;                 /* brand-ish blue/purple */
+  text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  transition: color 150ms ease, text-decoration-color 150ms ease, opacity 150ms ease;
+}
+
+/* Hover: underline appears + slight color shift */
+.container-video.block a:hover {
+  color: #1f1faa;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* Keyboard accessibility: visible focus ring */
+.container-video.block a:focus-visible {
+  outline: 3px solid rgba(42, 42, 214, 0.35);
+  outline-offset: 3px;
+  border-radius: 4px;
+  text-decoration: underline;
+}
+
+/* Optional: active state for click feedback */
+.container-video.block a:active {
+  opacity: 0.85;
+}
+/* Transcript wrapper alignment (bottom-right under video) */
+.container-video.block .container-video__transcript {
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* Transcript link base */
+.container-video.block .container-video__transcript-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #2a2ad6;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+/* Hover: pill background + tiny lift */
+.container-video.block .container-video__transcript-link:hover {
+  background-color: rgba(42, 42, 214, 0.10);
+  color: #1f1faa;
+  transform: translateY(-1px);
+}
+
+/* Focus: accessible ring */
+.container-video.block .container-video__transcript-link:focus-visible {
+  outline: 3px solid rgba(42, 42, 214, 0.35);
+  outline-offset: 2px;
+  background-color: rgba(42, 42, 214, 0.12);
+}
+
+/* Active: pressed feel */
+.container-video.block .container-video__transcript-link:active {
+  transform: translateY(0);
+  background-color: rgba(42, 42, 214, 0.16);
+}
