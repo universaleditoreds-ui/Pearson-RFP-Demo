@@ -97,7 +97,6 @@ export default function decorate(block) {
     transcriptWrap.appendChild(a);
     media.appendChild(transcriptWrap);
   }
-  
   // Assemble
   container.appendChild(header);
   container.appendChild(media);
