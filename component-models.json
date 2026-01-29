@@ -322,19 +322,28 @@
     "title": "Navigation",
     "fields": [
       {
-        "name": "navItems",
-        "label": "Navigation Items",
-        "component": "container",
-        "multi": true,
-        "itemLabel": "Navigation Item",
-        "fields": [
-          {
-            "name": "text",
-            "label": "Text",
-            "component": "text",
-            "valueType": "string"
-          }
-        ]
+        "component": "richtext",
+        "name": "text1",
+        "label": "Text 1",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text2",
+        "label": "Text 2",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text3",
+        "label": "Text 3",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text4",
+        "label": "Text 4",
+        "valueType": "string"
       },
       {
         "name": "selectedCountry",
