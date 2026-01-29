@@ -41,7 +41,7 @@
     ]
   },
   {
-    "id": "twocoloumwithimage",
+    "id": "containerimageleft",
     "components": [
       "text",
       "image",
