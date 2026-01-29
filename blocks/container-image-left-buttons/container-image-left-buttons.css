@@ -4,11 +4,11 @@
   background-color: #f5f6fa;
 }
 
-/* Main grid layout */
+/* Main grid */
 .section.container-image-left-buttons-container
 .container-image-left-buttons.block {
   display: grid;
-  grid-template-columns: 1fr 1.3fr; /* IMAGE | CONTENT */
+  grid-template-columns: 1.2fr 1fr; /* IMAGE | CONTENT */
   align-items: center;
   gap: 4rem;
   max-width: 1440px;
@@ -17,18 +17,28 @@
 }
 
 
+/* IMAGE – move to LEFT */
 .section.container-image-left-buttons-container
-.container-image-left-buttons.block > div:last-child picture img {
+.container-image-left-buttons.block > div:last-child {
+  order: 1;
+}
+
+/* CONTENT – move to RIGHT */
+.section.container-image-left-buttons-container
+.container-image-left-buttons.block > div:first-child {
+  order: 2;
+  padding-left: 2rem;
+}
+
+/* Image styling */
+.section.container-image-left-buttons-container
+.container-image-left-buttons.block picture img {
   width: 100%;
   height: auto;
   display: block;
 }
 
 
-.section.container-image-left-buttons-container
-.container-image-left-buttons.block > div:first-child {
-  padding-left: 2rem;
-}
 
 .section.container-image-left-buttons-container h2 {
   font-size: 3rem;
@@ -47,6 +57,7 @@
 }
 
 
+
 .section.container-image-left-buttons-container .button-container {
   margin-bottom: 1.25rem;
 }
@@ -60,19 +71,20 @@
   font-size: 1rem;
   font-weight: 600;
   color: #1b004f;
+  background-color: transparent;
   border: 2px solid #1b004f;
   border-radius: 999px;
-  background-color: transparent;
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
-/* Hover effect */
+/* Hover */
 .section.container-image-left-buttons-container a.button.primary:hover {
   background-color: #000000;
   color: #ffffff;
   border-color: #000000;
 }
+
 
 
 @media (max-width: 900px) {
@@ -81,6 +93,12 @@
     grid-template-columns: 1fr;
     text-align: center;
     padding: 3rem 1.5rem;
+  }
+
+  /* Reset order for mobile */
+  .section.container-image-left-buttons-container
+  .container-image-left-buttons.block > div {
+    order: unset;
   }
 
   .section.container-image-left-buttons-container
