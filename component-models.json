@@ -138,8 +138,8 @@
             "value": "highlight"
           },
            {
-            "name": "ContainerImageLeft",
-            "value": "containerimageleft"
+            "name": "container-image-left",
+            "value": "container-image-left"
           }
         ]
       }
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "id": "containerimageleft",
+    "id": "container-image-left",
     "title": "containerimageleft",
     "fields": [
       {
