@@ -1,113 +1,183 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+// import { getMetadata } from '../../scripts/aem.js';
+// import { loadFragment } from '../fragment/fragment.js';
 
-// media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+// // media query match that indicates mobile/tablet width
+// const isDesktop = window.matchMedia('(min-width: 900px)');
 
-function closeOnEscape(e) {
-  if (e.code === 'Escape') {
-    const nav = document.getElementById('nav');
-    const navSections = nav.querySelector('.nav-sections');
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-    if (navSectionExpanded && isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections);
-      navSectionExpanded.focus();
-    } else if (!isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections);
-      nav.querySelector('button').focus();
-    }
-  }
-}
+// function closeOnEscape(e) {
+//   if (e.code === 'Escape') {
+//     const nav = document.getElementById('nav');
+//     const navSections = nav.querySelector('.nav-sections');
+//     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
+//     if (navSectionExpanded && isDesktop.matches) {
+//       // eslint-disable-next-line no-use-before-define
+//       toggleAllNavSections(navSections);
+//       navSectionExpanded.focus();
+//     } else if (!isDesktop.matches) {
+//       // eslint-disable-next-line no-use-before-define
+//       toggleMenu(nav, navSections);
+//       nav.querySelector('button').focus();
+//     }
+//   }
+// }
 
-function closeOnFocusLost(e) {
-  const nav = e.currentTarget;
-  if (!nav.contains(e.relatedTarget)) {
-    const navSections = nav.querySelector('.nav-sections');
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-    if (navSectionExpanded && isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections, false);
-    } else if (!isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections, false);
-    }
-  }
-}
+// function closeOnFocusLost(e) {
+//   const nav = e.currentTarget;
+//   if (!nav.contains(e.relatedTarget)) {
+//     const navSections = nav.querySelector('.nav-sections');
+//     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
+//     if (navSectionExpanded && isDesktop.matches) {
+//       // eslint-disable-next-line no-use-before-define
+//       toggleAllNavSections(navSections, false);
+//     } else if (!isDesktop.matches) {
+//       // eslint-disable-next-line no-use-before-define
+//       toggleMenu(nav, navSections, false);
+//     }
+//   }
+// }
 
-function openOnKeydown(e) {
-  const focused = document.activeElement;
-  const isNavDrop = focused.className === 'nav-drop';
-  if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
-    const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
-    // eslint-disable-next-line no-use-before-define
-    toggleAllNavSections(focused.closest('.nav-sections'));
-    focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
-  }
-}
+// function openOnKeydown(e) {
+//   const focused = document.activeElement;
+//   const isNavDrop = focused.className === 'nav-drop';
+//   if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
+//     const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
+//     // eslint-disable-next-line no-use-before-define
+//     toggleAllNavSections(focused.closest('.nav-sections'));
+//     focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
+//   }
+// }
 
-function focusNavSection() {
-  document.activeElement.addEventListener('keydown', openOnKeydown);
-}
+// function focusNavSection() {
+//   document.activeElement.addEventListener('keydown', openOnKeydown);
+// }
 
-/**
- * Toggles all nav sections
- * @param {Element} sections The container element
- * @param {Boolean} expanded Whether the element should be expanded or collapsed
- */
-function toggleAllNavSections(sections, expanded = false) {
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', expanded);
-  });
-}
+// /**
+//  * Toggles all nav sections
+//  * @param {Element} sections The container element
+//  * @param {Boolean} expanded Whether the element should be expanded or collapsed
+//  */
+// function toggleAllNavSections(sections, expanded = false) {
+//   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+//     section.setAttribute('aria-expanded', expanded);
+//   });
+// }
 
-/**
- * Toggles the entire nav
- * @param {Element} nav The container element
- * @param {Element} navSections The nav sections within the container element
- * @param {*} forceExpanded Optional param to force nav expand behavior when not null
- */
-function toggleMenu(nav, navSections, forceExpanded = null) {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
-  const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
-  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
-  // enable nav dropdown keyboard accessibility
-  const navDrops = navSections.querySelectorAll('.nav-drop');
-  if (isDesktop.matches) {
-    navDrops.forEach((drop) => {
-      if (!drop.hasAttribute('tabindex')) {
-        drop.setAttribute('tabindex', 0);
-        drop.addEventListener('focus', focusNavSection);
-      }
-    });
-  } else {
-    navDrops.forEach((drop) => {
-      drop.removeAttribute('tabindex');
-      drop.removeEventListener('focus', focusNavSection);
-    });
-  }
+// /**
+//  * Toggles the entire nav
+//  * @param {Element} nav The container element
+//  * @param {Element} navSections The nav sections within the container element
+//  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
+//  */
+// function toggleMenu(nav, navSections, forceExpanded = null) {
+//   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+//   const button = nav.querySelector('.nav-hamburger button');
+//   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
+//   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+//   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+//   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+//   // enable nav dropdown keyboard accessibility
+//   const navDrops = navSections.querySelectorAll('.nav-drop');
+//   if (isDesktop.matches) {
+//     navDrops.forEach((drop) => {
+//       if (!drop.hasAttribute('tabindex')) {
+//         drop.setAttribute('tabindex', 0);
+//         drop.addEventListener('focus', focusNavSection);
+//       }
+//     });
+//   } else {
+//     navDrops.forEach((drop) => {
+//       drop.removeAttribute('tabindex');
+//       drop.removeEventListener('focus', focusNavSection);
+//     });
+//   }
 
-  // enable menu collapse on escape keypress
-  if (!expanded || isDesktop.matches) {
-    // collapse menu on escape press
-    window.addEventListener('keydown', closeOnEscape);
-    // collapse menu on focus lost
-    nav.addEventListener('focusout', closeOnFocusLost);
-  } else {
-    window.removeEventListener('keydown', closeOnEscape);
-    nav.removeEventListener('focusout', closeOnFocusLost);
-  }
-}
+//   // enable menu collapse on escape keypress
+//   if (!expanded || isDesktop.matches) {
+//     // collapse menu on escape press
+//     window.addEventListener('keydown', closeOnEscape);
+//     // collapse menu on focus lost
+//     nav.addEventListener('focusout', closeOnFocusLost);
+//   } else {
+//     window.removeEventListener('keydown', closeOnEscape);
+//     nav.removeEventListener('focusout', closeOnFocusLost);
+//   }
+// }
 
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+
+  // 1. Read nav texts from UE DOM
+  const navTexts = ['text1', 'text2', 'text3', 'text4']
+    .map((key) =>
+      block.querySelector(`[data-aue-prop="${key}"] p`)?.textContent?.trim()
+    )
+    .filter(Boolean);
+
+  const selectedCountry =
+    block.querySelector('[data-aue-prop="selectedCountry"]')?.textContent?.trim() ||
+    'United States';
+
+  // 2. Build <li> list
+  const navItemsHTML = navTexts
+    .map(
+      (text) => `
+        <li class="dropdown mega-nav-full-width">
+          <a href="#" role="link" class="dropdown-toggle js-opacity-0">
+            ${text}
+          </a>
+        </li>`
+    )
+    .join('');
+
+  // 3. Final HTML (YOUR structure, unchanged)
+  const headertopHTML = `
+<section class="column-control aem-GridColumn aem-GridColumn--default--12 he-navigation-topnav">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9 col-xs-12">
+        <div role="navigation" class="mega-nav navbar navbar-default section">
+
+          <div class="navbar-header">
+            <button aria-label="items" data-toggle="collapse"
+              data-target="#navbar-collapse-grid"
+              class="navbar-toggle"
+              aria-expanded="false">
+              <span class="fa fa-bars"></span>
+            </button>
+          </div>
+
+          <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              ${navItemsHTML}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-xs-12">
+        <div class="locale-selection section">
+          <div>
+            <button
+              class="locale-selection__button selected_en-US"
+              aria-haspopup="true"
+              aria-expanded="false">
+              ${selectedCountry}
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>`;
+
+  // 4. Replace block content ONLY
+  block.innerHTML = headertopHTML;
   const navcontainer = document.querySelector('.navigation-container');
   const headerHTML = [
     '<section class="column-control he-pr-nav__wrapper has-padding-top--none has-padding-bottom--none ls-search-enabled aem-GridColumn nav-content-selector aem-GridColumn--default--12 isAuthenticated">',
