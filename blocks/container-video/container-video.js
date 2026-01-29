@@ -72,7 +72,7 @@ export default function decorate(block) {
       loading: 'lazy',
       allow:
         'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-      allowfullscreen: ''
+      allowfullscreen: '',
     });
     frame.appendChild(iframe);
   } else {
@@ -91,7 +91,7 @@ export default function decorate(block) {
       href: transcriptHref,
       title: transcriptHref,
       target: '_blank',
-      rel: 'noopener noreferrer'
+      rel: 'noopener noreferrer',
     });
     a.textContent = transcriptTitle;
     transcriptWrap.appendChild(a);

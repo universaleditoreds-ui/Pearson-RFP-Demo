@@ -294,15 +294,7 @@
         "value": "",
         "label": "Video Transcript Title",
         "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "video-transcript-link",
-        "value": "",
-        "label": "Video Transcript Link",
-        "valueType": "string"
       }
-
     ]
   }
   
