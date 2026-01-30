@@ -394,7 +394,7 @@
         "label": "Text 4",
         "valueType": "string"
       },
-      {
+   {
     "id": "container-rounded-image-right",
     "title": "container-rounded-image-right",
     "fields": [
