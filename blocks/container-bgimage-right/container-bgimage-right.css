@@ -1,111 +1,212 @@
 
-.container-bgimage-right-wrapper,
-.container-bgimage-right,
-.container-bgimage-right .section {
-  background-color: #512eab; 
-  width: 100% !important;
-  max-width: 100% !important;
+/* ================================
+   SECTION BASE
+================================ */
+.section.container-image-right-container {
+  background-color: #0d004dff;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+  max-height: 548px;
+}
+
+/* Franklin wrapper */
+.section.container-image-right-container
+.container-image-right-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   position: relative;
 }
 
-.container-bgimage-right .col-10pct {
-  display: none !important;
-}
-
-
-.container-bgimage-right .col-80pct {
-  flex: 0 0 100% !important;
-  max-width: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
-}
-
-
-.container-bgimage-right .content-tile__figure {
-  display: flex;
-  flex-direction: row-reverse; /* Puts Image on Right */
+/* ================================
+   MAIN GRID
+================================ */
+.section.container-image-right-container
+.container-image-right.block {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
   align-items: center;
-  width: 100%;
-  height: 402px; /* Adjusted height for better fit */
-  margin: 0;
+  min-height: 560px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 92px;
 }
 
+/* ================================
+   LEFT CONTENT (TEXT STACK)
+================================ */
+.section.container-image-right-container
+.container-image-right.block
+> div:not(:last-child) {
+  grid-column: 1;
+  z-index: 2;
+  padding-left: 6rem;
+  max-width: 576px;
+}
 
-.container-bgimage-right picture {
-  
-  width: 20%;
-  height: 100%;
-  display: block;
+/* Stack spacing */
+.section.container-image-right-container
+.container-image-right.block
+> div:first-child {
+  margin-top: -2rem;
+}
+
+.section.container-image-right-container
+.container-image-right.block
+> div:nth-child(2) {
+  margin-top: -11rem;
+}
+
+.section.container-image-right-container
+.container-image-right.block
+> div:nth-child(3) {
+  margin-top: -19rem;
+}
+
+/* ================================
+   TYPOGRAPHY
+================================ */
+.section.container-image-right-container
+.container-image-right.block h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
   margin: 0;
+  color: #c1bfffff;
+}
+
+.section.container-image-right-container
+.container-image-right.block h5 {
+  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  color: #f9f9fcff;
+  line-height: 1.4;
+  font-weight: 300 !important;
+}
+
+.section.container-image-right-container
+.container-image-right.block p {
+  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #f9f9fcff;
+}
+
+/* ================================
+   CTA BUTTON
+================================ */
+.section.container-image-right-container
+.container-image-right.block a.button {
+  background-color: #ffce00ff;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;  
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+  text-decoration: none;
+  vertical-align: middle;
+  border: 0;
+  cursor: pointer;
+  min-block-size: 2.25rem;
+  padding: .375em 1.875em;
   position: relative;
-  padding-right: 20rem;
+  z-index: 1;
+  color: #060609ff;
+  margin: 20px 0 0;
 }
 
-.container-bgimage-right img {
-  width: 100%;
+.section.container-image-right-container
+.container-image-right.block a.button:hover {
+  background-color: #feeb99ff;
+  transform: scale(1.05);
+  transition: all .125s ease-in-out;
+}
+
+/* ================================
+   RIGHT IMAGE
+================================ */
+.section.container-image-right-container
+.container-image-right.block
+> div:last-child {
+  grid-column: 2;
+  position: relative;
   height: 100%;
-  object-fit: cover; /* Ensures it fills the box perfectly */
-  object-position: left center; /* Focuses on the important part of image */
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+}
+
+/* Image fill */
+.section.container-image-right-container
+.container-image-right.block picture,
+.section.container-image-right-container
+.container-image-right.block img {
+  width: 100%;
+  height: 548px;
+  object-fit: cover;
   display: block;
 }
 
-/* --- 6. TEXT STYLING (Moved to Left) --- */
-.container-bgimage-right .content-tile__figcaption {
-  flex: 0 0 43% !important; /* Text takes remaining 45% */
-  width: 43% !important;
-  
-  /* Text Alignment Fixes */
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: flex-start !important; /* Pushes everything to the LEFT */
-  
-  /* Spacing */
-  padding-left: 8vw !important; /* Dynamic padding to keep it off the edge */
-  padding-right: 20px !important;
-  
+/* ================================
+   GRADIENT OVERLAY
+================================ */
+.section.container-image-right-container
+.container-image-right.block
+> div:last-child::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset-block: calc(-1 * 92px) calc(-1 * 92px);
+  inset-inline-start: calc(-1 * calc(0px * 1) - 1px);
+  inline-size: 66%;
+  background: linear-gradient(90deg, #0d004dff calc(90% - 300px), rgba(from #0d004dff r g b / .6) calc(calc(90% - 300px) - -104px), transparent calc(calc(90% - 300px) - -383px));
   z-index: 1;
 }
 
-/* Title Styling */
-.container-bgimage-right .content-tile__title {
-  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
-  font-size: clamp(2.5rem, 3.25vw + 1rem, 3.125rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: #c1bfffff;
-  margin-bottom: 15px;
-  /* Force Left Align */
-  text-align: left !important;
-  width: 100%;
+.section.container-image-right-container
+.container-image-right.block picture {
+  position: relative;
+  z-index: 0;
 }
 
-/* Subtitle Styling */
-.container-bgimage-right .content-tile-subtitle {
-  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
-  font-size: clamp(1.25rem, 0.6vw + 1rem, 1.375rem);
-  font-weight: 600;
-  line-height: 1.4;
-  color: #f9f9fcff;
-  /* Force Left Align */
-  text-align: left !important;
-  width: 100%;
-}
-
-/* --- Mobile Reset --- */
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 900px) {
-  .container-bgimage-right .content-tile__figure {
-    height: auto !important;
-    flex-direction: column !important;
+  .section.container-image-right-container
+  .container-image-right.block {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem;
   }
-  .container-bgimage-right picture,
-  .container-bgimage-right .content-tile__figcaption {
-    width: 100% !important;
-    flex: none !important;
-    padding: 40px !important;
-  }
-}
 
-.container-bgimage-right-container {
-  overflow: hidden;
+  .section.container-image-right-container
+  .container-image-right.block
+  > div:not(:last-child) {
+    grid-column: 1;
+    text-align: center;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section.container-image-right-container
+  .container-image-right.block
+  > div:last-child {
+    grid-column: 1;
+    min-height: 320px;
+    margin-bottom: 2rem;
+  }
+
+  .section.container-image-right-container
+  .container-image-right.block p {
+    margin: 0 auto;
+  }
 }
