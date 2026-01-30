@@ -88,12 +88,12 @@ margin-top: 17.3rem;
 ================================ */
 .section.containerimageleft-container
 .containerimageleft.block h2 {
-  font-size: clamp(3.125rem, 1.6964rem + 2.9762vw, .375rem);
+  font-size: clamp(3.125rem, 1.6964rem + 2.9762vw, 4.375rem);
   line-height: 1.5;
   font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
   margin: 0;
   color: #0d004dff;
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 
 .section.containerimageleft-container
