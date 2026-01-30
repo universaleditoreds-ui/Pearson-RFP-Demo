@@ -1,28 +1,52 @@
-/* Main Block */
+/* --- 1. FORCE FULL WIDTH BACKGROUND --- */
+.columns-container-wrapper,
 .columns-container {
-  background-color: #dcd9f6; /* Matching the light purple background */
-  padding: 100px 5%;
+  /* Force the background to the edges */
+  background-color: #dcd9f6 !important; 
   
-  display: grid;
-  /* Two equal columns for the content below */
-  grid-template-columns: 1fr 1fr; 
-  /* Rows: Header Area, Spacer, Content Title, Content Desc, Content Link */
-  grid-template-rows: auto auto 1fr auto auto;
+  /* Breakout technique to stretch full width */
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
   
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 0; /* We handle spacing via padding to ensure hover cards are seamless */
+  /* Remove external white space */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  
+  /* Internal padding for top/bottom spacing */
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
-/* --- Header Area (Spanning Top) --- */
+/* --- 2. GRID LAYOUT WITH CENTERING GUTTERS --- */
+.columns-container {
+  display: grid;
+  
+  /* Columns: Gutter | Left Content | Right Content | Gutter */
+  /* This keeps content centered (max 1200px total) while background stretches */
+  grid-template-columns: 1fr minmax(300px, 600px) minmax(300px, 600px) 1fr;
+  
+  /* Rows: Header, Desc, Content Rows... */
+  grid-template-rows: auto auto auto auto auto;
+  
+  column-gap: 30px;
+  row-gap: 0;
+}
 
-/* Div 3: Image (The Icon) */
+/* --- 3. HEADER PLACEMENT (Spans Middle 2 Columns) --- */
+
+/* Image/Icon (Div 3) */
 .columns-container > div:nth-child(3) {
-  grid-column: 1 / 3;
+  grid-column: 2 / 4; /* Span the middle content area */
   grid-row: 1;
   justify-self: center;
-  transform: translateX(-240px); /* Shift icon left of the text */
-  margin-bottom: -60px; /* Pull text up next to it */
+  
+  /* Positioning relative to the center */
+  transform: translateX(-240px); 
+  margin-bottom: -60px; 
   z-index: 1;
 }
 .columns-container > div:nth-child(3) img {
@@ -30,45 +54,45 @@
   height: auto;
 }
 
-/* Div 1: Title "About Pearson" */
+/* Title "About Pearson" (Div 1) */
 .columns-container > div:nth-child(1) {
-  grid-column: 1 / 3;
+  grid-column: 2 / 4; /* Span middle */
   grid-row: 1;
   justify-self: center;
-  padding-left: 60px; /* Offset to clear the icon */
+  padding-left: 60px; 
 }
 
-/* Div 2: Description */
+/* Description (Div 2) */
 .columns-container > div:nth-child(2) {
-  grid-column: 1 / 3;
+  grid-column: 2 / 4; /* Span middle */
   grid-row: 2;
   justify-self: center;
   text-align: left;
   max-width: 600px;
-  padding-left: 60px; /* Align with title */
-  margin-bottom: 60px; /* Space before columns */
+  padding-left: 60px;
+  margin-bottom: 60px; 
 }
 
-/* --- Column Content Styling & Placement --- */
+/* --- 4. COLUMN CONTENT PLACEMENT --- */
 
-/* Common Styles for Column Items to creating the "Card" feel */
+/* Common Card Styles */
 .columns-container > div:nth-child(n+4) {
   padding-left: 40px;
   padding-right: 40px;
   transition: background-color 0.3s ease;
 }
 
-/* Left Column Items (Divs 4, 5, 6) */
-.columns-container > div:nth-child(4) { grid-column: 1; grid-row: 3; padding-top: 40px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
-.columns-container > div:nth-child(5) { grid-column: 1; grid-row: 4; }
-.columns-container > div:nth-child(6) { grid-column: 1; grid-row: 5; padding-bottom: 40px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+/* LEFT COLUMN GROUP (Divs 4, 5, 6) -> Goes to Grid Column 2 */
+.columns-container > div:nth-child(4) { grid-column: 2; grid-row: 3; padding-top: 40px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.columns-container > div:nth-child(5) { grid-column: 2; grid-row: 4; }
+.columns-container > div:nth-child(6) { grid-column: 2; grid-row: 5; padding-bottom: 40px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
 
-/* Right Column Items (Divs 7, 8, 9) */
-.columns-container > div:nth-child(7) { grid-column: 2; grid-row: 3; padding-top: 40px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
-.columns-container > div:nth-child(8) { grid-column: 2; grid-row: 4; }
-.columns-container > div:nth-child(9) { grid-column: 2; grid-row: 5; padding-bottom: 40px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+/* RIGHT COLUMN GROUP (Divs 7, 8, 9) -> Goes to Grid Column 3 */
+.columns-container > div:nth-child(7) { grid-column: 3; grid-row: 3; padding-top: 40px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.columns-container > div:nth-child(8) { grid-column: 3; grid-row: 4; }
+.columns-container > div:nth-child(9) { grid-column: 3; grid-row: 5; padding-bottom: 40px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
 
-/* --- Typography --- */
+/* --- 5. TYPOGRAPHY & LINKS (Unchanged) --- */
 .columns-container h2 {
   font-family: sans-serif;
   color: #000033;
@@ -91,12 +115,11 @@
   margin: 0 0 20px 0;
 }
 
-/* Link Styling */
 .columns-container a {
   text-decoration: none;
   color: #000033;
   font-weight: bold;
-  border-bottom: 2px solid #000033; /* Underline style */
+  border-bottom: 2px solid #000033;
   padding-bottom: 2px;
 }
 .columns-container a:hover {
@@ -104,12 +127,7 @@
   border-color: #007fa3;
 }
 
-/* --- THE HOVER EFFECT (Using :has) --- */
-/* This is the magic part. If you hover ANY element in the 1st column group (4,5,6),
-   we force ALL of them to turn white.
-*/
-
-/* Left Column Group Hover */
+/* --- 6. HOVER EFFECTS (Unchanged logic, kept for functionality) --- */
 .columns-container:has(div:nth-child(4):hover) > div:nth-child(4),
 .columns-container:has(div:nth-child(4):hover) > div:nth-child(5),
 .columns-container:has(div:nth-child(4):hover) > div:nth-child(6),
@@ -123,7 +141,6 @@
   cursor: pointer;
 }
 
-/* Right Column Group Hover */
 .columns-container:has(div:nth-child(7):hover) > div:nth-child(7),
 .columns-container:has(div:nth-child(7):hover) > div:nth-child(8),
 .columns-container:has(div:nth-child(7):hover) > div:nth-child(9),
@@ -137,36 +154,34 @@
   cursor: pointer;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
+/* --- 7. MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
   .columns-container {
-    grid-template-columns: 1fr; /* Stack everything */
-    padding: 60px 20px;
+    /* Switch to 3 columns: Pad | Content | Pad */
+    grid-template-columns: 20px 1fr 20px; 
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   
-  /* Reset header positions */
-  .columns-container > div:nth-child(3) {
-    grid-column: 1;
-    transform: none;
-    margin-bottom: 20px;
-  }
+  /* Header Items: Center in the middle column */
   .columns-container > div:nth-child(1),
-  .columns-container > div:nth-child(2) {
-    grid-column: 1;
+  .columns-container > div:nth-child(2),
+  .columns-container > div:nth-child(3) {
+    grid-column: 2;
+    transform: none;
     padding-left: 0;
     text-align: center;
   }
   
-  /* Reset Columns */
+  .columns-container > div:nth-child(3) {
+    margin-bottom: 20px; /* Space for icon on mobile */
+  }
+
+  /* Content Columns: Stack in the middle column */
   .columns-container > div:nth-child(n+4) {
-    grid-column: 1 !important; /* Force all to single column */
+    grid-column: 2 !important;
   }
   
-  /* Adjust Row placement for stacking */
-  .columns-container > div:nth-child(4) { grid-row: 4; }
-  .columns-container > div:nth-child(5) { grid-row: 5; }
-  .columns-container > div:nth-child(6) { grid-row: 6; margin-bottom: 30px;}
-  .columns-container > div:nth-child(7) { grid-row: 7; }
-  .columns-container > div:nth-child(8) { grid-row: 8; }
-  .columns-container > div:nth-child(9) { grid-row: 9; }
+  /* Reset Row styling for stacking */
+  .columns-container > div:nth-child(6) { margin-bottom: 30px; }
 }
