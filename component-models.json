@@ -454,6 +454,75 @@
         "multi": false
       }
     ]
+  },
+    {
+    "id": "columns-container",
+    "title": "columns-container",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "Coloum1Title",
+        "value": "",
+        "label": "Coloum1 Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Coloum1Description",
+        "value": "",
+        "label": "Coloum1 Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Coloum1LinkText",
+        "value": "",
+        "label": "Coloum1 LinkText",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Coloum2Title",
+        "value": "",
+        "label": "Coloum2 Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Coloum2Description",
+        "value": "",
+        "label": "Coloum2 Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Coloum2LinkText",
+        "value": "",
+        "label": "Coloum2 LinkText",
+        "valueType": "string"
+      }
+    ]
   }
     ]
   }
