@@ -30,7 +30,7 @@
   display: grid;
   
   /* Columns: Gutter | Left Content | Right Content | Gutter */
-  grid-template-columns: 1fr minmax(300px, 600px) minmax(300px, 600px) 1fr;
+  grid-template-columns: 1fr minmax(100px, 1000px) minmax(100px, 1000px) 1fr;
   
   /* Rows: Header, Desc, Title, Text, Link */
   grid-template-rows: auto auto auto auto auto;
