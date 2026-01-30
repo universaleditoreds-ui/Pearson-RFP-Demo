@@ -149,6 +149,11 @@
     /* box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45); */
     transition: transform 0.3s ease;
 }
+/* Slow down slide movement */
+.card-carousel-animation-wrapper .slick-track {
+  transition: transform 600ms ease-in-out !important;
+}
+
 
 .card-carousel-animation-wrapper .content-tile:hover {
     transform: translateY(-6px);
@@ -179,11 +184,17 @@
    CARD TEXT
 ========================================================= */
 .card-carousel-animation-wrapper .content-tile__eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    /* font-size: 0.7rem; */
+    /* letter-spacing: 0.12em; */
+    /* text-transform: uppercase; */
     color: #37f3dc;
+    letter-spacing: 0.08em;
     margin-bottom: 0;
+    font-size: var(--typesize-milli);
+    font-weight: var(--typeweight--extrabold);
+    line-height: var(--leading--1-5);
+    text-transform: uppercase;
+    /* color: var(--promocard--color-text-eyebrow); */
 }
 
 .card-carousel-animation-wrapper .content-tile__title {
@@ -483,6 +494,11 @@
     line-height: var(--leading--1-4);
     color: #d6d5fbff;
     text-wrap: balance;
+    font-size: var(--typesize-h4);
+    font-weight: var(--typeweight--semibold);
+    line-height: var(--leading--1-4);
+    /* color: var(--promocard--color-text-title); */
+    text-wrap: balance;
 }
 
 [class*="promocard"] .content-tile-subtitle {
@@ -507,7 +523,7 @@
 }
 
 :not([class*="use-button-"])[class*="promocard"] .content-tile-text p:last-of-type a[href] {
-    color: var(--promocard--color-text-primary-link,var(--color--text-link));
+    color: #d6d5fbff;
 }
 
 
@@ -527,6 +543,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  row-gap: 8px;
 }
 
 /* Push CTA to bottom */
@@ -570,11 +587,12 @@
 
 /* Remove ALL button styles by default */
 .carousel__item .content-tile-text a {
+  font-weight: var(--typeweight--semibold);
   background: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
-  color: #e3e1f9ff !important;
-  font-weight: 400 !important;
+  color: #d6d5fbff !important;
+  /* font-weight: 400 !important; */
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -642,4 +660,17 @@
   margin-left: 6px !important;
   font-size: 1.2em !important;
   line-height: 1 !important;
+}
+/* Default search icon = white */
+.ais-SearchBox-submit svg path {
+  fill: #ffffff !important;
+}
+
+/* On hover of facet__auto_suggest → icon turns #0d004d */
+.facet__auto_suggest:hover .ais-SearchBox-submit svg path {
+  fill: #0d004dff !important;
+}
+.ais-SearchBox-submit svg {
+  width: 18px !important;   /* match Pearson */
+  height: 18px !important;
 }
