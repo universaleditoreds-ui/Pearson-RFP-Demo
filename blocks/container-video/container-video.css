@@ -72,32 +72,26 @@
 
 /* Play icon */
 .container-video.block .youtube-video-play-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55);
-  position: relative;
-  transition: transform 160ms ease, background-color 160ms ease;
-}
-
-/* Triangle */
-.container-video.block .youtube-video-play-img::before {
-  content: "";
+  background-image: url(/content/dam/Pearson-RFP-Demo/youtube-play-icon.webp);
+  display: inline-flex;
+  align-self: center;
+  inline-size: 68px;
+  block-size: auto;
+  aspect-ratio: 1.41666667;
+  background-size: contain;
+  background-repeat: no-repeat;
+  inset-block-start: auto;
+  inset-inline-start: auto;
+  transition: all .2s ease-in-out;
+  margin: auto;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-42%, -50%);
-  width: 0;
-  height: 0;
-  border-left: 18px solid #fff;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-}
-
-/* Hover/focus effects for play button */
-.container-video.block .youtube-video-play-button:hover .youtube-video-play-img {
-  transform: scale(1.06);
-  background: rgba(0, 0, 0, 0.65);
+  width: 85px;
+  height: 59px;
+  top: calc(-30px - -50%);
+  left: calc(-43px - -50%);
+  z-index: 0;
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .container-video.block .youtube-video-play-button:focus-visible {
