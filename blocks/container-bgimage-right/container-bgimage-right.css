@@ -110,3 +110,7 @@
 .container-bgimage-right-container {
   overflow: hidden;
 }
+/* Override inline margin-bottom: unset */
+.section.container-bgimage-right-container {
+  margin-bottom: 60px !important; /* adjust as needed */
+}
