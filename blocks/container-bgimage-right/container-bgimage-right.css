@@ -2,13 +2,11 @@
 .container-bgimage-right-wrapper,
 .container-bgimage-right,
 .container-bgimage-right .section {
-  background-color: #512eab !important; 
-  width: 100vw !important; 
+  background-color: #512eab; 
+  width: 100% !important;
+  max-width: 100% !important;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
+  min-height: 402px;
 }
 
 .container-bgimage-right .col-10pct {
@@ -72,13 +70,12 @@
 
 /* Title Styling */
 .container-bgimage-right .content-tile__title {
-  font-family: sans-serif;
-  font-size: 4.0rem;
-  font-weight: 500;
-  line-height: 1.1;
-  color: #bfaee3;
+  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
+  font-size: clamp(2.5rem, 3.25vw + 1rem, 3.125rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #c1bfffff;
   margin-bottom: 15px;
-  
   /* Force Left Align */
   text-align: left !important;
   width: 100%;
@@ -86,11 +83,11 @@
 
 /* Subtitle Styling */
 .container-bgimage-right .content-tile-subtitle {
-  font-family: sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #ffffff;
-  
+  font-family: "Plus Jakarta Sans",Helvetica,Verdana,sans-serif;
+  font-size: clamp(1.25rem, 0.6vw + 1rem, 1.375rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #f9f9fcff;
   /* Force Left Align */
   text-align: left !important;
   width: 100%;
@@ -108,4 +105,8 @@
     flex: none !important;
     padding: 40px !important;
   }
+}
+
+.container-bgimage-right-container {
+  overflow: hidden;
 }

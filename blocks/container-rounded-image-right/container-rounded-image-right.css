@@ -6,7 +6,7 @@
   width: 100%;
 }
 .container-rounded-image-right-wrapper {
-    max-width: 1440px !important;
+    
     width: 100%;
 }
 
@@ -46,7 +46,7 @@
 .container-rounded-image-right .content-tile__figcaption {
   flex: 0 0 50%;
   width: 50%;
-  padding: 50px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -67,7 +67,8 @@
   font-size: 3rem; 
   
   /* CHANGED: Heavier Font Weight */
-  font-weight: 400;
+      font-weight: 200 !important;
+
   color: var(--color--text-brand-01);
   /* font-family: "Plus Jakarta Sans",var(--typefamily-fallback); */
 }
@@ -100,10 +101,14 @@
   color: #ffffff;
 }
 
-.container-rounded-image-right .button:hover {
-  /* Hover state for the new color */
-  background-color: #005a75; 
+.container-rounded-image-right 
+.content-tile__figcaption 
+.button-container 
+a.button:hover {
+  background-color: #005a75 !important;
+  color: var(--color--text-primary-inverse) !important;
 }
+
 /* --- LINK/BUTTON CHANGES END --- */
 
 /* Mobile Responsiveness */
