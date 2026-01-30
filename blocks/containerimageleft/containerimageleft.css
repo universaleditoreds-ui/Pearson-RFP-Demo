@@ -24,7 +24,7 @@
   margin: 0 auto;
   position: relative;
   margin-top: -4rem;
-  margin-bottom: 1rem;
+  margin-bottom: -7rem;
 }
 
 
@@ -74,13 +74,13 @@
 .section.containerimageleft-container
 .containerimageleft.block
 > div:nth-child(2) {
-margin-top: 8rem;
+margin-top: 17.3rem;
 }
 
 .section.containerimageleft-container
 .containerimageleft.block
 > div:nth-child(3) {
-  margin-top: 18rem;
+  margin-top: 27.5rem;
 }
 
 /* ================================
