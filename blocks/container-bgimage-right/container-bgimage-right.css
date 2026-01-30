@@ -54,11 +54,11 @@
 /* --- Typography: "Learning never stops" --- */
 .container-bgimage-right .content-tile__title {
   font-family: sans-serif; /* Replace with specific brand font if available */
-  font-size: 4.5rem; /* Very large hero text */
+  font-size: 3.5rem; /* Very large hero text */
   font-weight: 700; /* Bold */
   line-height: 1.1;
   margin-bottom: 25px;
-  
+  text-align: left;
   /* Light Lavender color for the main title */
   color: #bfaee3; 
 }
