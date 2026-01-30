@@ -1,20 +1,115 @@
-footer {
-     background: var(--color--ui-background-brand-01);
-  font-size: var(--body-font-size-xs);
+/* --- Footer Background & Container --- */
+footer .footer {
+  /* Deep Pearson Navy Background */
+  background-color: #150045; 
+  color: #ffffff;
+  padding: 60px 20px;
+  font-family: sans-serif;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+/* --- Main Grid Layout for the Content --- */
+/* We target the wrapper containing the h3 and ul lists */
+footer .footer .default-content-wrapper {
+  display: grid;
+  
+  /* Create 4 columns: 
+     1. Empty/Logo space (mimicking the image layout)
+     2. Explore/Major Biz
+     3. Support/About
+     4. Insights 
+  */
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  
+  /* Gap between columns */
+  column-gap: 40px;
+  row-gap: 10px; /* Small gap between Title and List */
+  
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
 }
 
-footer .footer p {
+/* --- Positioning the Sections (The "Flat DOM" Fix) --- */
+/* Since h3 and ul are siblings, we must explicitly place them in columns */
+
+/* COLUMN 2: Explore & Major Businesses */
+/* Explore */
+footer h3:nth-of-type(1), 
+footer ul:nth-of-type(1) { grid-column: 2; }
+
+/* Major Businesses (Pushes to a new row automatically or we can force it) */
+footer h3:nth-of-type(4) { grid-column: 2; margin-top: 40px; } /* Add spacing before second group */
+footer ul:nth-of-type(4) { grid-column: 2; }
+
+
+/* COLUMN 3: Support & About Pearson */
+/* Support */
+footer h3:nth-of-type(2), 
+footer ul:nth-of-type(2) { grid-column: 3; grid-row: 1; } /* Force to top row */
+footer ul:nth-of-type(2) { grid-row: 2; } /* List follows title */
+
+/* About Pearson */
+footer h3:nth-of-type(5) { grid-column: 3; margin-top: 40px; }
+footer ul:nth-of-type(5) { grid-column: 3; }
+
+
+/* COLUMN 4: Insights */
+/* Insights */
+footer h3:nth-of-type(3), 
+footer ul:nth-of-type(3) { grid-column: 4; grid-row: 1; }
+footer ul:nth-of-type(3) { grid-row: 2; }
+
+
+/* --- Typography Styling --- */
+
+/* Headings */
+footer .footer h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 15px 0;
+}
+
+/* Lists */
+footer .footer ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer li {
+  margin-bottom: 12px;
+}
+
+/* Links */
+footer .footer a {
+  color: #d9d9d9; /* Slight off-white for text */
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+footer .footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  footer .footer .default-content-wrapper {
+    /* Stack everything in one column on mobile */
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  
+  /* Reset specific column placements for mobile */
+  footer h3:nth-of-type(n), 
+  footer ul:nth-of-type(n) { 
+    grid-column: 1; 
+    grid-row: auto;
+    margin-top: 0;
   }
 }
