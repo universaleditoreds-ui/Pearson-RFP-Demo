@@ -1,65 +1,87 @@
 /* --- Main Container / Background --- */
 .container-bgimage-right {
-  /* Deep Pearson Purple Background */
+  /* Deep Pearson Purple Background - Applied to full width */
   background-color: #371585; 
   padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden; /* Ensures the wave image doesn't spill out */
+  overflow: hidden; 
+  
+  /* User Request: Fixed height */
+  height: 300px; 
 }
 
 /* --- Layout Wrapper (Flexbox) --- */
 .container-bgimage-right .content-tile__figure {
   display: flex;
-  flex-direction: row-reverse; /* REVERSE: Puts Image (1st in DOM) on Right, Text (2nd) on Left */
-  align-items: center; /* Vertically centers the content */
+  flex-direction: row-reverse; /* Image Right, Text Left */
+  align-items: center; 
   justify-content: space-between;
   
   width: 100%;
-  max-width: 1440px; /* Limits width on very large screens */
-  min-height: 450px; /* Ensures substantial height */
+  max-width: 1440px; 
+  height: 100%; /* Match parent height */
   margin: 0 auto;
   position: relative;
+  
+  /* FIX: Ensure no background color conflicts here */
+  background: transparent;
+  
+  /* FIX: Remove Hover Transition */
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Explicitly disable hover effects if they exist */
+.container-bgimage-right:hover .content-tile__figure {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* --- Image Section (Right) --- */
 .container-bgimage-right picture {
-  flex: 1; /* Allows image area to grow */
+  flex: 1; 
   display: flex;
-  justify-content: flex-end; /* Aligns image to the far right */
+  justify-content: flex-end; 
   height: 100%;
-  min-height: 450px; /* Matches container height */
+  
+  /* Fix: Ensure image container fills the height */
+  min-height: 100%; 
 }
 
 .container-bgimage-right img {
   height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: cover; /* Ensures the wave graphic covers the area appropriately */
-  object-position: right center; /* Anchors image to the right */
+  width: 100%; /* Force width to fill container to avoid gaps */
+  object-fit: cover; 
+  object-position: right center; 
   display: block;
+  
+  /* Fix: Ensure no white background on the image itself */
+  background-color: #371585; 
 }
 
 /* --- Content/Text Section (Left) --- */
 .container-bgimage-right .content-tile__figcaption {
-  flex: 1; /* Takes up remaining space */
-  padding: 60px 100px; /* Generous padding to position text nicely */
-  z-index: 10; /* Ensures text stays on top if screen gets small */
+  flex: 1; 
+  z-index: 10; 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+  /* User Request: Padding adjustment */
+  padding-bottom: 18rem; 
+  padding-left: 60px; /* Kept some left padding for alignment */
 }
 
-/* --- Typography: "Learning never stops" --- */
+/* --- Typography: Title --- */
 .container-bgimage-right .content-tile__title {
-  font-family: sans-serif; /* Replace with specific brand font if available */
-  font-size: 3.5rem; /* Very large hero text */
-  font-weight: 700; /* Bold */
-  line-height: 1.1;
-  margin-bottom: 25px;
+  font-family: sans-serif; 
+  font-size: 3.5rem; 
+  font-weight: 700; 
+  line-height: 1.1; 
+  margin-bottom: 25px; 
   text-align: left;
-  /* Light Lavender color for the main title */
   color: #bfaee3; 
 }
 
@@ -69,36 +91,35 @@
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.4;
-  
-  /* White color for the subtitle */
-  color: #ffffff; 
-  max-width: 600px; /* Prevents text from stretching too wide */
+  color: #ffffff;
+  max-width: 600px;
+  text-align: left;
 }
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
+  .container-bgimage-right {
+    height: auto; /* Allow height to grow on mobile */
+    min-height: 300px;
+  }
+  
   .container-bgimage-right .content-tile__figure {
-    flex-direction: column; /* Stack vertically on smaller screens */
+    flex-direction: column; 
     text-align: center;
   }
 
   .container-bgimage-right .content-tile__figcaption {
-    padding: 40px 20px;
-    align-items: center; /* Center text on mobile */
+    padding: 40px 20px; /* Reset the large bottom padding on mobile */
+    align-items: center; 
   }
-
+  
+  .container-bgimage-right .content-tile-subtitle,
   .container-bgimage-right .content-tile__title {
-    font-size: 3rem;
+    text-align: center;
   }
 
   .container-bgimage-right picture {
     width: 100%;
-    min-height: 300px;
-    justify-content: center;
-  }
-  
-  .container-bgimage-right img {
-    width: 100%;
-    object-position: center;
+    min-height: 200px;
   }
 }
