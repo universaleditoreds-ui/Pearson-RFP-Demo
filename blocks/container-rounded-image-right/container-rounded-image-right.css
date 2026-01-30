@@ -2,6 +2,12 @@
 .container-rounded-image-right {
   /* padding: 40px 20px; */
   /* background-color: #f3f0f8; */
+  /* max-width: 1440px; */
+  width: 100%;
+}
+.container-rounded-image-right-wrapper {
+    max-width: 1440px !important;
+    width: 100%;
 }
 
 /* Flex container - WIDTH REDUCED HERE */
@@ -43,14 +49,14 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
   box-sizing: border-box;
 }
 
 /* --- TITLE CHANGES START --- */
 .container-rounded-image-right h2 {
-  font-family: sans-serif;
+  font-family: Helvetica,Verdana,sans-serif;
   line-height: 1.1;
   margin-bottom: 24px;
   
@@ -61,22 +67,25 @@
   font-size: 3rem; 
   
   /* CHANGED: Heavier Font Weight */
-  font-weight: 800;
+  font-weight: 400;
   color: var(--color--text-brand-01);
-  font-family: var(--typefamily-alt);
+  /* font-family: "Plus Jakarta Sans",var(--typefamily-fallback); */
 }
 /* --- TITLE CHANGES END --- */
-
+.container-rounded-image-right .content-tile__title {
+  margin:0;
+}
 .container-rounded-image-right p {
   font-family: sans-serif;
   color: #555;
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 /* --- LINK/BUTTON CHANGES START --- */
 .container-rounded-image-right .button {
+  margin-top: 0 !important;
   display: inline-block;
   padding: 12px 35px;
   border-radius: 50px;
@@ -85,10 +94,10 @@
   transition: background-color 0.3s ease;
 
   /* CHANGED: New Link Background Color (e.g., Pearson Electric Blue) */
-  background-color: #007fa3; 
+  background-color: #0d004dff !important; 
   
   /* CHANGED: Text Color */
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .container-rounded-image-right .button:hover {
