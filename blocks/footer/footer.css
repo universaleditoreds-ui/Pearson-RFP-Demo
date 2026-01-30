@@ -1,6 +1,6 @@
 /* --- 1. Footer Container & Background --- */
 footer .footer {
-  background-color: #150045; /* Deep Pearson Navy */
+  background-color: #150045; /* Pearson Navy */
   color: #ffffff;
   padding: 60px 40px;
   font-family: sans-serif;
@@ -11,91 +11,78 @@ footer .footer {
 footer .footer .default-content-wrapper {
   display: grid;
   
-  /* 4 Columns: 
-     Col 1: Logo & Icons (1.2 fraction)
-     Col 2: Explore / Major Biz
-     Col 3: Support / About
-     Col 4: Insights 
-  */
+  /* 4 Columns: Logo Area | Col 2 | Col 3 | Col 4 */
   grid-template-columns: 1.2fr 1fr 1fr 1fr;
   
-  /* 4 Explicit Rows to lock items in place */
+  /* 4 Explicit Rows:
+     Row 1: Headers (Explore, Support, Logo)
+     Row 2: Lists (School, College, Icons)
+     Row 3: Headers (Major Biz, About)
+     Row 4: Lists (Assessments, Our Company)
+  */
   grid-template-rows: min-content min-content min-content min-content;
   
   column-gap: 40px;
-  row-gap: 0; 
+  row-gap: 0; /* We control spacing via padding on the elements */
   
   max-width: 1400px;
   margin: 0 auto;
-  align-items: start; /* Prevents stretching */
+  align-items: start; /* CRITICAL: Prevents vertical stretching */
 }
 
-/* --- 3. INJECTING LOGO & ICONS (The Fix) --- */
+/* --- 3. INJECTING LOGO & ICONS (Column 1) --- */
 
-/* LOGO: Uses ::before on the wrapper */
+/* The Logo (Placed in Row 1, Col 1) */
 footer .footer .default-content-wrapper::before {
-  content: ""; /* Essential for pseudo-element to render */
-  display: block; /* Essential for giving it size */
-  
-  /* Grid Position: Top Left */
+  content: "";
   grid-column: 1;
   grid-row: 1;
   
-  /* Size */
   width: 140px;
   height: 50px;
+  display: block;
   
-  /* WORKING PUBLIC URL for White Pearson Logo */
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Pearson_logo.svg/2560px-Pearson_logo.svg.png"); 
+  /* Pearson Logo White Version */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/87/Pearson_logo.svg"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left top;
-  
-  /* Turn the logo white since the source is black */
-  filter: brightness(0) invert(1); 
-  
+  filter: brightness(0) invert(1); /* Turns black logo white */
   margin-bottom: 20px;
 }
 
-/* ICONS: Uses ::after on the wrapper */
+/* The Social Icons (Placed in Row 2, Col 1) */
 footer .footer .default-content-wrapper::after {
-  content: ""; 
-  display: block; 
-  
-  /* Grid Position: Below Logo (Row 2, Col 1) */
+  content: "";
   grid-column: 1;
   grid-row: 2;
   
-  /* Size */
-  width: 200px; 
+  width: 160px; 
   height: 40px;
+  display: block;
   
-  /* WORKING PUBLIC URL for White Social Icons */
-  /* If you have your own image, replace this URL with: '/content/dam/your-icons.png' */
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Social_media_icons.svg/1200px-Social_media_icons.svg.png");
+  /* Social Icons Sprite (Placeholder) */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Social_media_icons_white.svg/1024px-Social_media_icons_white.svg.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left top;
-  
-  /* Turn icons white */
-  filter: brightness(0) invert(1);
 }
 
-/* --- 4. STRICT PLACEMENT OF TEXT CONTENT (Unchanged) --- */
+/* --- 4. STRICT PLACEMENT OF TEXT CONTENT --- */
 
 /* === ROW 1 & 2: Top Section === */
 
 /* Explore */
 footer h3:nth-of-type(1) { grid-column: 2; grid-row: 1; }
-footer ul:nth-of-type(1) { grid-column: 2; grid-row: 2; margin-bottom: 50px; }
+footer ul:nth-of-type(1) { grid-column: 2; grid-row: 2; margin-bottom: 40px; }
 
 /* Support */
 footer h3:nth-of-type(2) { grid-column: 3; grid-row: 1; }
-footer ul:nth-of-type(2) { grid-column: 3; grid-row: 2; margin-bottom: 50px; }
+footer ul:nth-of-type(2) { grid-column: 3; grid-row: 2; margin-bottom: 40px; }
 
-/* Insights (Spans all rows vertically) */
+/* Insights */
 footer h3:nth-of-type(3) { grid-column: 4; grid-row: 1; }
-footer ul:nth-of-type(3) { grid-column: 4; grid-row: 2; grid-row-end: span 3; }
+footer ul:nth-of-type(3) { grid-column: 4; grid-row: 2; margin-bottom: 40px; }
 
 
 /* === ROW 3 & 4: Bottom Section === */
@@ -109,12 +96,12 @@ footer h3:nth-of-type(5) { grid-column: 3; grid-row: 3; }
 footer ul:nth-of-type(5) { grid-column: 3; grid-row: 4; }
 
 
-/* --- 5. Typography Styling (Unchanged) --- */
+/* --- 5. Typography Styling --- */
 footer .footer h3 {
   color: #ffffff;
   font-size: 16px;
   font-weight: 700;
-  margin: 0 0 15px 0; 
+  margin: 0 0 15px 0; /* Tight spacing below header */
 }
 
 footer .footer ul {
@@ -124,7 +111,7 @@ footer .footer ul {
 }
 
 footer .footer li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 footer .footer a {
@@ -151,7 +138,6 @@ footer .footer a:hover {
   footer .footer .default-content-wrapper::before,
   footer .footer .default-content-wrapper::after {
     margin: 0 auto 20px auto;
-    background-position: center;
   }
   
   footer h3:nth-of-type(n), footer ul:nth-of-type(n) {
