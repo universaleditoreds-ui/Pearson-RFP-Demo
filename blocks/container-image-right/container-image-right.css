@@ -165,9 +165,9 @@
   position: absolute;
   inset-block: calc(-1 * 92px) calc(-1 * 92px);
   inset-inline-start: calc(-1 * calc(0px * 1) - 1px);
-  inline-size: calc(100% + 500px);
-  background: linear-gradient(90deg, #0d004dff calc(90% - 800px), rgba(from #0d004dff r g b / .6) calc(calc(90% - 800px) - -104px), transparent calc(calc(90% - 800px) - -383px));
-  z-index: -1;
+  inline-size: 66%;
+  background: linear-gradient(90deg, #0d004dff calc(90% - 300px), rgba(from #0d004dff r g b / .6) calc(calc(90% - 300px) - -104px), transparent calc(calc(90% - 300px) - -383px));
+  z-index: 1;
 }
 
 .section.container-image-right-container

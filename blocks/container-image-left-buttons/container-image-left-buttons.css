@@ -35,20 +35,20 @@
 
 /* 3. Primary Button Container */
 .container-image-left-buttons > div:nth-child(3) {
-  grid-area: btn1;
+  grid-area: btn;
   margin-top: 20px; /* Space before first button */
   padding: 0 32px;
 }
 
 /* 4. Secondary Button Container */
-.container-image-left-buttons > div:nth-child(4) {
+/* .container-image-left-buttons > div:nth-child(4) {
   grid-area: btn2;
-  margin-top: 10px; /* Space between buttons */
+  margin-top: 10px;
   padding: 0 32px;
-}
+} */
 
 /* 5. Image Container (Last in DOM, moved to Left via Grid) */
-.container-image-left-buttons > div:nth-child(5) {
+.container-image-left-buttons > div:nth-child(4) {
   grid-area: image;
   align-self: center; /* Vertically center the image */
   justify-self: end;
