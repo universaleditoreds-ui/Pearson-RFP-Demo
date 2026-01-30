@@ -1,26 +1,28 @@
-/* Main container for the block */
+/* Main wrapper */
 .container-rounded-image-right {
   padding: 40px 20px;
-  background-color: #f3f0f8; /* Matches the light purple background in screenshot */
+  background-color: #f3f0f8;
 }
 
-/* Flex container to split Image and Text */
+/* Flex container - WIDTH REDUCED HERE */
 .container-rounded-image-right .content-tile__figure {
   display: flex;
-  flex-direction: row-reverse; /* Puts the Image (1st in DOM) on Right, Text on Left */
-  align-items: stretch; /* Ensures both sides are equal height */
+  flex-direction: row-reverse;
+  align-items: stretch;
   background-color: #ffffff;
-  border-radius: 30px; /* The "circle ended" rounded corner look */
-  overflow: hidden; /* Clips the image to the border radius */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Optional: subtle shadow */
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin: 0 auto;
-  max-width: 1200px; /* Standard container width */
-  min-height: 400px; /* Minimum height for visual balance */
+  
+  /* CHANGED: Reduced max-width from standard 1200px to 960px to make it narrower */
+  max-width: 960px; 
+  min-height: 400px;
 }
 
-/* --- Image Side (Right) --- */
+/* Image Side (Right) */
 .container-rounded-image-right picture {
-  flex: 0 0 50%; /* Takes exactly 50% width */
+  flex: 0 0 50%;
   width: 50%;
   position: relative;
   display: block;
@@ -30,30 +32,38 @@
 .container-rounded-image-right img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image covers the area without stretching */
+  object-fit: cover;
   display: block;
 }
 
-/* --- Content Side (Left) --- */
+/* Content Side (Left) */
 .container-rounded-image-right .content-tile__figcaption {
-  flex: 0 0 50%; /* Takes exactly 50% width */
+  flex: 0 0 50%;
   width: 50%;
-  padding: 60px; /* Generous padding for whitespace */
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically aligns text in the middle */
-  align-items: flex-start; /* Aligns text to the left */
+  justify-content: center;
+  align-items: flex-start;
   box-sizing: border-box;
 }
 
-/* Typography Styling */
+/* --- TITLE CHANGES START --- */
 .container-rounded-image-right h2 {
   font-family: sans-serif;
-  color: #1a1a1a;
+  line-height: 1.1;
   margin-bottom: 24px;
-  font-size: 2.5rem; /* Large heading size */
-  line-height: 1.2;
+  
+  /* CHANGED: Dark Navy Color */
+  color: #003057; 
+  
+  /* CHANGED: Increased Font Size */
+  font-size: 3rem; 
+  
+  /* CHANGED: Heavier Font Weight */
+  font-weight: 800; 
 }
+/* --- TITLE CHANGES END --- */
 
 .container-rounded-image-right p {
   font-family: sans-serif;
@@ -63,39 +73,39 @@
   margin-bottom: 30px;
 }
 
-/* Button Styling */
+/* --- LINK/BUTTON CHANGES START --- */
 .container-rounded-image-right .button {
   display: inline-block;
-  background-color: #000033; /* Dark Navy/Purple from screenshot */
-  color: #ffffff;
-  padding: 12px 30px;
-  border-radius: 50px; /* Pill-shaped button */
+  padding: 12px 35px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: background-color 0.3s ease;
+
+  /* CHANGED: New Link Background Color (e.g., Pearson Electric Blue) */
+  background-color: #007fa3; 
+  
+  /* CHANGED: Text Color */
+  color: #ffffff; 
 }
 
 .container-rounded-image-right .button:hover {
-  background-color: #222255;
+  /* Hover state for the new color */
+  background-color: #005a75; 
 }
+/* --- LINK/BUTTON CHANGES END --- */
 
-/* --- Mobile Responsiveness --- */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .container-rounded-image-right .content-tile__figure {
-    flex-direction: column; /* Stack image on top, text on bottom */
+    flex-direction: column;
   }
-
   .container-rounded-image-right picture,
   .container-rounded-image-right .content-tile__figcaption {
     flex: none;
     width: 100%;
   }
-
   .container-rounded-image-right img {
-    height: 300px; /* Fixed height for image on mobile */
-  }
-
-  .container-rounded-image-right .content-tile__figcaption {
-    padding: 30px;
+    height: 300px;
   }
 }
