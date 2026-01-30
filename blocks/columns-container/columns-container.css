@@ -213,7 +213,7 @@
 }
 
 .columns-container a.button:hover::after {
-  transform: translateX(5px); /* Move Arrow */
+ 
   text-decoration: none !important;
 }
 
