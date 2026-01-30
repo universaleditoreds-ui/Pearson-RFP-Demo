@@ -24,6 +24,7 @@
   /* CHANGED: Reduced max-width from standard 1200px to 960px to make it narrower */
   /* max-width: 960px; */
   min-height: 400px;
+  margin-bottom: 3rem;
 }
 
 /* Image Side (Right) */
