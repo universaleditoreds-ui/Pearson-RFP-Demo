@@ -23,7 +23,8 @@
       "navigation",
       "container-rounded-image-right",
       "container-bgimage-right",
-      "columns-container"
+      "columns-container",
+      "card-carousel-animation"
     ]
   },
   {

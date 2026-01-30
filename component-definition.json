@@ -276,6 +276,21 @@
               }
             }
           }
+        },
+        {
+          "title": "card-carousel-animation",
+          "id": "card-carousel-animation",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "card-carousel-animation",
+                  "model": "card-carousel-animation"
+                }
+              }
+            }
+          }
         }
       ]
     }
