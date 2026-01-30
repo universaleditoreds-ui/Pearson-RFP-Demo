@@ -38,6 +38,52 @@
 
   /* nav height */
   --nav-height: 64px;
+  --typefamily-fallback: Helvetica, Verdana, sans-serif;
+  --typefamily-alt: var(--typefamily-primary);
+  --typesize-exa: clamp(3.125rem, -1.8750rem + 10.4167vw, 7.5rem);
+  --typesize-peta: clamp(3.125rem, -0.4464rem + 7.4405vw, 6.25rem);
+  --typesize-tera: clamp(3.125rem, -0.1607rem + 6.8452vw, 6rem);
+  --typesize-giga: clamp(3.125rem, 0.9821rem + 4.4643vw, 5rem);
+  --typesize-mega: clamp(3.125rem, 1.4107rem + 3.5714vw, 4.625rem);
+  --typesize-kilo: clamp(3.125rem, 1.6964rem + 2.9762vw, 4.375rem);
+  --typesize-h1-plus: clamp(3.125rem, 4.35vw + 1rem, 4rem);
+  --typesize-h1: clamp(2.5rem, 3.25vw + 1rem, 3.125rem);
+  --typesize-h1-catalog: clamp(2rem, 2.75vw + 1rem, 2.625rem);
+  --typesize-h2: clamp(2.125rem, 2.35vw + 1rem, 2.5rem);
+  --typesize-h3: clamp(1.75rem, 1.5vw + 1rem, 1.875rem);
+  --typesize-h4: 1.5rem;
+  --typesize-h5: clamp(1.25rem, 0.6vw + 1rem, 1.375rem);
+  --typesize-h6: 1.125rem;
+  --typesize-default: 1rem;
+  --typesize-p: var(--typesize-default);
+  --typesize-minor: 0.875rem;
+  --typesize-milli: 0.75rem;
+  --typesize-micro: 0.625rem;
+  --typeweight--light: 300;
+  --typeweight--default: 400;
+  --typeweight--medium: 500;
+  --typeweight--semibold: 600;
+  --typeweight--semibold-plus: 645;
+  --typeweight--bold: 700;
+  --typeweight--extrabold: 800;
+  --leading--tightest: 0.825;
+  --leading--1: 1;
+  --leading--1-1: 1.1;
+  --leading--1-15: 1.15;
+  --leading--1-2: 1.2;
+  --leading--1-3: 1.3;
+  --leading--1-4: 1.4;
+  --leading--1-5: 1.5;
+  --leading--1-6: 1.6;
+  --leading--default: var(--leading--1-6);
+  --leading--1-7: 1.7;
+  --leading--1-8: 1.8;
+  --leading--2: 2;
+  --typecase-upper: uppercase;
+  --typecase-lower: lowercase;
+  --typestyle-normal: normal;
+  --typestyle-italic: italic;
+  --typestyle-oblique: oblique
 }
 
 /* fallback fonts */
@@ -53,7 +99,7 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   :root {
     /* body sizes */
     --body-font-size-m: 18px;
@@ -112,12 +158,29 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p,
 dl,
@@ -142,7 +205,7 @@ pre {
   white-space: pre;
 }
 
-main > div {
+main>div {
   margin: 40px 16px;
 }
 
@@ -228,22 +291,22 @@ main img {
 }
 
 /* sections */
-main > .section {
+main>.section {
   margin: 40px 0;
 }
 
-main > .section > div {
+main>.section>div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
 
-main > .section:first-of-type {
+main>.section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
-  main > .section > div {
+@media (width >=900px) {
+  main>.section>div {
     padding: 0 32px;
   }
 }

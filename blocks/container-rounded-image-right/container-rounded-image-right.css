@@ -1,7 +1,7 @@
 /* Main wrapper */
 .container-rounded-image-right {
-  padding: 40px 20px;
-  background-color: #f3f0f8;
+  /* padding: 40px 20px; */
+  /* background-color: #f3f0f8; */
 }
 
 /* Flex container - WIDTH REDUCED HERE */
@@ -16,7 +16,7 @@
   margin: 0 auto;
   
   /* CHANGED: Reduced max-width from standard 1200px to 960px to make it narrower */
-  max-width: 960px; 
+  /* max-width: 960px; */
   min-height: 400px;
 }
 
@@ -55,13 +55,15 @@
   margin-bottom: 24px;
   
   /* CHANGED: Dark Navy Color */
-  color: #003057; 
+  /* color: #003057; */ 
   
   /* CHANGED: Increased Font Size */
   font-size: 3rem; 
   
   /* CHANGED: Heavier Font Weight */
-  font-weight: 800; 
+  font-weight: 800;
+  color: var(--color--text-brand-01);
+  font-family: var(--typefamily-alt);
 }
 /* --- TITLE CHANGES END --- */
 
