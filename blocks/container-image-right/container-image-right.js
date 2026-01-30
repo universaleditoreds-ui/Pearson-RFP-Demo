@@ -1,4 +1,4 @@
-export default function decorate(block) {
+/* export default function decorate(block) {
   const rows = [...block.children];
 
   const title = rows[0]?.innerHTML || '';
@@ -19,3 +19,4 @@ export default function decorate(block) {
     </section>
   `;
 }
+ */
