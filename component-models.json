@@ -1,529 +1,529 @@
 [
-    {
-        "id": "page-metadata",
-        "fields": [
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "jcr:title",
-                "label": "Title"
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "jcr:description",
-                "label": "Description"
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "keywords",
-                "multi": true,
-                "label": "Keywords"
-            }
-        ]
-    },
-    {
-        "id": "image",
-        "fields": [
-            {
-                "component": "reference",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "name": "imageAlt",
-                "label": "Alt Text"
-            }
-        ]
-    },
-    {
-        "id": "title",
-        "fields": [
-            {
-                "component": "text",
-                "name": "title",
-                "label": "Title"
-            },
-            {
-                "component": "select",
-                "name": "titleType",
-                "label": "Title Type",
-                "options": [
-                    {
-                        "name": "h1",
-                        "value": "h1"
-                    },
-                    {
-                        "name": "h2",
-                        "value": "h2"
-                    },
-                    {
-                        "name": "h3",
-                        "value": "h3"
-                    },
-                    {
-                        "name": "h4",
-                        "value": "h4"
-                    },
-                    {
-                        "name": "h5",
-                        "value": "h5"
-                    },
-                    {
-                        "name": "h6",
-                        "value": "h6"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "button",
-        "fields": [
-            {
-                "component": "aem-content",
-                "name": "link",
-                "label": "Link"
-            },
-            {
-                "component": "text",
-                "name": "linkText",
-                "label": "Text"
-            },
-            {
-                "component": "text",
-                "name": "linkTitle",
-                "label": "Title"
-            },
-            {
-                "component": "select",
-                "name": "linkType",
-                "label": "Type",
-                "options": [
-                    {
-                        "name": "default",
-                        "value": ""
-                    },
-                    {
-                        "name": "primary",
-                        "value": "primary"
-                    },
-                    {
-                        "name": "secondary",
-                        "value": "secondary"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "section",
-        "fields": [
-            {
-                "component": "text",
-                "name": "name",
-                "label": "Section Name",
-                "description": "The label shown for this section in the Content Tree"
-            },
-            {
-                "component": "multiselect",
-                "name": "style",
-                "label": "Style",
-                "options": [
-                    {
-                        "name": "Highlight",
-                        "value": "highlight"
-                    },
-                    {
-                        "name": "container-image-left",
-                        "value": "container-image-left"
-                    },
-                    {
-                        "name": "container-image-right",
-                        "value": "container-image-right"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "card",
-        "fields": [
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Text",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "columns",
-        "fields": [
-            {
-                "component": "text",
-                "valueType": "number",
-                "name": "columns",
-                "value": "",
-                "label": "Columns"
-            },
-            {
-                "component": "text",
-                "valueType": "number",
-                "name": "rows",
-                "value": "",
-                "label": "Rows"
-            }
-        ]
-    },
-    {
-        "id": "fragment",
-        "fields": [
-            {
-                "component": "aem-content",
-                "name": "reference",
-                "label": "Reference"
-            }
-        ]
-    },
-    {
-        "id": "hero",
-        "fields": [
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "imageAlt",
-                "label": "Alt",
-                "value": ""
-            },
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Text",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "container-image-left",
-        "title": "containerimageleft",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "Title",
-                "value": "",
-                "label": "Title",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Description",
-                "value": "",
-                "label": "Description",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Button text",
-                "value": "",
-                "label": "ButtonText",
-                "valueType": "string"
-            },
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            }
-        ]
-    },
-    {
-        "id": "container-image-right",
-        "title": "containerimageright",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "Title",
-                "value": "",
-                "label": "Title",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Description",
-                "value": "",
-                "label": "Description",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Button text",
-                "value": "",
-                "label": "ButtonText",
-                "valueType": "string"
-            },
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            }
-        ]
-    },
-    {
-        "id": "container-video",
-        "title": "Container Video",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "video-title",
-                "value": "",
-                "label": "Video Title",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "video-desc",
-                "value": "",
-                "label": "Video Description",
-                "valueType": "string"
-            },
-            {
-                "component": "text",
-                "name": "video-id",
-                "value": "",
-                "label": "Video ID",
-                "valueType": "string"
-            },
-            {
-                "component": "text",
-                "name": "video-transcript-title",
-                "value": "",
-                "label": "Video Transcript Title",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "container-image-left-buttons",
-        "title": "container-image-left-buttons",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "Title",
-                "value": "",
-                "label": "Title",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Description",
-                "value": "",
-                "label": "Description",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Primary Button text",
-                "value": "",
-                "label": "PrimaryButtonText",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "Secondary Button text",
-                "value": "",
-                "label": "SecondaryPrimaryButtonText",
-                "valueType": "string"
-            },
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            }
-        ]
-    },
-    {
-        "id": "navigation",
-        "title": "Navigation",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "text1",
-                "label": "Text 1",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "text2",
-                "label": "Text 2",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "text3",
-                "label": "Text 3",
-                "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "text4",
-                "label": "Text 4",
-                "valueType": "string"
-            },
-            {
-                "id": "container-rounded-image-right",
-                "title": "container-rounded-image-right",
-                "fields": [
-                    {
-                        "component": "richtext",
-                        "name": "Title",
-                        "value": "",
-                        "label": "Title",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Description",
-                        "value": "",
-                        "label": "Description",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Button text",
-                        "value": "",
-                        "label": "ButtonText",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "reference",
-                        "valueType": "string",
-                        "name": "image",
-                        "label": "Image",
-                        "multi": false
-                    }
-                ]
-            },
-            {
-                "id": "container-bgimage-right",
-                "title": "container-bgimage-right",
-                "fields": [
-                    {
-                        "component": "richtext",
-                        "name": "Title",
-                        "value": "",
-                        "label": "Title",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Description",
-                        "value": "",
-                        "label": "Description",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "reference",
-                        "valueType": "string",
-                        "name": "image",
-                        "label": "Image",
-                        "multi": false
-                    }
-                ]
-            },
-            {
-                "id": "columns-container",
-                "title": "columns-container",
-                "fields": [
-                    {
-                        "component": "richtext",
-                        "name": "Title",
-                        "value": "",
-                        "label": "Title",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Description",
-                        "value": "",
-                        "label": "Description",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "reference",
-                        "valueType": "string",
-                        "name": "image",
-                        "label": "Image",
-                        "multi": false
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Coloum1Title",
-                        "value": "",
-                        "label": "Coloum1 Title",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Coloum1Description",
-                        "value": "",
-                        "label": "Coloum1 Description",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Coloum1LinkText",
-                        "value": "",
-                        "label": "Coloum1 LinkText",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Coloum2Title",
-                        "value": "",
-                        "label": "Coloum2 Title",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Coloum2Description",
-                        "value": "",
-                        "label": "Coloum2 Description",
-                        "valueType": "string"
-                    },
-                    {
-                        "component": "richtext",
-                        "name": "Coloum2LinkText",
-                        "value": "",
-                        "label": "Coloum2 LinkText",
-                        "valueType": "string"
-                    }
-                ]
-            }
-        ]
-    }
+	{
+		"id": "page-metadata",
+		"fields": [
+			{
+				"component": "text",
+				"valueType": "string",
+				"name": "jcr:title",
+				"label": "Title"
+			},
+			{
+				"component": "text",
+				"valueType": "string",
+				"name": "jcr:description",
+				"label": "Description"
+			},
+			{
+				"component": "text",
+				"valueType": "string",
+				"name": "keywords",
+				"multi": true,
+				"label": "Keywords"
+			}
+		]
+	},
+	{
+		"id": "image",
+		"fields": [
+			{
+				"component": "reference",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			},
+			{
+				"component": "text",
+				"name": "imageAlt",
+				"label": "Alt Text"
+			}
+		]
+	},
+	{
+		"id": "title",
+		"fields": [
+			{
+				"component": "text",
+				"name": "title",
+				"label": "Title"
+			},
+			{
+				"component": "select",
+				"name": "titleType",
+				"label": "Title Type",
+				"options": [
+					{
+						"name": "h1",
+						"value": "h1"
+					},
+					{
+						"name": "h2",
+						"value": "h2"
+					},
+					{
+						"name": "h3",
+						"value": "h3"
+					},
+					{
+						"name": "h4",
+						"value": "h4"
+					},
+					{
+						"name": "h5",
+						"value": "h5"
+					},
+					{
+						"name": "h6",
+						"value": "h6"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "button",
+		"fields": [
+			{
+				"component": "aem-content",
+				"name": "link",
+				"label": "Link"
+			},
+			{
+				"component": "text",
+				"name": "linkText",
+				"label": "Text"
+			},
+			{
+				"component": "text",
+				"name": "linkTitle",
+				"label": "Title"
+			},
+			{
+				"component": "select",
+				"name": "linkType",
+				"label": "Type",
+				"options": [
+					{
+						"name": "default",
+						"value": ""
+					},
+					{
+						"name": "primary",
+						"value": "primary"
+					},
+					{
+						"name": "secondary",
+						"value": "secondary"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "section",
+		"fields": [
+			{
+				"component": "text",
+				"name": "name",
+				"label": "Section Name",
+				"description": "The label shown for this section in the Content Tree"
+			},
+			{
+				"component": "multiselect",
+				"name": "style",
+				"label": "Style",
+				"options": [
+					{
+						"name": "Highlight",
+						"value": "highlight"
+					},
+					{
+						"name": "container-image-left",
+						"value": "container-image-left"
+					},
+					{
+						"name": "container-image-right",
+						"value": "container-image-right"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "card",
+		"fields": [
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			},
+			{
+				"component": "richtext",
+				"name": "text",
+				"value": "",
+				"label": "Text",
+				"valueType": "string"
+			}
+		]
+	},
+	{
+		"id": "columns",
+		"fields": [
+			{
+				"component": "text",
+				"valueType": "number",
+				"name": "columns",
+				"value": "",
+				"label": "Columns"
+			},
+			{
+				"component": "text",
+				"valueType": "number",
+				"name": "rows",
+				"value": "",
+				"label": "Rows"
+			}
+		]
+	},
+	{
+		"id": "fragment",
+		"fields": [
+			{
+				"component": "aem-content",
+				"name": "reference",
+				"label": "Reference"
+			}
+		]
+	},
+	{
+		"id": "hero",
+		"fields": [
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			},
+			{
+				"component": "text",
+				"valueType": "string",
+				"name": "imageAlt",
+				"label": "Alt",
+				"value": ""
+			},
+			{
+				"component": "richtext",
+				"name": "text",
+				"value": "",
+				"label": "Text",
+				"valueType": "string"
+			}
+		]
+	},
+	{
+		"id": "container-image-left",
+		"title": "containerimageleft",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "Title",
+				"value": "",
+				"label": "Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Description",
+				"value": "",
+				"label": "Description",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Button text",
+				"value": "",
+				"label": "ButtonText",
+				"valueType": "string"
+			},
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			}
+		]
+	},
+	{
+		"id": "container-image-right",
+		"title": "containerimageright",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "Title",
+				"value": "",
+				"label": "Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Description",
+				"value": "",
+				"label": "Description",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Button text",
+				"value": "",
+				"label": "ButtonText",
+				"valueType": "string"
+			},
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			}
+		]
+	},
+	{
+		"id": "container-video",
+		"title": "Container Video",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "video-title",
+				"value": "",
+				"label": "Video Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "video-desc",
+				"value": "",
+				"label": "Video Description",
+				"valueType": "string"
+			},
+			{
+				"component": "text",
+				"name": "video-id",
+				"value": "",
+				"label": "Video ID",
+				"valueType": "string"
+			},
+			{
+				"component": "text",
+				"name": "video-transcript-title",
+				"value": "",
+				"label": "Video Transcript Title",
+				"valueType": "string"
+			}
+		]
+	},
+	{
+		"id": "container-image-left-buttons",
+		"title": "container-image-left-buttons",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "Title",
+				"value": "",
+				"label": "Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Description",
+				"value": "",
+				"label": "Description",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Primary Button text",
+				"value": "",
+				"label": "PrimaryButtonText",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Secondary Button text",
+				"value": "",
+				"label": "SecondaryPrimaryButtonText",
+				"valueType": "string"
+			},
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			}
+		]
+	},
+	{
+		"id": "navigation",
+		"title": "Navigation",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "text1",
+				"label": "Text 1",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "text2",
+				"label": "Text 2",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "text3",
+				"label": "Text 3",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "text4",
+				"label": "Text 4",
+				"valueType": "string"
+			}
+		]
+	},
+	{
+		"id": "container-rounded-image-right",
+		"title": "container-rounded-image-right",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "Title",
+				"value": "",
+				"label": "Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Description",
+				"value": "",
+				"label": "Description",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Button text",
+				"value": "",
+				"label": "ButtonText",
+				"valueType": "string"
+			},
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			}
+		]
+	},
+	{
+		"id": "container-bgimage-right",
+		"title": "container-bgimage-right",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "Title",
+				"value": "",
+				"label": "Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Description",
+				"value": "",
+				"label": "Description",
+				"valueType": "string"
+			},
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			}
+		]
+	},
+	{
+		"id": "columns-container",
+		"title": "columns-container",
+		"fields": [
+			{
+				"component": "richtext",
+				"name": "Title",
+				"value": "",
+				"label": "Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Description",
+				"value": "",
+				"label": "Description",
+				"valueType": "string"
+			},
+			{
+				"component": "reference",
+				"valueType": "string",
+				"name": "image",
+				"label": "Image",
+				"multi": false
+			},
+			{
+				"component": "richtext",
+				"name": "Coloum1Title",
+				"value": "",
+				"label": "Coloum1 Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Coloum1Description",
+				"value": "",
+				"label": "Coloum1 Description",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Coloum1LinkText",
+				"value": "",
+				"label": "Coloum1 LinkText",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Coloum2Title",
+				"value": "",
+				"label": "Coloum2 Title",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Coloum2Description",
+				"value": "",
+				"label": "Coloum2 Description",
+				"valueType": "string"
+			},
+			{
+				"component": "richtext",
+				"name": "Coloum2LinkText",
+				"value": "",
+				"label": "Coloum2 LinkText",
+				"valueType": "string"
+			}
+		]
+	}
 ]
