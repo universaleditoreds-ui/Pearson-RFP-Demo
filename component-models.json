@@ -427,6 +427,33 @@
         "multi": false
       }
     ]
+  },
+      {
+    "id": "container-bgimage-right",
+    "title": "container-bgimage-right",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      }
+    ]
   }
     ]
   }
