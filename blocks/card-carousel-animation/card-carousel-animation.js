@@ -129,65 +129,63 @@ export default function decorate(block) {
 `;
 
 
-function initCarousel(root) {
-  const track = root.querySelector('.carousel__track');
-  const slides = root.querySelectorAll('.carousel__slide');
-  const dotsContainer = root.querySelector('.carousel__dots');
+    function initCarousel(root) {
+        if (!root) return;
 
-  let currentIndex = 0;
-  const slideCount = slides.length;
-  const speed = 200; // matches slick speed
+        const track = root.querySelector('.slick-track');
+        const slides = root.querySelectorAll('.slick-slide');
+        const dots = root.querySelectorAll('.slick-dots li');
 
-  track.style.transitionDuration = `${speed}ms`;
+        if (!track || slides.length === 0 || dots.length === 0) {
+            console.warn('Carousel init skipped – missing elements');
+            return;
+        }
 
-  // -------------------------
-  // CREATE DOTS
-  // -------------------------
-  slides.forEach((_, index) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel__dot';
-    dot.type = 'button';
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        const speed = 200; // matches slick speed
 
-    if (index === 0) {
-      dot.classList.add('is-active');
+        // -------------------------
+        // SETUP TRACK
+        // -------------------------
+        track.style.display = 'flex';
+        track.style.transition = `transform ${speed}ms ease`;
+
+        slides.forEach((slide) => {
+            slide.style.flex = '0 0 100%';
+        });
+
+        // -------------------------
+        // NAVIGATION
+        // -------------------------
+        function goToSlide(index) {
+            if (index < 0 || index >= slideCount) return;
+
+            track.style.transform = `translateX(-${index * 100}%)`;
+
+            dots.forEach((dot) => dot.classList.remove('slick-active'));
+            dots[index].classList.add('slick-active');
+
+            currentIndex = index;
+        }
+
+        // -------------------------
+        // DOT CLICK HANDLERS
+        // -------------------------
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+
+        // -------------------------
+        // INIT
+        // -------------------------
+        goToSlide(0);
     }
 
-    dot.addEventListener('click', () => {
-      goToSlide(index);
-    });
+    const carousel = block.querySelector('.carousel-v2');
+    initCarousel(carousel);
 
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = dotsContainer.querySelectorAll('.carousel__dot');
-
-  // -------------------------
-  // NAVIGATION
-  // -------------------------
-  function goToSlide(index) {
-    if (index < 0 || index >= slideCount) return;
-
-    track.style.transform = `translateX(-${index * 100}%)`;
-
-    dots.forEach((dot) => dot.classList.remove('is-active'));
-    dots[index].classList.add('is-active');
-
-    currentIndex = index;
-  }
-
-  // -------------------------
-  // OPTIONAL AUTOPLAY (OFF)
-  // -------------------------
-  // Uncomment if needed later
-  /*
-  setInterval(() => {
-    if (currentIndex < slideCount - 1) {
-      goToSlide(currentIndex + 1);
-    }
-  }, 2000);
-  */
-}
-const carousel = block.querySelector('.carousel-v2');
-initCarousel(carousel);
 
 }
