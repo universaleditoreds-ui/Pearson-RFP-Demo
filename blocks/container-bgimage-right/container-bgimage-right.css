@@ -1,10 +1,8 @@
-/* --- 1. FORCE FULL WIDTH BACKGROUND (The "Gap Killer") --- */
+
 .container-bgimage-right-wrapper,
 .container-bgimage-right,
 .container-bgimage-right .section {
-  background-color: #512eab !important; /* Deep Purple */
-  
-  /* These lines force the block to break out of any centered container */
+  background-color: #512eab !important; 
   width: 100vw !important; 
   position: relative;
   left: 50%;
@@ -13,14 +11,11 @@
   margin-right: -50vw !important;
 }
 
-/* --- 2. HIDE THE EMPTY SPACER COLUMNS --- */
-/* This is crucial. We hide the 10% divs that create the white gaps */
 .container-bgimage-right .col-10pct {
   display: none !important;
 }
 
-/* --- 3. FORCE CONTENT COLUMN TO FULL WIDTH --- */
-/* We make the 80% column take up 100% of the space now */
+
 .container-bgimage-right .col-80pct {
   flex: 0 0 100% !important;
   max-width: 100% !important;
@@ -28,7 +23,7 @@
   padding: 0 !important;
 }
 
-/* --- 4. MAIN LAYOUT: IMAGE RIGHT, TEXT LEFT --- */
+
 .container-bgimage-right .content-tile__figure {
   display: flex !important;
   flex-direction: row-reverse !important; /* Puts Image on Right */
@@ -36,13 +31,9 @@
   width: 100% !important;
   height: 350px !important; /* Adjusted height for better fit */
   margin: 0 !important;
-  
-  /* Reset any hover effects */
-  transform: none !important;
-  transition: none !important;
 }
 
-/* --- 5. IMAGE STYLING (Fitted Like Img 2) --- */
+
 .container-bgimage-right picture {
   
   width: 20% !important;
