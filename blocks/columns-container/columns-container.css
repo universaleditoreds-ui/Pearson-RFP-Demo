@@ -2,7 +2,7 @@
 .columns-container-wrapper,
 .columns-container {
   /* Force the background to the edges */
-  background-color: #dcd9f6 !important; 
+  background-color: #c1bfff !important; 
   
   /* Breakout technique to stretch full width */
   width: 100vw !important;
@@ -32,7 +32,7 @@
   /* Rows: Header, Desc, Content Rows... */
   grid-template-rows: auto auto auto auto auto;
   
-  column-gap: 30px;
+  column-gap: 60px;
   row-gap: 0;
 }
 
@@ -68,17 +68,18 @@
   grid-row: 2;
   justify-self: center;
   text-align: left;
-  max-width: 600px;
-  padding-left: 60px;
+  max-width: 750px;
+  padding-left: 150px;
   margin-bottom: 60px; 
+     font-weight: 300;
 }
 
 /* --- 4. COLUMN CONTENT PLACEMENT --- */
 
 /* Common Card Styles */
 .columns-container > div:nth-child(n+4) {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 60px;
+  
   transition: background-color 0.3s ease;
 }
 
@@ -98,6 +99,9 @@
   color: #000033;
   font-size: 3rem;
   margin: 0 0 10px 0;
+    font-weight: 300;
+    margin-right: 20rem !important;
+    
 }
 
 .columns-container h3 {
@@ -105,6 +109,7 @@
   color: #000033;
   font-size: 2rem;
   margin: 0 0 15px 0;
+    font-weight: 100 !important;
 }
 
 .columns-container p {
