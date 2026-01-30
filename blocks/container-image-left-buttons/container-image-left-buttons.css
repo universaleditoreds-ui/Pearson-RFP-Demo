@@ -133,4 +133,25 @@
   .container-image-left-buttons p {
     margin: 0 auto; /* Center description */
   }
+    
 }
+
+
+/* Make the two buttons horizontally */
+.container-image-left-buttons-wrapper {
+  display: flex;
+  gap: 16px;              /* spacing between buttons */
+  align-items: center;
+  flex-wrap: wrap;        /* wrap on smaller screens */
+}
+
+/* Optional: remove default <p> margin that can mess alignment */
+.container-image-left-buttons-wrapper .button-container {
+  margin: 0;
+}
+
+/* Optional: ensure the anchor behaves like a button */
+.container-image-left-buttons-wrapper .button {
+  display: inline-block;
+}
+
