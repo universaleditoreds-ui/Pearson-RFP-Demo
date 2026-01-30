@@ -16,12 +16,13 @@
 }
 
 /* ================================
-   MAIN LAYOUT
+   MAIN GRID
 ================================ */
 .section.containerimageleft-container
 .containerimageleft.block {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
+  grid-template-rows: 1fr;          /* 🔑 single row */
   align-items: center;
   min-height: 560px;
   max-width: 1440px;
@@ -30,60 +31,72 @@
 }
 
 /* ================================
-   IMAGE COLUMN (LEFT)
+   IMAGE (LEFT)
 ================================ */
 .section.containerimageleft-container
 .containerimageleft.block
 > div:nth-child(4) {
-  position: relative;
-  height: 100%;
   grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Image styling */
-.section.containerimageleft-container
-.containerimageleft.block picture,
+/* Image sizing */
 .section.containerimageleft-container
 .containerimageleft.block img {
+  max-width: 420px;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
 
 /* ================================
-   CONTENT COLUMN (RIGHT)
+   CONTENT (RIGHT)
 ================================ */
 .section.containerimageleft-container
 .containerimageleft.block
-> div:nth-child(-n + 3) {
+> div:nth-child(1),
+.section.containerimageleft-container
+.containerimageleft.block
+> div:nth-child(2),
+.section.containerimageleft-container
+.containerimageleft.block
+> div:nth-child(3) {
   grid-column: 2;
-  padding: 4rem 4rem 4rem 2rem;
-  z-index: 2;
+  grid-row: 1;                      /* 🔑 same row */
+  max-width: 560px;
 }
 
-/* Headline */
+/* Inner spacing only once */
+.section.containerimageleft-container
+.containerimageleft.block
+> div:nth-child(1) {
+  padding-top: 2rem;
+}
+
+/* ================================
+   TYPOGRAPHY
+================================ */
 .section.containerimageleft-container
 .containerimageleft.block h2 {
   font-size: 3.2rem;
   line-height: 1.15;
   margin-bottom: 1.2rem;
   color: #16005a;
-  font-weight: 700;
 }
 
-/* Description */
 .section.containerimageleft-container
 .containerimageleft.block p {
   font-size: 1.05rem;
   line-height: 1.6;
   color: #3d3d4e;
-  max-width: 520px;
   margin-bottom: 1rem;
 }
 
 /* ================================
-   CTA BUTTON
+   BUTTON
 ================================ */
 .section.containerimageleft-container
 .containerimageleft.block .button-container {
@@ -108,6 +121,7 @@
   .section.containerimageleft-container
   .containerimageleft.block {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
   }
 
   /* Image on top */
@@ -115,20 +129,16 @@
   .containerimageleft.block
   > div:nth-child(4) {
     grid-column: 1;
-    min-height: 320px;
+    grid-row: 1;
+    margin-bottom: 2rem;
   }
 
-  /* Content below */
+  /* Text below */
   .section.containerimageleft-container
   .containerimageleft.block
   > div:nth-child(-n + 3) {
     grid-column: 1;
-    padding: 2.5rem 2rem;
+    grid-row: 2;
     text-align: center;
-  }
-
-  .section.containerimageleft-container
-  .containerimageleft.block p {
-    margin: 0 auto;
   }
 }
