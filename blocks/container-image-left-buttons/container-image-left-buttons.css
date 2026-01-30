@@ -38,6 +38,7 @@
   display: flex;
   margin-top: 20px; /* Space before first button */
   padding: 0 32px;
+  margin: 0;
 }
 
 .container-image-left-buttons > div:nth-child(3) > div {
@@ -63,7 +64,7 @@
   position: relative;
   z-index: 1;
   color: #060609ff;
-  margin: 20px 0 0;
+  margin: 8px 0 0;
   outline-color: #0d004dff;
   outline-offset: -2px;
   outline-width: 2px;
@@ -203,13 +204,13 @@
 
 @media (min-width: 1440px) {
   .container-image-left-buttons-wrapper {
-    max-width: 1440px;
+    max-width: 1440px !important;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1439px) {
   .container-image-left-buttons-wrapper {
-    max-width: 1140px;
+    max-width: 1140px !important;
   }
 }
 
@@ -224,6 +225,5 @@
 }
 
 .container-image-left-buttons-container {
-  margin: 0;
-
+  margin: 0 !important;
 }
