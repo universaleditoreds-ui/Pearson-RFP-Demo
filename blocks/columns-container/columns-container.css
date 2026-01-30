@@ -1,8 +1,10 @@
-/* --- 1. FORCE FULL WIDTH BACKGROUND --- */
+/* =========================================
+   1. MAIN CONTAINER & BACKGROUND
+   ========================================= */
 .columns-container-wrapper,
 .columns-container {
   /* Force the background to the edges */
-  background-color: #dcd9f6 !important; 
+  background-color: #c1bfff !important; 
   
   /* Breakout technique to stretch full width */
   width: 100vw !important;
@@ -16,43 +18,51 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   
-  /* Internal padding for top/bottom spacing */
+  /* Internal padding */
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
-/* --- 2. GRID LAYOUT WITH CENTERING GUTTERS --- */
+/* =========================================
+   2. GRID LAYOUT
+   ========================================= */
 .columns-container {
   display: grid;
   
   /* Columns: Gutter | Left Content | Right Content | Gutter */
   grid-template-columns: 1fr minmax(300px, 600px) minmax(300px, 600px) 1fr;
   
-  /* Rows: Header, Desc, Content Rows... */
+  /* Rows: Header, Desc, Title, Text, Link */
   grid-template-rows: auto auto auto auto auto;
   
   column-gap: 60px;
   row-gap: 0;
 }
 
-/* --- 3. HEADER PLACEMENT (Spans Middle 2 Columns) --- */
+/* =========================================
+   3. HEADER SECTION (Spans Middle)
+   ========================================= */
 
-/* Image/Icon (Div 3) */
+/* --- Icon / Image (Div 3) --- */
 .columns-container > div:nth-child(3) {
-  grid-column: 2 / 4; 
+  grid-column: 2 / 4; /* Span middle area */
   grid-row: 1;
   justify-self: center;
+  
+  /* Positioning relative to center */
   transform: translateX(-240px); 
   margin-bottom: -60px; 
   z-index: 1;
 }
+
 .columns-container > div:nth-child(3) img {
   width: 100px;
   height: auto;
-  padding-right: 15rem;
+  /* User requested padding */
+  padding-right: 15rem; 
 }
 
-/* Title "About Pearson" (Div 1) */
+/* --- Main Title (Div 1) --- */
 .columns-container > div:nth-child(1) {
   grid-column: 2 / 4; 
   grid-row: 1;
@@ -60,7 +70,7 @@
   padding-left: 60px; 
 }
 
-/* Description (Div 2) */
+/* --- Main Description (Div 2) --- */
 .columns-container > div:nth-child(2) {
   grid-column: 2 / 4; 
   grid-row: 2;
@@ -72,25 +82,59 @@
   font-weight: 300;
 }
 
-/* --- 4. COLUMN CONTENT PLACEMENT --- */
+/* =========================================
+   4. CONTENT COLUMNS (Left & Right)
+   ========================================= */
 
-/* Common Card Styles */
+/* Common Styles for Card Content */
 .columns-container > div:nth-child(n+4) {
   padding-left: 60px;
   transition: background-color 0.3s ease;
 }
 
-/* LEFT COLUMN GROUP */
-.columns-container > div:nth-child(4) { grid-column: 2; grid-row: 3; padding-top: 40px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
-.columns-container > div:nth-child(5) { grid-column: 2; grid-row: 4; }
-.columns-container > div:nth-child(6) { grid-column: 2; grid-row: 5; padding-bottom: 40px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+/* --- Left Column Group (Divs 4, 5, 6) --- */
+.columns-container > div:nth-child(4) { 
+  grid-column: 2; 
+  grid-row: 3; 
+  padding-top: 40px; 
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 20px; 
+}
+.columns-container > div:nth-child(5) { 
+  grid-column: 2; 
+  grid-row: 4; 
+}
+.columns-container > div:nth-child(6) { 
+  grid-column: 2; 
+  grid-row: 5; 
+  padding-bottom: 40px; 
+  border-bottom-left-radius: 20px; 
+  border-bottom-right-radius: 20px; 
+}
 
-/* RIGHT COLUMN GROUP */
-.columns-container > div:nth-child(7) { grid-column: 3; grid-row: 3; padding-top: 40px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
-.columns-container > div:nth-child(8) { grid-column: 3; grid-row: 4; }
-.columns-container > div:nth-child(9) { grid-column: 3; grid-row: 5; padding-bottom: 40px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+/* --- Right Column Group (Divs 7, 8, 9) --- */
+.columns-container > div:nth-child(7) { 
+  grid-column: 3; 
+  grid-row: 3; 
+  padding-top: 40px; 
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 20px; 
+}
+.columns-container > div:nth-child(8) { 
+  grid-column: 3; 
+  grid-row: 4; 
+}
+.columns-container > div:nth-child(9) { 
+  grid-column: 3; 
+  grid-row: 5; 
+  padding-bottom: 40px; 
+  border-bottom-left-radius: 20px; 
+  border-bottom-right-radius: 20px; 
+}
 
-/* --- 5. TYPOGRAPHY --- */
+/* =========================================
+   5. TYPOGRAPHY
+   ========================================= */
 .columns-container h2 {
   font-family: sans-serif;
   color: #000033;
@@ -116,53 +160,72 @@
   margin: 0 0 20px 0;
 }
 
-/* --- 6. NEW LINK / BUTTON STYLING (Text Link + Arrow) --- */
-/* Override the default button class */
-.columns-container .button,
-.columns-container a.button {
-  background-color: transparent !important; /* Remove Blue Background */
+/* =========================================
+   6. LINK / BUTTON STYLING (Fixed)
+   ========================================= */
+
+/* Reset container and remove hardcoded underlines */
+.columns-container .button-container,
+.columns-container .button-container strong,
+.columns-container .button-container u {
+  text-decoration: none !important;
+  font-weight: inherit;
   border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  
-  /* Text Styling */
-  color: #000033 !important; /* Pearson Navy */
-  font-weight: 700 !important;
-  text-decoration: none !important; /* Remove default underline initially */
-  font-family: sans-serif;
-  font-size: 1.1rem;
-  
-  display: inline-flex;
-  align-items: center;
-  position: relative;
 }
 
-/* Add the Arrow Icon using CSS */
-.columns-container .button::after,
+/* Style the Link (Remove Button Look) */
+.columns-container .button,
+.columns-container a.button {
+  display: inline-flex !important;
+  align-items: center;
+  background-color: transparent !important; /* No Blue Box */
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  
+  /* Text */
+  color: #000033 !important;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700 !important;
+  text-decoration: none !important; /* No Underline Initially */
+  
+  transition: color 0.2s ease;
+}
+
+/* Add Arrow Icon */
 .columns-container a.button::after {
-  content: "→"; /* Simple arrow character */
+  content: "→";
+  display: inline-block;
+  margin-left: 10px;
   font-size: 1.2rem;
-  margin-left: 8px;
+  line-height: 1;
+  font-weight: 400;
   transition: transform 0.2s ease;
 }
 
 /* Hover Effects */
-.columns-container .button:hover,
 .columns-container a.button:hover {
-  text-decoration: underline !important; /* Underline text on hover */
-  background-color: transparent !important; /* Ensure no background appears */
+  text-decoration: underline !important; /* Underline Only on Hover */
   color: #000033 !important;
+  background-color: transparent !important;
 }
 
-.columns-container .button:hover::after,
 .columns-container a.button:hover::after {
-  transform: translateX(5px); /* Move arrow slightly right on hover */
-  text-decoration: none !important; /* Do not underline the arrow itself */
-  display: inline-block;
+  transform: translateX(5px); /* Move Arrow */
+  text-decoration: none !important;
 }
 
-/* --- 7. HOVER CARD EFFECTS (Unchanged) --- */
+/* Force hidden <u> tags inside link */
+.columns-container a.button u {
+  text-decoration: none !important;
+}
+
+/* =========================================
+   7. HOVER CARD EFFECTS (White Background)
+   ========================================= */
+/* Left Column Group */
 .columns-container:has(div:nth-child(4):hover) > div:nth-child(4),
 .columns-container:has(div:nth-child(4):hover) > div:nth-child(5),
 .columns-container:has(div:nth-child(4):hover) > div:nth-child(6),
@@ -176,6 +239,7 @@
   cursor: pointer;
 }
 
+/* Right Column Group */
 .columns-container:has(div:nth-child(7):hover) > div:nth-child(7),
 .columns-container:has(div:nth-child(7):hover) > div:nth-child(8),
 .columns-container:has(div:nth-child(7):hover) > div:nth-child(9),
@@ -189,7 +253,9 @@
   cursor: pointer;
 }
 
-/* --- 8. MOBILE RESPONSIVENESS --- */
+/* =========================================
+   8. MOBILE RESPONSIVENESS
+   ========================================= */
 @media (max-width: 900px) {
   .columns-container {
     grid-template-columns: 20px 1fr 20px; 
@@ -197,6 +263,7 @@
     padding-bottom: 60px;
   }
   
+  /* Header Items */
   .columns-container > div:nth-child(1),
   .columns-container > div:nth-child(2),
   .columns-container > div:nth-child(3) {
@@ -209,8 +276,10 @@
   .columns-container > div:nth-child(3) {
     margin-bottom: 20px; 
   }
+  
+  /* Reset Specific Padding */
   .columns-container > div:nth-child(3) img {
-    padding-right: 0; /* Remove offset padding on mobile */
+    padding-right: 0; 
   }
   .columns-container h2 {
     margin-right: 0 !important;
@@ -219,6 +288,7 @@
     padding-left: 0;
   }
 
+  /* Content Columns Stack */
   .columns-container > div:nth-child(n+4) {
     grid-column: 2 !important;
     padding-left: 20px;
