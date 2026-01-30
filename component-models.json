@@ -229,9 +229,23 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "text",
+        "name": "Title",
         "value": "",
-        "label": "Text",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Button text",
+        "value": "",
+        "label": "ButtonText",
         "valueType": "string"
       },
       {
@@ -249,9 +263,23 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "text",
+        "name": "Title",
         "value": "",
-        "label": "Text",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Button text",
+        "value": "",
+        "label": "ButtonText",
         "valueType": "string"
       },
       {
@@ -303,9 +331,30 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "text",
+        "name": "Title",
         "value": "",
-        "label": "Text",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Primary Button text",
+        "value": "",
+        "label": "PrimaryButtonText",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Secondary Button text",
+        "value": "",
+        "label": "SecondaryPrimaryButtonText",
         "valueType": "string"
       },
       {
