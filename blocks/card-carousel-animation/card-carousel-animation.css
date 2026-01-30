@@ -5,6 +5,15 @@
 .card-carousel-animation-wrapper * {
     box-sizing: border-box;
 }
+.card-carousel-animation-wrapper .content-tile__figcaption {
+  display: flex;
+    flex-direction: column;  
+}
+.card-carousel-animation-wrapper .content-tile-container,.content-tile__figure,.content-tile__figcaption{
+    height:100%;
+    /* justify-content: space-between; */
+}
+    
 
 .card-carousel-animation-container {
     margin: 0 !important;
@@ -86,14 +95,19 @@
 .d1-ccr-learner .content-tile__title {
     font-size: 3rem;
     font-weight: 700;
-    color: #eae6ff;
+    font-family: "Plus Jakarta Sans",var(--typefamily-fallback);
+    font-size: var(--typesize-h1);
+    font-weight: var(--typeweight--bold);
+    color: #c1bfffff;
     line-height: 1.15;
 }
 
 .d1-ccr-learner h4 {
     margin-top: 16px;
-    font-size: 1.1rem;
-    color: #d6d0ff;
+    font-size: 1.5rem;
+    color: #f9f9fcff;
+    font-weight: 500 !important;
+    font-family: "Plus Jakarta Sans",var(--typefamily-fallback);
 }
 
 /* =========================================================
@@ -103,9 +117,6 @@
     margin-top: 24px;
 }
 
-.carousel__row {
-    /* overflow: hidden; */
-}
 
 /* =========================================================
    SLIDES TRACK
@@ -130,72 +141,72 @@
 ========================================================= */
 
 
-.content-tile.promocard--medium-theme,
-.content-tile.promocard--dark-theme {
+.card-carousel-animation-wrapper .content-tile.promocard--medium-theme,
+.card-carousel-animation-wrapper .content-tile.promocard--dark-theme {
     height: 100%;
-    border-radius: 22px;
+    border-radius: 24px;
     padding: 28px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    /* box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45); */
     transition: transform 0.3s ease;
 }
 
-.content-tile:hover {
+.card-carousel-animation-wrapper .content-tile:hover {
     transform: translateY(-6px);
 }
 
 /* =========================================================
    FIRST SLIDE – FEATURED CARD
 ========================================================= */
-.slick-slide.slick-active .content-tile.promocard--medium-theme:first-child {
-    background: linear-gradient(160deg,
-            #5b39b8 0%,
-            #4b2a9f 100%);
+.slick-slide.slick-active .carousel__item--extend-1:first-child .content-tile.promocard--medium-theme {
+    background: #512eabff;
 }
 
 /* =========================================================
    MEDIUM THEME (LEFT GROUP)
 ========================================================= */
-.content-tile.promocard--medium-theme {
-    background: linear-gradient(180deg,
-            #3c1f87 0%,
-            #2b1368 100%);
+.card-carousel-animation-wrapper .content-tile.promocard--medium-theme {
+    background: #0d004dff;
 }
 
 /* =========================================================
    DARK THEME (RIGHT GROUP)
 ========================================================= */
-.content-tile.promocard--dark-theme {
-    background: linear-gradient(180deg,
-            #0d0338 0%,
-            #06001f 100%);
+.card-carousel-animation-wrapper .content-tile.promocard--dark-theme {
+    background: #0d004dff;
 }
 
 /* =========================================================
    CARD TEXT
 ========================================================= */
-.content-tile__eyebrow {
+.card-carousel-animation-wrapper .content-tile__eyebrow {
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #37f3dc;
-    margin-bottom: 12px;
+    margin-bottom: 0;
 }
 
-.content-tile__title {
-    font-size: 1.4rem;
-    line-height: 1.3;
-    margin-bottom: 12px;
+.card-carousel-animation-wrapper .content-tile__title {
+    /* font-size: 1.4rem; */
+    /* line-height: 1.3; */
+    margin: 0;
 }
 
-.content-tile-text p {
+.card-carousel-animation-wrapper .carousel__item .content-tile-text p {
     font-size: 0.95rem;
     color: #e4e1ff;
+    margin:0;
+}
+.carousel__item .content-tile-text p:last-of-type:has(a[href])
+ {
+    padding-block-start: 4px;
+    margin-top: auto;
 }
 
 /* =========================================================
    CTA STYLES
 ========================================================= */
-.content-tile-text a {
+.card-carousel-animation-wrapper .content-tile-text a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -205,13 +216,15 @@
     color: #ffffff;
 }
 
-.content-tile-text a::after {
+.card-carousel-animation-wrapper .content-tile-text a::after {
     content: "›";
     font-size: 1.2em;
 }
 
 /* YELLOW CTA FOR FEATURED CARD */
-.slick-slide.slick-active .content-tile.promocard--medium-theme:first-child a {
+.slick-slide.slick-active 
+.carousel__item:first-child 
+.content-tile-text a {
     background: #ffd400;
     color: #2a005a;
     padding: 8px 18px;
@@ -462,4 +475,171 @@
 
 .min-height--65vh {
     min-block-size: 65vh
+}
+[class*="promocard"] .content-tile__title {
+    font-family: "Plus Jakarta Sans",var(--typefamily-fallback);
+    font-size: var(--typesize-h4);
+    font-weight: 400;
+    line-height: var(--leading--1-4);
+    color: #d6d5fbff;
+    text-wrap: balance;
+}
+
+[class*="promocard"] .content-tile-subtitle {
+    color: var(--promocard--color-text-subtitle);
+}
+
+[class*="promocard"] .content-tile-text {
+    /* display: var(--promocard--rte-display); */
+    flex-direction: var(--promocard--rte-direction);
+    /* flex: var(--promocard--rte-flex); */
+    block-size: var(--promocard--rte-block-size);
+}
+
+
+[class*="promocard"] .content-tile-text :not(a[href], a[href] *) {
+    color: #f9f9fcff;
+    font-family: "Plus Jakarta Sans",var(--typefamily-fallback);
+}
+
+.column-control:is([class*="flex-layout"]) [class*="promocard"] .content-tile-text p:last-of-type:has(a[href]) {
+    padding-block-start: var(--space--x8); margin-block-start: var(--promocard--rte-cta-margin);
+}
+
+:not([class*="use-button-"])[class*="promocard"] .content-tile-text p:last-of-type a[href] {
+    color: var(--promocard--color-text-primary-link,var(--color--text-link));
+}
+
+
+/* Make card a vertical layout */
+.card-carousel-animation-wrapper .content-tile-container {
+  height: 100%;
+  display: flex;
+}
+
+.card-carousel-animation-wrapper .content-tile__figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-carousel-animation-wrapper .content-tile__figcaption {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Push CTA to bottom */
+.card-carousel-animation-wrapper .content-tile-text {
+  margin-top: auto;
+}
+/* ================================
+   BASE CTA – TEXT ONLY (ALL CARDS)
+================================ */
+.card-carousel-animation-wrapper .content-tile-text a {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Arrow for ALL non-featured cards */
+.card-carousel-animation-wrapper .content-tile-text a::after {
+  content: "›";
+  margin-left: 6px;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* =========================================================
+   CTA BASE RESET – ALL CARDS
+========================================================= */
+.carousel__item .content-tile-text {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.carousel__item .content-tile-text p:last-child {
+  margin-top: auto !important; /* push CTA to bottom */
+}
+
+/* Remove ALL button styles by default */
+.carousel__item .content-tile-text a {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #e3e1f9ff !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+/* =========================================================
+   ARROW FOR ALL CARDS
+========================================================= */
+.carousel__item .content-tile-text a::after {
+  content: "›" !important;
+  font-size: 1.2em !important;
+  line-height: 1 !important;
+}
+
+/* =========================================================
+   FIRST CARD – YELLOW BUTTON ONLY
+========================================================= */
+.slick-slide.slick-active 
+.carousel__item:first-child 
+.content-tile-text a {
+  background: #ffce00ff !important;
+  color: #2a005a !important;
+  padding: 7px 24px !important;
+  border-radius: 999px !important;
+}
+
+/* Remove arrow ONLY for first card */
+.slick-slide.slick-active 
+.carousel__item:first-child 
+.content-tile-text a::after {
+  content: "" !important;
+}
+
+/* =========================================================
+   OPTIONAL HOVER (MATCHES PEARSON FEEL)
+========================================================= */
+.carousel__item .content-tile-text a:hover {
+  opacity: 0.9 !important;
+}
+
+/* =========================================================
+   ENSURE ALL CARDS SAME HEIGHT
+========================================================= */
+.carousel__item {
+  display: flex !important;
+}
+
+.carousel__item .content-tile {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.carousel__item .content-tile-container {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* FORCE arrow on ALL cards */
+.carousel__item .content-tile-text a::after {
+  content: "›" !important;
+  display: inline-block !important;
+  margin-left: 6px !important;
+  font-size: 1.2em !important;
+  line-height: 1 !important;
 }

@@ -2715,12 +2715,12 @@ header.isSticky .he-pr-nav__wrapper>.container {
 
   .ls-search-enabled .facet__auto_suggest.search-box-input-active .ais-SearchBox.search-box,
   .ls-search-enabled .facet__auto_suggest:hover .ais-SearchBox.search-box {
-    background-color: var(--color--ui-field)
+    /* background-color: var(--color--ui-field); */
   }
 
   .ls-search-enabled .facet__auto_suggest.search-box-input-active .ais-SearchBox.search-box .search-ls-menu button,
   .ls-search-enabled .facet__auto_suggest:hover .ais-SearchBox.search-box .search-ls-menu button {
-    color: var(--color--ui-background-dark)
+    color: #fff;
   }
 
   .ls-search-enabled .facet__auto_suggest.search-box-input-active .ais-SearchBox.search-box .search-ls-menu button::before,
@@ -2740,7 +2740,7 @@ header.isSticky .he-pr-nav__wrapper>.container {
 
   .ls-search-enabled .facet__auto_suggest.search-box-input-active .ais-SearchBox.search-box .search-box-input,
   .ls-search-enabled .facet__auto_suggest:hover .ais-SearchBox.search-box .search-box-input {
-    color: var(--color--ui-background-dark);
+    color: #fff !important;
     box-shadow: none
   }
 
@@ -2771,7 +2771,8 @@ header.isSticky .he-pr-nav__wrapper>.container {
   }
 
   .ls-search-enabled .facet__auto_suggest.search-box-input-active .ais-SearchBox.search-box {
-    outline: 3px solid var(--color--interactive-focus)
+    /* outline: 3px solid var(--color--interactive-focus); */
+    /* color: #fff; */
   }
 }
 
@@ -4383,4 +4384,19 @@ header.isSticky .he-pr-nav__wrapper>.container {
 
 .navigation-container {
   display: none;
+}
+.ais-SearchBox-input::placeholder {
+  color: #ffffff !important;
+}
+.facet__auto_suggest:hover .ais-SearchBox-input::placeholder {
+  color: #0d004dff !important;
+}
+.facet__auto_suggest:hover .ais-SearchBox {
+  background-color: #ffffff !important;
+}
+.facet__auto_suggest:hover .selected-option,
+.facet__auto_suggest:hover .selected-option span,
+.facet__auto_suggest:hover .selected-option svg {
+  color: #0d004dff !important;
+  stroke: #0d004dff !important; /* for chevron */
 }
