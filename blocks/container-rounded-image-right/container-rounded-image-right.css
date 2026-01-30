@@ -1,90 +1,65 @@
-/* Container styling */
-.container-rounded-image-right-wrapper {
-    padding: 2rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* Container settings */
 .container-rounded-image-right.block {
-    background-color: #ffffff;
-    border-radius: 40px; /* Large rounded corners as seen in screenshot */
-    overflow: hidden;
     display: flex;
-    flex-direction: row-reverse; /* Places image on the right */
-    align-items: stretch;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    flex-direction: row-reverse; /* This moves the image (first in HTML) to the right */
+    background-color: #ffffff;
+    border-radius: 40px;
+    overflow: hidden;
+    align-items: stretch; /* Ensures both sides have equal height */
+    margin: 2rem 0;
 }
 
-/* Responsive: stack on mobile */
-@media (max-width: 768px) {
-    .container-rounded-image-right.block {
-        flex-direction: column;
-        border-radius: 20px;
-    }
-}
-
-/* Image section */
-.container-rounded-image-right .content-tile__figure {
+/* Text Content (Left Side) */
+.container-rounded-image-right .content-tile__figcaption {
     flex: 1;
     display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+    padding: 3rem 4rem;
+    order: 1; /* Explicitly sets text to first position */
+}
+
+/* Image Wrapper (Right Side) */
+.container-rounded-image-right .content-tile__figure {
+    flex: 1;
     margin: 0;
+    order: 2; /* Explicitly sets image to second position */
+    line-height: 0; /* Removes bottom whitespace in some browsers */
 }
 
-.container-rounded-image-right .content-tile__figure picture {
-    width: 100%;
-    height: 100%;
-}
-
+/* Image styling */
 .container-rounded-image-right .content-tile__figure img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the woman's photo fills the space */
+    object-fit: cover; /* Keeps image aspect ratio while filling the box */
     display: block;
 }
 
-/* Content/Text section */
-.container-rounded-image-right .content-tile__figcaption {
-    flex: 1;
-    padding: 3rem 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-/* Typography */
+/* Heading and Text refinements */
 .container-rounded-image-right h2 {
+    color: #00005a;
     font-size: 2.5rem;
-    line-height: 1.1;
-    color: #000056; /* Dark Pearson Blue */
-    margin: 0 0 1.5rem 0;
-    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
-.container-rounded-image-right .content-tile-text p {
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+.container-rounded-image-right .button-container {
+    margin-top: 2rem;
 }
 
-/* Button styling */
-.container-rounded-image-right .button-container .button {
-    display: inline-block;
-    background-color: #000056;
-    color: #ffffff;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.container-rounded-image-right .button-container .button:hover {
-    background-color: #2b008c;
-}
-
-/* Superscript fix */
-.container-rounded-image-right sup {
-    font-size: 0.6em;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container-rounded-image-right.block {
+        flex-direction: column; /* Stacks image on top of text for mobile */
+    }
+    
+    .container-rounded-image-right .content-tile__figcaption {
+        padding: 2rem;
+        order: 2;
+    }
+    
+    .container-rounded-image-right .content-tile__figure {
+        order: 1;
+    }
 }
