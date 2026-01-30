@@ -1,78 +1,105 @@
-/* --- Footer Background & Container --- */
+/* --- Footer Container --- */
 footer .footer {
-  /* Deep Pearson Navy Background */
-  background-color: #150045; 
+  background-color: #150045; /* Deep Pearson Navy */
   color: #ffffff;
   padding: 60px 20px;
   font-family: sans-serif;
+  position: relative;
 }
 
-/* --- Main Grid Layout for the Content --- */
-/* We target the wrapper containing the h3 and ul lists */
+/* --- Main Grid Layout --- */
 footer .footer .default-content-wrapper {
   display: grid;
-  
-  /* Create 4 columns: 
-     1. Empty/Logo space (mimicking the image layout)
-     2. Explore/Major Biz
-     3. Support/About
+  /* 4 Columns: 
+     1. Logo & Socials (Visual only via CSS)
+     2. Explore 
+     3. Support 
      4. Insights 
   */
   grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  
-  /* Gap between columns */
   column-gap: 40px;
-  row-gap: 10px; /* Small gap between Title and List */
-  
+  row-gap: 10px;
   max-width: 1400px;
   margin: 0 auto;
   align-items: start;
 }
 
-/* --- Positioning the Sections (The "Flat DOM" Fix) --- */
-/* Since h3 and ul are siblings, we must explicitly place them in columns */
+/* --- INJECTING THE LOGO (Pearson SVG) --- */
+/* We use ::before to create the Logo in the first column */
+footer .footer .default-content-wrapper::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1; /* Place at the top left */
+  
+  /* Size of the logo */
+  width: 120px;
+  height: 40px;
+  
+  /* Pearson Logo SVG (Data URI or URL) */
+  /* Replace '...' below with your actual SVG file path if you have one uploaded */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/87/Pearson_logo.svg"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  
+  /* Make it white/inverse if the SVG is black */
+  filter: brightness(0) invert(1); 
+}
 
+/* --- INJECTING THE SOCIAL ICONS --- */
+/* We use ::after to create the Social Icons below the logo */
+footer .footer .default-content-wrapper::after {
+  content: "";
+  grid-column: 1;
+  grid-row: 1; /* Same column/row as logo, but pushed down */
+  
+  /* Size of the social icon strip */
+  width: 180px; 
+  height: 40px;
+  margin-top: 60px; /* Push it down below the logo */
+  
+  /* Ideally, you should use a single image sprite containing all 4 icons (FB, X, YT, LI).
+     Here is a placeholder specific to social icons. 
+  */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Social_media_icons_white.svg/1024px-Social_media_icons_white.svg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* --- Positioning the Text Sections --- */
 /* COLUMN 2: Explore & Major Businesses */
-/* Explore */
 footer h3:nth-of-type(1), 
 footer ul:nth-of-type(1) { grid-column: 2; }
 
-/* Major Businesses (Pushes to a new row automatically or we can force it) */
-footer h3:nth-of-type(4) { grid-column: 2; margin-top: 40px; } /* Add spacing before second group */
+footer h3:nth-of-type(4) { grid-column: 2; margin-top: 50px; }
 footer ul:nth-of-type(4) { grid-column: 2; }
 
 
 /* COLUMN 3: Support & About Pearson */
-/* Support */
 footer h3:nth-of-type(2), 
-footer ul:nth-of-type(2) { grid-column: 3; grid-row: 1; } /* Force to top row */
-footer ul:nth-of-type(2) { grid-row: 2; } /* List follows title */
+footer ul:nth-of-type(2) { grid-column: 3; grid-row: 1; }
+footer ul:nth-of-type(2) { grid-row: 2; }
 
-/* About Pearson */
-footer h3:nth-of-type(5) { grid-column: 3; margin-top: 40px; }
+footer h3:nth-of-type(5) { grid-column: 3; margin-top: 50px; }
 footer ul:nth-of-type(5) { grid-column: 3; }
 
 
 /* COLUMN 4: Insights */
-/* Insights */
 footer h3:nth-of-type(3), 
 footer ul:nth-of-type(3) { grid-column: 4; grid-row: 1; }
 footer ul:nth-of-type(3) { grid-row: 2; }
 
 
-/* --- Typography Styling --- */
-
-/* Headings */
+/* --- Typography --- */
 footer .footer h3 {
   color: #ffffff;
   font-size: 1rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: capitalize; /* Pearson uses Capitalize, not UPPERCASE in footer usually */
   margin: 0 0 15px 0;
 }
 
-/* Lists */
 footer .footer ul {
   list-style: none;
   padding: 0;
@@ -83,13 +110,11 @@ footer .footer li {
   margin-bottom: 12px;
 }
 
-/* Links */
 footer .footer a {
-  color: #d9d9d9; /* Slight off-white for text */
+  color: #d9d9d9;
   text-decoration: none;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  transition: color 0.2s ease;
+  font-size: 0.9rem;
+  transition: color 0.2s;
 }
 
 footer .footer a:hover {
@@ -100,12 +125,22 @@ footer .footer a:hover {
 /* --- Mobile Responsiveness --- */
 @media (max-width: 900px) {
   footer .footer .default-content-wrapper {
-    /* Stack everything in one column on mobile */
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column */
     row-gap: 30px;
+    text-align: center;
   }
   
-  /* Reset specific column placements for mobile */
+  /* Move Logo and Icons to the top center on mobile */
+  footer .footer .default-content-wrapper::before,
+  footer .footer .default-content-wrapper::after {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  /* Reset Columns for text */
   footer h3:nth-of-type(n), 
   footer ul:nth-of-type(n) { 
     grid-column: 1; 
