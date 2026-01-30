@@ -40,7 +40,7 @@
 > div:not(:last-child) {
   grid-column: 1;
   z-index: 2;
-  padding-left: 4rem;
+  padding-left: 6rem;
   max-width: 576px;
 }
 
@@ -48,19 +48,19 @@
 .section.container-image-right-container
 .container-image-right.block
 > div:first-child {
-  margin-top: -5rem;
+  margin-top: -2rem;
 }
 
 .section.container-image-right-container
 .container-image-right.block
 > div:nth-child(2) {
-  margin-top: -16rem;
+  margin-top: -11rem;
 }
 
 .section.container-image-right-container
 .container-image-right.block
 > div:nth-child(3) {
-  margin-top: -28rem;
+  margin-top: -19rem;
 }
 
 /* ================================
@@ -161,25 +161,13 @@
 .container-image-right.block
 > div:last-child::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(11, 0, 79, 0.98) 0%,
-    rgba(11, 0, 79, 0.85) 40%,
-    rgba(11, 0, 79, 0.45) 65%,
-    rgba(11, 0, 79, 0.05) 85%
-  );
-  z-index: 1;
-
-  /* content: '';
   display: block;
   position: absolute;
   inset-block: calc(-1 * 92px) calc(-1 * 92px);
   inset-inline-start: calc(-1 * calc(0px * 1) - 1px);
   inline-size: calc(100% + 500px);
-  background: linear-gradient(90deg, #0d004dff calc(90% - 500px), rgba(from #0d004dff r g b / .6) calc(calc(90% - 500px) - -104px), transparent calc(calc(90% - 500px) - -383px));
-  z-index: -1; */
+  background: linear-gradient(90deg, #0d004dff calc(90% - 800px), rgba(from #0d004dff r g b / .6) calc(calc(90% - 800px) - -104px), transparent calc(calc(90% - 800px) - -383px));
+  z-index: -1;
 }
 
 .section.container-image-right-container
