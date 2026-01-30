@@ -101,11 +101,14 @@
   color: #ffffff;
 }
 
-.container-rounded-image-right .button:hover {
-  /* Hover state for the new color */
-  background-color: #005a75; 
-    color: var(--color--text-primary-inverse);
+.container-rounded-image-right 
+.content-tile__figcaption 
+.button-container 
+a.button:hover {
+  background-color: #005a75 !important;
+  color: var(--color--text-primary-inverse) !important;
 }
+
 /* --- LINK/BUTTON CHANGES END --- */
 
 /* Mobile Responsiveness */
