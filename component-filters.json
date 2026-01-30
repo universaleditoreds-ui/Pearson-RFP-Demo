@@ -20,7 +20,8 @@
       "container-image-right",
       "container-video",
       "container-image-left-buttons",
-      "navigation"
+      "navigation",
+      "container-rounded-image-right"
     ]
   },
   {
