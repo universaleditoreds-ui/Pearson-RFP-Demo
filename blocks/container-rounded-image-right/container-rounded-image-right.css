@@ -1,50 +1,72 @@
-/* outer rounded card */
-.container-rounded-image-right .content-tile {
-  background: #ffffff;
-  border-radius: 24px;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
+/* OUTER SECTION BACKGROUND */
+.container-rounded-image-right-wrapper {
+  background: #f4f2fa;
+  padding: 64px 0;
 }
 
-/* main layout */
+/* CARD */
+.container-rounded-image-right .content-tile {
+  max-width: 1280px;
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* GRID LAYOUT */
 .container-rounded-image-right .content-tile__figure {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: stretch;
 }
 
-/* LEFT content */
+/* TEXT – LEFT */
 .container-rounded-image-right .content-tile__figcaption {
-  padding: 64px 56px;
+  order: 1;
+  padding: 72px 72px 72px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #ffffff;
 }
 
-.container-rounded-image-right .content-tile__figcaption h2 {
-  font-size: 40px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #1a0a3c;
-  margin-bottom: 16px;
+/* IMAGE – RIGHT */
+.container-rounded-image-right picture {
+  order: 2;
+  display: block;
+  height: 100%;
 }
 
+.container-rounded-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HEADING */
+.container-rounded-image-right h2 {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #1a0a3c;
+  margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
 .container-rounded-image-right .content-tile-text p {
   font-size: 18px;
   line-height: 1.6;
   color: #333333;
   margin-bottom: 32px;
+  max-width: 480px;
 }
 
-/* CTA button */
+/* BUTTON */
 .container-rounded-image-right a.button,
 .container-rounded-image-right .button {
-  display: inline-block;
   background: #2b006b;
   color: #ffffff;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: 999px;
   font-size: 16px;
   font-weight: 600;
@@ -52,26 +74,22 @@
   width: fit-content;
 }
 
-/* RIGHT image */
-.container-rounded-image-right picture,
-.container-rounded-image-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Responsive */
+/* MOBILE */
 @media (max-width: 900px) {
   .container-rounded-image-right .content-tile__figure {
     grid-template-columns: 1fr;
   }
 
+  .container-rounded-image-right picture {
+    order: 1;
+  }
+
   .container-rounded-image-right .content-tile__figcaption {
+    order: 2;
     padding: 40px 24px;
   }
 
-  .container-rounded-image-right .content-tile__figcaption h2 {
-    font-size: 28px;
+  .container-rounded-image-right h2 {
+    font-size: 30px;
   }
 }
-
