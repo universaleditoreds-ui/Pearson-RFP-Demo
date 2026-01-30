@@ -393,7 +393,41 @@
         "name": "text4",
         "label": "Text 4",
         "valueType": "string"
+      },
+      {
+    "id": "container-rounded-image-right",
+    "title": "container-rounded-image-right",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Button text",
+        "value": "",
+        "label": "ButtonText",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
       }
+    ]
+  }
     ]
   }
 ]
