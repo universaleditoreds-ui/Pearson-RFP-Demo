@@ -21,7 +21,8 @@
       "container-video",
       "container-image-left-buttons",
       "navigation",
-      "container-rounded-image-right"
+      "container-rounded-image-right",
+      "container-bgimage-right"
     ]
   },
   {
