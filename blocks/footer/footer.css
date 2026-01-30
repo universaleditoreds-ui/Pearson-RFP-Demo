@@ -1,20 +1,147 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* --- 1. Footer Container & Background --- */
+footer .footer {
+  background-color: #150045; /* Pearson Navy */
+  color: #ffffff;
+  padding: 60px 40px;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+/* --- 2. The Grid Layout --- */
+footer .footer .default-content-wrapper {
+  display: grid;
+  
+  /* 4 Columns: Logo Area | Col 2 | Col 3 | Col 4 */
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  
+  /* 4 Explicit Rows:
+     Row 1: Headers (Explore, Support, Logo)
+     Row 2: Lists (School, College, Icons)
+     Row 3: Headers (Major Biz, About)
+     Row 4: Lists (Assessments, Our Company)
+  */
+  grid-template-rows: min-content min-content min-content min-content;
+  
+  column-gap: 40px;
+  row-gap: 0; /* We control spacing via padding on the elements */
+  
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start; /* CRITICAL: Prevents vertical stretching */
 }
 
-footer .footer p {
+/* --- 3. INJECTING LOGO & ICONS (Column 1) --- */
+
+/* The Logo (Placed in Row 1, Col 1) */
+footer .footer .default-content-wrapper::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1;
+  
+  width: 140px;
+  height: 50px;
+  display: block;
+  
+  /* Pearson Logo White Version */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/87/Pearson_logo.svg"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  filter: brightness(0) invert(1); /* Turns black logo white */
+  margin-bottom: 20px;
+}
+
+/* The Social Icons (Placed in Row 2, Col 1) */
+footer .footer .default-content-wrapper::after {
+  content: "";
+  grid-column: 1;
+  grid-row: 2;
+  
+  width: 160px; 
+  height: 40px;
+  display: block;
+  
+  /* Social Icons Sprite (Placeholder) */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Social_media_icons_white.svg/1024px-Social_media_icons_white.svg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+/* --- 4. STRICT PLACEMENT OF TEXT CONTENT --- */
+
+/* === ROW 1 & 2: Top Section === */
+
+/* Explore */
+footer h3:nth-of-type(1) { grid-column: 2; grid-row: 1; }
+footer ul:nth-of-type(1) { grid-column: 2; grid-row: 2; margin-bottom: 40px; }
+
+/* Support */
+footer h3:nth-of-type(2) { grid-column: 3; grid-row: 1; }
+footer ul:nth-of-type(2) { grid-column: 3; grid-row: 2; margin-bottom: 40px; }
+
+/* Insights */
+footer h3:nth-of-type(3) { grid-column: 4; grid-row: 1; }
+footer ul:nth-of-type(3) { grid-column: 4; grid-row: 2; margin-bottom: 40px; }
+
+
+/* === ROW 3 & 4: Bottom Section === */
+
+/* Major Businesses */
+footer h3:nth-of-type(4) { grid-column: 2; grid-row: 3; }
+footer ul:nth-of-type(4) { grid-column: 2; grid-row: 4; }
+
+/* About Pearson */
+footer h3:nth-of-type(5) { grid-column: 3; grid-row: 3; }
+footer ul:nth-of-type(5) { grid-column: 3; grid-row: 4; }
+
+
+/* --- 5. Typography Styling --- */
+footer .footer h3 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 15px 0; /* Tight spacing below header */
+}
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer li {
+  margin-bottom: 10px;
+}
+
+footer .footer a {
+  color: #e0e0e0;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+footer .footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* --- 6. Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  footer .footer .default-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Center align logo/icons on mobile */
+  footer .footer .default-content-wrapper::before,
+  footer .footer .default-content-wrapper::after {
+    margin: 0 auto 20px auto;
+  }
+  
+  footer h3:nth-of-type(n), footer ul:nth-of-type(n) {
+    text-align: center;
+    margin-bottom: 0;
   }
 }
