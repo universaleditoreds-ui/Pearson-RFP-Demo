@@ -1,123 +1,136 @@
-
-
-.section.container-image-left-buttons-container {
-  background-color: #f5f6fa;
-}
-
-/* Main grid */
-.section.container-image-left-buttons-container
-.container-image-left-buttons.block {
+/* --- Main Block Container --- */
+.container-image-left-buttons {
+  /* Use Grid to rearrange the 5 separate sibling divs */
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* IMAGE | CONTENT */
-  align-items: center;
-  gap: 4rem;
-  max-width: 1440px;
+  grid-template-columns: 1fr 1fr; /* Split 50/50 */
+  
+  /* Define layout areas: Image on left, Text/Buttons on right */
+  grid-template-areas:
+    "image title"
+    "image desc"
+    "image btn1"
+    "image btn2";
+    
+  gap: 10px 60px; /* Small gap between text rows, large gap between image and text */
+  align-items: start; /* Align text to top of its row */
+  align-content: center; /* Center content vertically within the block */
+  
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4.5rem 3rem;
+  padding: 80px 20px;
+  background-color: #f6f7fc; /* Very light lavender background */
 }
 
+/* --- Item Placement using nth-child --- */
 
-/* IMAGE – move to LEFT */
-.section.container-image-left-buttons-container
-.container-image-left-buttons.block > div:last-child {
-  order: 1;
+/* 1. Title Container */
+.container-image-left-buttons > div:nth-child(1) {
+  grid-area: title;
+  align-self: end; /* Push title closer to description */
 }
 
-/* CONTENT – move to RIGHT */
-.section.container-image-left-buttons-container
-.container-image-left-buttons.block > div:first-child {
-  order: 2;
-  padding-left: 2rem;
+/* 2. Description Container */
+.container-image-left-buttons > div:nth-child(2) {
+  grid-area: desc;
 }
 
-/* Image styling */
-.section.container-image-left-buttons-container
-.container-image-left-buttons.block picture img {
+/* 3. Primary Button Container */
+.container-image-left-buttons > div:nth-child(3) {
+  grid-area: btn1;
+  margin-top: 20px; /* Space before first button */
+}
+
+/* 4. Secondary Button Container */
+.container-image-left-buttons > div:nth-child(4) {
+  grid-area: btn2;
+  margin-top: 10px; /* Space between buttons */
+}
+
+/* 5. Image Container (Last in DOM, moved to Left via Grid) */
+.container-image-left-buttons > div:nth-child(5) {
+  grid-area: image;
+  align-self: center; /* Vertically center the image */
+  justify-self: center;
+  width: 100%;
+  max-width: 550px;
+}
+
+/* --- Image Styling --- */
+.container-image-left-buttons img {
   width: 100%;
   height: auto;
   display: block;
+  /* Optional: Add drop shadow to match laptop vibe if needed */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); 
 }
 
+/* --- Typography --- */
 
-
-.section.container-image-left-buttons-container h2 {
+/* Title Styling */
+.container-image-left-buttons h2 {
+  font-family: sans-serif;
   font-size: 3rem;
-  line-height: 1.2;
   font-weight: 700;
-  color: #1b004f;
-  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: #000f30; /* Dark Navy */
+  margin: 0 0 15px 0;
 }
 
-.section.container-image-left-buttons-container h6 {
+/* Description Styling */
+.container-image-left-buttons p {
+  font-family: sans-serif;
   font-size: 1.25rem;
-  font-weight: 400;
-  color: #3a3a3a;
-  max-width: 520px;
-  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  color: #573ba3; /* Pearson Purple */
+  margin: 0;
+  max-width: 90%; /* Prevent text from getting too wide */
 }
 
-
-
-.section.container-image-left-buttons-container .button-container {
-  margin-bottom: 1.25rem;
-}
-
-.section.container-image-left-buttons-container a.button.primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 280px;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1b004f;
-  background-color: transparent;
-  border: 2px solid #1b004f;
-  border-radius: 999px;
+/* --- Button Styling (Outline Style) --- */
+.container-image-left-buttons .button {
+  display: inline-block;
+  box-sizing: border-box;
   text-decoration: none;
-  transition: all 0.25s ease;
+  text-align: center;
+  
+  /* Outline Style */
+  background-color: transparent;
+  border: 2px solid #000f30; /* Dark border */
+  color: #000f30;
+  
+  font-weight: 700;
+  font-family: sans-serif;
+  padding: 12px 30px;
+  border-radius: 50px; /* Pill shape */
+  min-width: 260px; /* Ensure uniform button width */
+  transition: all 0.3s ease;
 }
 
-/* Hover */
-.section.container-image-left-buttons-container a.button.primary:hover {
-  background-color: #000000;
+.container-image-left-buttons .button:hover {
+  background-color: #000f30;
   color: #ffffff;
-  border-color: #000000;
 }
 
-
-
+/* --- Mobile Responsiveness --- */
 @media (max-width: 900px) {
-  .section.container-image-left-buttons-container
-  .container-image-left-buttons.block {
-    grid-template-columns: 1fr;
+  .container-image-left-buttons {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-areas:
+      "image"
+      "title"
+      "desc"
+      "btn1"
+      "btn2";
     text-align: center;
-    padding: 3rem 1.5rem;
+    gap: 20px;
   }
 
-  /* Reset order for mobile */
-  .section.container-image-left-buttons-container
-  .container-image-left-buttons.block > div {
-    order: unset;
+  .container-image-left-buttons > div:nth-child(5) {
+    width: 80%; /* Smaller image on mobile */
+    margin-bottom: 30px;
   }
-
-  .section.container-image-left-buttons-container
-  .container-image-left-buttons.block > div:first-child {
-    padding-left: 0;
-  }
-
-  .section.container-image-left-buttons-container h2 {
-    font-size: 2.25rem;
-  }
-
-  .section.container-image-left-buttons-container h6 {
-    font-size: 1.1rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .section.container-image-left-buttons-container a.button.primary {
-    width: 100%;
-    max-width: 320px;
+  
+  .container-image-left-buttons p {
+    margin: 0 auto; /* Center description */
   }
 }
