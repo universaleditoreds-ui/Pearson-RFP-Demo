@@ -8,8 +8,8 @@ footer .footer {
 }
 .section .default-content-wrapper p:nth-last-child(2) {
   position: absolute;
-  top: 0;     /* adjust */
-  left: 0;    /* adjust */
+  top: 5px;     /* adjust */
+  left: 20px;    /* adjust */
   margin: 0;
   z-index: 2; /* higher than other logo */
 }
@@ -24,8 +24,8 @@ footer .footer {
 
 .section .default-content-wrapper p:last-child {
   position: absolute;
-  top: 20px;
-  left: 15px;
+  top: 40px;
+  left: 20px;
   margin: 0;
   z-index: 1;
 }
