@@ -49,6 +49,16 @@ footer .footer {
   margin: 0;
   padding: 0;
 }
+/* Remove extra gap only in first column */
+.section .default-content-wrapper h3:first-of-type {
+  margin-bottom: 5px;
+}
+
+.section .default-content-wrapper h3:first-of-type + ul {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 
 /* --- 2. The Grid Layout --- */
 footer .footer .default-content-wrapper {
