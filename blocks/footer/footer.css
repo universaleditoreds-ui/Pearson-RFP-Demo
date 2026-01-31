@@ -8,9 +8,10 @@ footer .footer {
 }
 .section .default-content-wrapper {
   position: relative;
+  padding-top: 40px; /* push all headings down evenly */
 }
 
-/* PEARSON LOGO (first image) */
+/* PEARSON LOGO */
 .section .default-content-wrapper p:nth-last-child(2) {
   position: absolute;
   top: 10px;
@@ -19,29 +20,23 @@ footer .footer {
   z-index: 2;
 }
 
-/* SOCIAL ICONS (second image) */
+/* SOCIAL ICONS */
 .section .default-content-wrapper p:last-child {
   position: absolute;
-  top: 110px;   /* BELOW logo */
+  top: 90px; /* slightly tighter */
   left: 10px;
   margin: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Image behavior */
+/* Images */
 .section .default-content-wrapper p img {
   display: block;
   max-width: 170px;
 }
 
-.section .default-content-wrapper h3:nth-of-type(4),
-.section .default-content-wrapper h3:nth-of-type(5) {
-  margin-top: 60px;
-}
-
-/* Reset default spacing */
 .section .default-content-wrapper h3 {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px;
 }
 
 .section .default-content-wrapper ul {
@@ -49,10 +44,6 @@ footer .footer {
   padding: 0;
 }
 
-/* ONLY add space for second row headings */
-.section .default-content-wrapper ul + h3 {
-  margin-top: 40px;
-}
 
 /* --- 2. The Grid Layout --- */
 footer .footer .default-content-wrapper {
