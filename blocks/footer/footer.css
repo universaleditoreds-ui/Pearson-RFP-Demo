@@ -47,9 +47,6 @@ footer .footer {
   margin: 0;
   padding: 0;
 }
-.section .default-content-wrapper > *:first-child h3 {
-  margin-top: 0;
-}
 
 /* --- 2. The Grid Layout --- */
 footer .footer .default-content-wrapper {
