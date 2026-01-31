@@ -53,6 +53,10 @@ footer .footer {
 .section .default-content-wrapper h3:first-of-type {
   margin-bottom: 5px;
 }
+.section .default-content-wrapper h3:first-of-type + p {
+  margin: 0;
+}
+
 
 .section .default-content-wrapper h3:first-of-type + ul {
   margin-top: 0;
