@@ -39,39 +39,6 @@ footer .footer {
 .section .default-content-wrapper h3:nth-of-type(5) {
   margin-top: 60px;
 }
-/* ONLY Explore section spacing fix */
-.section .default-content-wrapper ul:first-of-type {
-  margin-top: 0;
-}
-
-.section .default-content-wrapper ul:first-of-type li {
-  margin-bottom: 6px;
-}
-
-.section .default-content-wrapper ul:first-of-type {
-  padding-top: 0;
-}
-
-/* Explore heading (the h3 right before first ul) */
-.section .default-content-wrapper ul:first-of-type {
-  margin-top: 0;
-}
-
-.section .default-content-wrapper ul:first-of-type {
-  padding-top: 0;
-}
-
-.section .default-content-wrapper ul:first-of-type {
-  margin-bottom: 0;
-}
-
-.section .default-content-wrapper ul:first-of-type {
-  line-height: 1.6;
-}
-
-.section .default-content-wrapper ul:first-of-type {
-  transform: translateY(-6px); /* subtle tighten if needed */
-}
 
 
 /* --- 2. The Grid Layout --- */
