@@ -38,6 +38,13 @@ footer .footer {
 .section .default-content-wrapper h3:nth-of-type(5) {
   margin-top: 60px;
 }
+.section .default-content-wrapper h3 {
+  margin-bottom: 12px; /* control gap below heading */
+}
+
+.section .default-content-wrapper ul {
+  margin-top: 0; /* remove extra space above list */
+}
 
 
 /* --- 2. The Grid Layout --- */
