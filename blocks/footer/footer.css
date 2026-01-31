@@ -48,12 +48,6 @@ footer .footer {
   padding: 0;
 }
 
-/* ONLY add space for second row headings */
-.section .default-content-wrapper ul + h3 {
-  margin-top: 40px;
-}
-
-
 /* --- 2. The Grid Layout --- */
 footer .footer .default-content-wrapper {
   display: grid;
