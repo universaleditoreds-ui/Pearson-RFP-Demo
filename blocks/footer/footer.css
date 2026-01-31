@@ -34,19 +34,21 @@ footer .footer {
   display: block;
   max-width: 170px;
 }
+
 .section .default-content-wrapper h3:nth-of-type(4),
 .section .default-content-wrapper h3:nth-of-type(5) {
   margin-top: 60px;
 }
+
+/* Reset default spacing */
 .section .default-content-wrapper h3 {
-  margin: 0 0 12px;
+  margin: 0 0 10px 0;
 }
 
 .section .default-content-wrapper ul {
   margin: 0;
   padding: 0;
 }
-
 
 /* --- 2. The Grid Layout --- */
 footer .footer .default-content-wrapper {
