@@ -6,33 +6,34 @@ footer .footer {
   font-family: sans-serif;
   font-size: 14px;
 }
-.section .default-content-wrapper p:nth-last-child(2) {
-  position: absolute;
-  top: 5px;     /* adjust */
-  left: 20px;    /* adjust */
-  margin: 0;
-  z-index: 2; /* higher than other logo */
-}
-
-.section .default-content-wrapper p:nth-last-child(2) img {
-  display: block;
-}
-
 .section .default-content-wrapper {
   position: relative;
 }
 
+/* PEARSON LOGO (first image) */
+.section .default-content-wrapper p:nth-last-child(2) {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  margin: 0;
+  z-index: 2;
+}
+
+/* SOCIAL ICONS (second image) */
 .section .default-content-wrapper p:last-child {
   position: absolute;
-  top: 80px;
+  top: 110px;   /* BELOW logo */
   left: 20px;
   margin: 0;
   z-index: 1;
 }
 
-.section .default-content-wrapper p:last-child img {
+/* Image behavior */
+.section .default-content-wrapper p img {
   display: block;
+  max-width: 180px;
 }
+
 
 
 
