@@ -48,7 +48,9 @@ footer .footer {
   padding: 0;
 }
 
-
+.section .default-content-wrapper {
+  row-gap: 20px; /* controls vertical spacing */
+}
 
 
 /* --- 2. The Grid Layout --- */
