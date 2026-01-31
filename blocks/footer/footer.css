@@ -7,9 +7,21 @@ footer .footer {
   font-size: 14px;
 }
 
-.section .default-content-wrapper p:last-child img {
-  width: 200px;
+.section .default-content-wrapper {
+  position: relative;
 }
+
+.section .default-content-wrapper p:last-child {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+}
+
+.section .default-content-wrapper p:last-child img {
+  display: block;
+}
+
 
 
 /* --- 2. The Grid Layout --- */
