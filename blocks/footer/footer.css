@@ -49,6 +49,18 @@ footer .footer {
   margin: 0;
   padding: 0;
 }
+/* FIX ONLY FIRST SECTION (Explore) SPACING */
+.section .default-content-wrapper h3:first-of-type {
+  margin-bottom: 6px; /* tighter heading → list gap */
+}
+
+.section .default-content-wrapper h3:first-of-type + ul {
+  margin-top: 0;
+}
+
+.section .default-content-wrapper h3:first-of-type + ul li {
+  margin-bottom: 6px; /* optional: tighten list items */
+}
 
 /* --- 2. The Grid Layout --- */
 footer .footer .default-content-wrapper {
