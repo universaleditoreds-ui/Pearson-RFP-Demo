@@ -31,10 +31,12 @@ footer .footer {
 /* Image behavior */
 .section .default-content-wrapper p img {
   display: block;
-  max-width: 180px;
+  max-width: 160px;
 }
 
-
+.section .default-content-wrapper ul + h3 {
+  margin-top: 50px;
+}
 
 
 /* --- 2. The Grid Layout --- */
