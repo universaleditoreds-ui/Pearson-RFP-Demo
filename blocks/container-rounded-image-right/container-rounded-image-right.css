@@ -1,4 +1,7 @@
 /* Main wrapper */
+.container-rounded-image-right-container {
+  overflow-x: hidden;
+}
 .container-rounded-image-right {
   /* padding: 40px 20px; */
   /* background-color: #f3f0f8; */

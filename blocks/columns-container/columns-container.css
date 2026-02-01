@@ -296,3 +296,6 @@
   
   .columns-container > div:nth-child(6) { margin-bottom: 30px; }
 }
+.columns-container-container {
+  overflow-x: hidden;
+}
