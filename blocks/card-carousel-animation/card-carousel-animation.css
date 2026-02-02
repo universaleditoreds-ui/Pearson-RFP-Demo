@@ -106,7 +106,7 @@
     margin-top: 16px;
     font-size: 1.5rem;
     /* color: #f9f9fcff; */
-    color:red;
+    color:blue;
     font-weight: 500 !important;
     font-family: "Plus Jakarta Sans",var(--typefamily-fallback);
 }
