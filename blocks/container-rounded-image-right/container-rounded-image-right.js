@@ -1,4 +1,41 @@
 export default function decorate(block) {
+  const containerimgrightbase = `<div>
+    <div>
+      <div data-aue-prop="Title" data-aue-label="Title" data-aue-filter="text" data-aue-type="richtext">
+        <h2><strong>Transform careers &amp; workplaces</strong></h2>
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="Description" data-aue-label="Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Build smarter, future-ready teams with AI-driven data and insights from Credly<sup>®</sup> by Pearson.</p>
+        <p class="button-container"><a href="https://info.credly.com/" title="Get more info" class="button">Get more
+            info</a></p>
+      </div>
+    </div>
+
+  </div>
+  <div>
+
+    <div>
+      <div data-aue-prop="Button text" data-aue-label="ButtonText" data-aue-filter="text" data-aue-type="richtext">
+        <p class="button-container"><a href="https://info.credly.com/" title="Get more info" class="button">Get more
+            info</a></p>
+      </div>
+    </div>
+
+  </div>
+  <div>
+
+    <div>
+      <picture><img
+          src="/adobe/dynamicmedia/deliver/dm-aid--14185dd8-8e56-41c0-a43b-b2dd1a8b1e4d/img2.webp?preferwebp=true&amp;width=1280&amp;quality=85"
+          data-aue-prop="image" data-aue-label="Image" data-aue-type="media"></picture>
+    </div>
+  </div>`;
+  block.innerHTML = containerimgrightbase;
   /* extract UE content */
   const titleEl = block.querySelector('[data-aue-prop="Title"]');
   const descEl = block.querySelector('[data-aue-prop="Description"]');
