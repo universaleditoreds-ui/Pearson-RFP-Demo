@@ -1,4 +1,28 @@
 export default function decorate(block) {
+  const bgimagerightbaseele = `div>
+        <div>
+            <div data-aue-prop="Title" data-aue-label="Title" data-aue-filter="text" data-aue-type="richtext">
+                <h2><strong>Learning never stops</strong></h2>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <div>
+            <div data-aue-prop="Description" data-aue-label="Description" data-aue-filter="text"
+                data-aue-type="richtext">
+                <p><strong>The more we learn, the more we achieve.</strong></p>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <div>
+            <picture><img src="/content/dam/img3.avif" data-aue-prop="image" data-aue-label="Image"
+                    data-aue-type="media"></picture>
+        </div>
+    </div>`;
+  block.innerHTML = bgimagerightbaseele;
   /* extract authored content */
   const titleEl = block.querySelector('[data-aue-prop="Title"]');
   const descEl = block.querySelector('[data-aue-prop="Description"]');
