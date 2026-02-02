@@ -2,7 +2,6 @@ export default function decorate(block) {
     // ---------------------------
     // HERO CONTENT
     // ---------------------------
-
     const bodyHtml = `<header class="header-wrapper">
   <div class="header block" data-block-name="header" data-block-status="loaded">
     <section class="column-control aem-GridColumn aem-GridColumn--default--12 he-navigation-topnav">
