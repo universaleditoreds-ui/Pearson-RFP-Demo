@@ -3,7 +3,7 @@
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  const headerBaseHTML=`<div>
+  const HeaderBaseHTML=`<div>
   <div>
     <div data-aue-prop="text1" data-aue-label="Text 1" data-aue-filter="text" data-aue-type="richtext">
       <p>For School</p>
@@ -32,7 +32,7 @@ export default async function decorate(block) {
   </div>
 </div>`;
   const navbaseEle = document.querySelector('.navigation.block');
-  navbaseEle.innerHTML = headerBaseHTML;
+  navbaseEle.innerHTML = HeaderBaseHTML;
   const textKeys = [
     'text1',
     'text2',
