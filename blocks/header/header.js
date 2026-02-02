@@ -3,7 +3,7 @@
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  const headerHTML=`<div>
+  const headerBaseHTML=`<div>
   <div>
     <div data-aue-prop="text1" data-aue-label="Text 1" data-aue-filter="text" data-aue-type="richtext">
       <p>For School</p>
@@ -31,7 +31,7 @@ export default async function decorate(block) {
     </div>
   </div>
 </div>`;
-  block.innerHTML = headerHTML;
+  block.innerHTML = headerBaseHTML;
   const textKeys = [
     'text1',
     'text2',
