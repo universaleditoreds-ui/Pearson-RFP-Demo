@@ -72,7 +72,7 @@
 
 /* Play icon */
 .container-video.block .youtube-video-play-img {
-  background-image: url(/content/dam/Pearson-RFP-Demo/youtube-play-icon.webp);
+  background-image: url(https://www.pearson.com/etc/clientlibs/platform/aem-core/components/content/youtube-video/assets/images/youtube-play-icon.png);
   display: inline-flex;
   align-self: center;
   inline-size: 68px;
