@@ -73,7 +73,7 @@ export default function decorate(block) {
     '<div class="content-tile__figure">',
 
     '<picture style="--original-image-ratio: 1">',
-    `<img loading="lazy" src="${imageSrc}" alt="" role="presentation">`,
+    `<img loading="lazy" src="https://www.pearson.com/content/dam/global/shared/brand/evolution/lines-waves/800x800-conical-lines.png.transform/big-size-xl/img.png" alt="" role="presentation">`,
     '</picture>',
 
     '<div class="content-tile__figcaption">',
