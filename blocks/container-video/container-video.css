@@ -1,7 +1,7 @@
 /* Optional section background similar to UX */
 .section.container-video-container {
   padding: 48px 16px;
-  background: #f3f1ff;
+  background: #edecf6 !important;
 }
 
 /* Constrain width and center */
