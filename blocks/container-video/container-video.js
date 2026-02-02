@@ -54,29 +54,34 @@ function buildYouTubeEmbedSrc(videoId, { related = true } = {}) {
 }
 
 export default function decorate(block) {
-  const vedeoBaseHTML = `<div class="col-80pct col-12">
-    <div class="content-tile pad-top--0__pad-bottom--45__caption use-heading-align-center subtitle-typesize--h5 subtitle-typeweight--medium section">
-      <div class="content-tile-container">
-        <div class="content-tile__figure">
-          <div class="content-tile__figcaption">
-            <h2 class="content-tile__title">What if learning is more powerful than we realize?</h2>
-            <p class="content-tile-subtitle">When we learn, the benefits extend far beyond what we might expect. Each new skill or insight can transform many parts of our lives.</p>
-          </div>
-        </div>
+  const vedeoBaseHTML = `<div>
+    <div>
+      <div data-aue-prop="video-title" data-aue-label="Video Title" data-aue-filter="text" data-aue-type="richtext">
+        <p>What if learning is more powerful than we realize?</p>
       </div>
     </div>
-    <div class="youtube-video section">
-      <iframe class="youtube-video-iframe" id="what-if-learning-is-more-powerful-than-we-realize-352922" data-video-id="TXj6aLD6muM" data-related-videos="true" data-youtube-lazy-loading-enabled="true" data-js-api-enabled="true" title="What if learning is more powerful than we realize?" allow="autoplay"></iframe>
-      <button class="youtube-video-play-button" type="button" aria-label="Play What if learning is more powerful than we realize?">
-        <img class="youtube-video-inline-img" src="https://img.youtube.com/vi/TXj6aLD6muM/maxresdefault.jpg" alt="What if learning is more powerful than we realize?" loading="lazy">
-        <span class="youtube-video-play-img"></span>
-      </button>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="video-desc" data-aue-label="Video Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>When we learn, the benefits extend far beyond what we might expect. Each new skill or insight can transform many parts of our lives.</p>
+      </div>
     </div>
-    <div class="text section">
-      <p style="text-align: right;">
-        <span class="minor">
-          <a class="new-window" href="https://www.pearson.com/en-us/transcripts/born-to-learn.html" target="_blank" rel="noreferrer" aria-label="View Transcript. Opens new tab.">View Transcript</a>
-        </span>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="video-id" data-aue-label="Video ID" data-aue-type="text">TXj6aLD6muM</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="video-transcript-title" data-aue-label="Video Transcript Title" data-aue-type="text">View Transcript</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p>
+        <a href="https://www.pearson.com/en-us/transcripts/born-to-learn.html" title="https://www.pearson.com/en-us/transcripts/born-to-learn.html">https://www.pearson.com/en-us/transcripts/born-to-learn.html</a>
       </p>
     </div>
   </div>`;
