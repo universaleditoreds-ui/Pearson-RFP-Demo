@@ -2,6 +2,171 @@ export default function decorate(block) {
     // ---------------------------
     // HERO CONTENT
     // ---------------------------
+  const carouselBase = `<div data-aue-resource="urn:aemconnection:/content/Pearson-RFP-Demo/index/jcr:content/root/section_963508404_301234203/card_carousel_animat" data-aue-type="component" data-aue-behavior="component" data-aue-model="card-carousel-animation" data-aue-label="card-carousel-animation" class="card-carousel-animation block" data-block-name="card-carousel-animation" data-block-status="loading">
+  <div>
+    <div>
+      <p data-aue-prop="heroTitle" data-aue-label="Hero Title" data-aue-type="text">Where learning comes to life</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="heroDescription" data-aue-label="Hero Description" data-aue-filter="text" data-aue-type="richtext">
+        <h4>
+          <strong>Explore learning for every stage of life with Pearson.</strong>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card1Eyebrow" data-aue-label="Card 1 – Eyebrow" data-aue-type="text">Pearson+</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card1Title" data-aue-label="Card 1 – Title" data-aue-type="text">eTextbooks &amp; study tools for quicker, simpler learning</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="card1Description" data-aue-label="Card 1 – Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Join more than 1 million students who are getting&nbsp;more out of their study time.</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card1CtaLabel" data-aue-label="Card 1 – CTA Label" data-aue-type="text">Buy eTextbooks</p>
+    </div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card2Eyebrow" data-aue-label="Card 2 – Eyebrow" data-aue-type="text">For Schools</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card2Title" data-aue-label="Card 2 – Title" data-aue-type="text">Prepare K-12 students for what's next</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="card2Description" data-aue-label="Card 2 – Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Set college students up for success</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card2CtaLabel" data-aue-label="Card 2 – CTA Label" data-aue-type="text">Check out K-12 programs</p>
+    </div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card3Eyebrow" data-aue-label="Card 3 – Eyebrow" data-aue-type="text">Check out K-12 programs</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card3Title" data-aue-label="Card 3 – Title" data-aue-type="text">Set college students up for success</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="card3Description" data-aue-label="Card 3 – Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Set college students up for success</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card3CtaLabel" data-aue-label="Card 3 – CTA Label" data-aue-type="text">Explore college offerings</p>
+    </div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card4Eyebrow" data-aue-label="Card 4 – Eyebrow" data-aue-type="text">For School</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card4Title" data-aue-label="Card 4 – Title" data-aue-type="text">Prepare K-12 students for what's next</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="card4Description" data-aue-label="Card 4 – Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Offer pathways for every student — from college prep to career readiness.</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card4CtaLabel" data-aue-label="Card 4 – CTA Label" data-aue-type="text">Check out K-12 programs</p>
+    </div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card5Eyebrow" data-aue-label="Card 5 – Eyebrow" data-aue-type="text">For College</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card5Title" data-aue-label="Card 5 – Title" data-aue-type="text">Set college students up for success</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="card5Description" data-aue-label="Card 5 – Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Give them tools and resources that link what&nbsp;they're learning to real-life goals.</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card5CtaLabel" data-aue-label="Card 5 – CTA Label" data-aue-type="text">For College</p>
+    </div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card6Eyebrow" data-aue-label="Card 6 – Eyebrow" data-aue-type="text">For College</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p data-aue-prop="card6Title" data-aue-label="Card 6 – Title" data-aue-type="text">Build employee skills &amp; expertise</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div data-aue-prop="card6Description" data-aue-label="Card 6 – Description" data-aue-filter="text" data-aue-type="richtext">
+        <p>Transform careers, find new opportunities, and help people adapt to a changing economy.&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+</div>`;
+  block.innerHTML = carouselBase;
     const heroTitle =
         block.querySelector('[data-aue-prop="heroTitle"]')?.textContent.trim() || '';
 
