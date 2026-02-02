@@ -60,7 +60,7 @@ export default function decorate(block) {
     '<div class="content-tile__figure">',
 
     '<picture>',
-    `<img loading="lazy" src="${imgSrc}" alt="" role="presentation">`,
+    `<img loading="lazy" src="https://www.pearson.com/content/dam/global/shared/brand/evolution/images/2400x800-GettyImages-1162052022.jpg.transform/big-size-xl/img.jpeg" alt="" role="presentation">`,
     '</picture>',
 
     '<div class="content-tile__figcaption">',
