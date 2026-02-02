@@ -233,7 +233,7 @@ export default function decorate(block) {
   <div class="background-video__container min-height--default">
     <div class="background-video__wrap-outer background-video--light-controls">
       <div class="background-video__wrap-inner">
-        <video class="background-video__media" loop="loop" autoplay="autoplay" poster="/content/dam/global/shared/brand/evolution/video/waves-fucsia-3-pearsonpurple-slow-16x9-l2r/waves-fucsia-3-pearsonpurple-slow-16x9-l2r-hires-v01.png" muted="" playsinline="" data-source="/content/dam/global/shared/brand/evolution/video/waves-fucsia-3-pearsonpurple-slow-16x9-l2r/waves-fucsia-3-pearsonpurple-slow-16x9-l2r-hires-v01.mp4" src="/content/dam/waves-fucsia-3-pearsonpurple-slow-16x9-l2r-hires-v01.mp4"></video>
+        <video class="background-video__media" loop="loop" autoplay="autoplay" poster="/content/dam/global/shared/brand/evolution/video/waves-fucsia-3-pearsonpurple-slow-16x9-l2r/waves-fucsia-3-pearsonpurple-slow-16x9-l2r-hires-v01.png" muted="" playsinline="" data-source="/content/dam/global/shared/brand/evolution/video/waves-fucsia-3-pearsonpurple-slow-16x9-l2r/waves-fucsia-3-pearsonpurple-slow-16x9-l2r-hires-v01.mp4" src="https://www.pearson.com/content/dam/global/shared/brand/evolution/video/waves-fucsia-3-pearsonpurple-slow-16x9-l2r/waves-fucsia-3-pearsonpurple-slow-16x9-l2r-hires-v01.mp4"></video>
         <button type="button" aria-label="Pause background video"
           class="background-video__control pause is-visible"></button>
     
