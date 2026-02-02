@@ -31,7 +31,8 @@ export default async function decorate(block) {
     </div>
   </div>
 </div>`;
-  block.innerHTML = headerBaseHTML;
+  const navbaseele = document.querySelector('.navigation.block');
+  navbaseele.innerHTML = headerBaseHTML;
   const textKeys = [
     'text1',
     'text2',
