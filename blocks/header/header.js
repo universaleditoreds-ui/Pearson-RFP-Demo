@@ -3,6 +3,35 @@
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  const headerHTML=`<div>
+  <div>
+    <div data-aue-prop="text1" data-aue-label="Text 1" data-aue-filter="text" data-aue-type="richtext">
+      <p>For School</p>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div data-aue-prop="text2" data-aue-label="Text 2" data-aue-filter="text" data-aue-type="richtext">
+      <p>For College</p>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div data-aue-prop="text3" data-aue-label="Text 3" data-aue-filter="text" data-aue-type="richtext">
+      <p>For work</p>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div data-aue-prop="text4" data-aue-label="Text 4" data-aue-filter="text" data-aue-type="richtext">
+      <p>Explore Pearson</p>
+    </div>
+  </div>
+</div>`;
+  block.innerHTML = headerHTML;
   const textKeys = [
     'text1',
     'text2',
