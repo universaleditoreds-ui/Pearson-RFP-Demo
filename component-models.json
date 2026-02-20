@@ -218,7 +218,14 @@
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Text",
+        "label": "HeroTitle",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "HeroText",
         "valueType": "string"
       }
     ]
