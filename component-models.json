@@ -214,6 +214,7 @@
         "label": "HeroTitle",
         "valueType": "string"
       },
+      
       {
         "component": "richtext",
         "name": "text",
