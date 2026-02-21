@@ -7,14 +7,13 @@
   padding: 100px 20px;
 }
 
-/* Center wrapper */
 .content-tile-cards-icons-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* ========================================
-   BLOCK LAYOUT GRID
+   MAIN GRID
 ======================================== */
 
 .content-tile-cards-icons.block {
@@ -24,21 +23,18 @@
 }
 
 /* ========================================
-   TOP SECTION CONTENT (FULL WIDTH)
+   HEADER AREA (FULL WIDTH)
 ======================================== */
 
-/* Benefits */
 .content-tile-cards-icons.block > div:nth-child(1),
-/* Title */
 .content-tile-cards-icons.block > div:nth-child(2),
-/* Paragraph */
 .content-tile-cards-icons.block > div:nth-child(3) {
   grid-column: 1 / -1;
   text-align: center;
 }
 
 /* Benefits */
-.content-tile-cards-icons.block h2:first-of-type {
+.content-tile-cards-icons.block > div:nth-child(1) h2 {
   font-size: 2.5rem;
   font-weight: 600;
   color: #1c1459;
@@ -63,37 +59,39 @@
 }
 
 /* ========================================
-   CARD BASE STYLE
+   MAKE CARD WRAPPERS
 ======================================== */
 
-/* Cards start from div 4 onward */
-.content-tile-cards-icons.block > div:nth-child(n+4) {
+/* Each card consists of 4 consecutive divs:
+   4–7, 8–11, 12–15
+*/
+
+.content-tile-cards-icons.block > div:nth-child(4),
+.content-tile-cards-icons.block > div:nth-child(8),
+.content-tile-cards-icons.block > div:nth-child(12) {
   background: #ffffff;
   border-radius: 24px;
   padding: 48px 36px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-  text-align: left;
-}
-
-/* ========================================
-   MAKE CARDS STRUCTURED (3 per row)
-======================================== */
-
-/* We regroup every 4 elements into one visual card */
-.content-tile-cards-icons.block {
-  counter-reset: card;
-}
-
-/* Force visual grouping */
-.content-tile-cards-icons.block > div:nth-child(4),
-.content-tile-cards-icons.block > div:nth-child(8),
-.content-tile-cards-icons.block > div:nth-child(12) {
   display: flex;
   flex-direction: column;
 }
 
+/* Remove box styling from inner parts */
+.content-tile-cards-icons.block > div:nth-child(5),
+.content-tile-cards-icons.block > div:nth-child(6),
+.content-tile-cards-icons.block > div:nth-child(7),
+.content-tile-cards-icons.block > div:nth-child(9),
+.content-tile-cards-icons.block > div:nth-child(10),
+.content-tile-cards-icons.block > div:nth-child(11),
+.content-tile-cards-icons.block > div:nth-child(13),
+.content-tile-cards-icons.block > div:nth-child(14),
+.content-tile-cards-icons.block > div:nth-child(15) {
+  display: contents;
+}
+
 /* ========================================
-   ICON STYLE
+   ICON
 ======================================== */
 
 .content-tile-cards-icons.block img {
@@ -102,10 +100,10 @@
 }
 
 /* ========================================
-   CARD TITLES
+   CARD TITLE
 ======================================== */
 
-.content-tile-cards-icons.block > div:nth-child(n+5) h2 {
+.content-tile-cards-icons.block h2:not(:first-of-type) {
   font-size: 1.4rem;
   font-weight: 600;
   color: #1c1459;
@@ -153,9 +151,5 @@
 @media (max-width: 1024px) {
   .content-tile-cards-icons.block {
     grid-template-columns: 1fr;
-  }
-
-  .content-tile-cards-icons.block > div:nth-child(3) p {
-    margin-bottom: 50px;
   }
 }
