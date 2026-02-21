@@ -1,87 +1,99 @@
-/* ============================= */
-/* CONTENT TILE LINK SECTION */
-/* ============================= */
-
-.section.content-tile-link {
-  background-color: #eeecf4;
-  padding: 120px 0;
+/* =====================================
+   SECTION CONTAINER
+===================================== */
+.section.content-title-link-container {
+  background: #f5f5f7;
+  padding: 0;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #e2e2e2;
 }
 
-/* Content alignment (left aligned like image) */
-.section.content-tile-link .default-content-wrapper {
-  max-width: 820px;
-  margin-left: 180px;
+/* Wrapper full width */
+.section.content-title-link-container
+.content-title-link-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* Heading */
-.section.content-tile-link h2 {
-  font-size: 64px;
-  font-weight: 500;
-  color: #1b115c;
-  line-height: 1.1;
-  margin-bottom: 40px;
-}
-
-/* Paragraphs */
-.section.content-tile-link p {
-  font-size: 20px;
-  line-height: 1.9;
-  color: #2d2d2d;
-  margin-bottom: 28px;
-}
-
-/* CTA spacing */
-.section.content-tile-link p:last-child {
-  margin-top: 20px;
-}
-
-/* CTA link */
-.section.content-tile-link a {
-  font-size: 20px;
-  font-weight: 600;
-  color: #4b2aad;
-  text-decoration: none;
-  display: inline-flex;
+/* =====================================
+   HORIZONTAL NAV LAYOUT
+===================================== */
+.section.content-title-link-container
+.content-title-link.block {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  transition: opacity 0.3s ease;
+  gap: 4rem;
+  height: 72px;
 }
 
-/* Arrow styling */
-.section.content-tile-link strong:last-child {
-  font-size: 22px;
-  color: #4b2aad;
+/* Each nav item */
+.section.content-title-link-container
+.content-title-link.block > div {
+  position: relative;
+  cursor: pointer;
 }
 
-/* Hover */
-.section.content-tile-link a:hover {
-  opacity: 0.75;
+/* Remove paragraph spacing */
+.section.content-title-link-container
+.content-title-link.block p {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
 }
 
+/* =====================================
+   ACTIVE TAB (First One Example)
+===================================== */
 
-@media (max-width: 1200px) {
-  .section.content-tile-link .default-content-wrapper {
-    margin-left: 100px;
-    max-width: 700px;
-  }
+/* Make first tab active by default */
+.section.content-title-link-container
+.content-title-link.block > div:first-child p {
+  color: #1b115c;
+  font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .section.content-tile-link {
-    padding: 80px 20px;
+/* Purple underline */
+.section.content-title-link-container
+.content-title-link.block > div:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #5a2ca0;
+  border-radius: 2px;
+}
+
+/* =====================================
+   HOVER EFFECT
+===================================== */
+.section.content-title-link-container
+.content-title-link.block > div:hover p {
+  color: #1b115c;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 900px) {
+  .section.content-title-link-container
+  .content-title-link.block {
+    gap: 2rem;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
 
-  .section.content-tile-link .default-content-wrapper {
-    margin-left: 0;
-    max-width: 100%;
-  }
-
-  .section.content-tile-link h2 {
-    font-size: 36px;
-  }
-
-  .section.content-tile-link p,
-  .section.content-tile-link a {
+  .section.content-title-link-container
+  .content-title-link.block p {
     font-size: 16px;
+    white-space: nowrap;
   }
 }
