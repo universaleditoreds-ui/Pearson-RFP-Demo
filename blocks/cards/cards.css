@@ -1,27 +1,103 @@
-.cards > ul {
+/* ========================================
+   SECTION BACKGROUND + TITLE ALIGNMENT
+======================================== */
+
+.section.cards-container {
+  background: #f3f2f8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Remove wrapper width restriction */
+.section.cards-container .cards-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CARDS GRID LAYOUT
+======================================== */
+
+.section.cards-container .cards.block ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 40px 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+/* ========================================
+   INDIVIDUAL CARD
+======================================== */
+
+.section.cards-container .cards.block li {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.section.cards-container .cards.block li:hover {
+  transform: translateY(-6px);
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+/* ========================================
+   CARD IMAGE (ICON STYLE)
+======================================== */
+
+.section.cards-container .cards-card-image {
+  text-align: left;
+  margin-bottom: 24px;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.section.cards-container .cards-card-image img {
+  width: 90px;
+  height: auto;
+}
+
+/* ========================================
+   CARD TITLE (h4 inside card)
+======================================== */
+
+.section.cards-container .cards.block h4 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #1d155c;
+  margin: 16px 0;
+}
+
+/* ========================================
+   CARD PARAGRAPH
+======================================== */
+
+.section.cards-container .cards.block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4b4b63;
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   LINK STYLE
+======================================== */
+
+.section.cards-container .cards.block a {
+  color: #4b3df0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.section.cards-container .cards.block a:hover {
+  text-decoration: underline;
+}
+
+/* Divider line above link */
+.section.cards-container .cards.block li .cards-card-body:last-child {
+  border-top: 1px solid #e2e2f0;
+  padding-top: 20px;
+  margin-top: 30px;
 }
