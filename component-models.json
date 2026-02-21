@@ -901,5 +901,32 @@
         "valueType": "string"
       }
     ]
+  },
+    {
+    "id": "content-tile-bullets",
+    "title": "content-tile-bullets",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Heading",
+        "value": "",
+        "label": "Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Title",
+        "value": "",
+        "label": "title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Paragraph",
+        "value": "",
+        "label": "Paragraph",
+        "valueType": "string"
+      }
+    ]
   }
 ]
