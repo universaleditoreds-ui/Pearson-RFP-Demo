@@ -1,77 +1,77 @@
 /* ========================================
-   SECTION BACKGROUND + TITLE ALIGNMENT
+   SECTION
 ======================================== */
 
 .section.cards-container {
   background: #f3f2f8;
-  padding: 80px 20px;
-  text-align: center;
+  padding: 100px 20px;
 }
 
-/* Remove wrapper width restriction */
+/* Center wrapper */
 .section.cards-container .cards-wrapper {
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
 /* ========================================
-   CARDS GRID LAYOUT
+   GRID
 ======================================== */
 
 .section.cards-container .cards.block ul {
   list-style: none;
   padding: 0;
-  margin: 40px 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 48px;
 }
 
 /* ========================================
-   INDIVIDUAL CARD
+   CARD
 ======================================== */
 
 .section.cards-container .cards.block li {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 40px 32px;
+  border-radius: 20px;
+  padding: 48px 40px;
   text-align: left;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-.section.cards-container .cards.block li:hover {
-  transform: translateY(-6px);
+/* REMOVE duplicated h3 inside card */
+.section.cards-container .cards.block h3 {
+  display: none;
 }
 
 /* ========================================
-   CARD IMAGE (ICON STYLE)
+   ICON
 ======================================== */
 
 .section.cards-container .cards-card-image {
-  text-align: left;
   margin-bottom: 24px;
 }
 
 .section.cards-container .cards-card-image img {
-  width: 90px;
+  width: 70px;
   height: auto;
 }
 
 /* ========================================
-   CARD TITLE (h4 inside card)
+   CARD TITLE
 ======================================== */
 
 .section.cards-container .cards.block h4 {
-  font-size: 1.3rem;
-  line-height: 1.4;
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #1d155c;
-  margin: 16px 0;
+  color: #1c1459;
+  margin: 16px 0 18px;
+  line-height: 1.4;
 }
 
 /* ========================================
-   CARD PARAGRAPH
+   PARAGRAPH
 ======================================== */
 
 .section.cards-container .cards.block p {
@@ -82,11 +82,23 @@
 }
 
 /* ========================================
-   LINK STYLE
+   DIVIDER
+======================================== */
+
+.section.cards-container 
+.cards.block li 
+.cards-card-body:last-child {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #e5e5f2;
+}
+
+/* ========================================
+   LINK
 ======================================== */
 
 .section.cards-container .cards.block a {
-  color: #4b3df0;
+  color: #3d2ef0;
   font-weight: 600;
   text-decoration: none;
 }
@@ -95,9 +107,16 @@
   text-decoration: underline;
 }
 
-/* Divider line above link */
-.section.cards-container .cards.block li .cards-card-body:last-child {
-  border-top: 1px solid #e2e2f0;
-  padding-top: 20px;
-  margin-top: 30px;
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .section.cards-container .cards.block ul {
+    grid-template-columns: 1fr;
+  }
+
+  .section.cards-container {
+    padding: 70px 20px;
+  }
 }
