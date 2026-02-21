@@ -1,0 +1,57 @@
+/* Section background */
+.section {
+  background: #f3f1f7; /* soft light purple */
+  padding: 80px 20px;
+}
+
+/* Content wrapper */
+.default-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Title */
+.default-content-wrapper h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #1f174a; /* deep purple */
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+/* Paragraphs */
+.default-content-wrapper p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Remove extra margin from last paragraph */
+.default-content-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+/* Request Information Link */
+.default-content-wrapper a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5b2d90; /* Pearson purple */
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+/* Arrow style */
+.default-content-wrapper a::after {
+  content: "›";
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.default-content-wrapper a:hover {
+  opacity: 0.8;
+}
