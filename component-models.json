@@ -861,5 +861,25 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "bg-quote",
+    "title": "bg-quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Quote",
+        "value": "",
+        "label": "Quote",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Author",
+        "value": "",
+        "label": "Author",
+        "valueType": "string"
+      }
+    ]
   }
 ]
