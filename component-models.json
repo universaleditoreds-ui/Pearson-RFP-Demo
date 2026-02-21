@@ -985,16 +985,9 @@
       },
       {
         "component": "richtext",
-        "name": "Button1",
+        "name": "Link",
         "value": "",
-        "label": "Button1",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "Button2",
-        "value": "",
-        "label": "Button2",
+        "label": "Link",
         "valueType": "string"
       }
     ]
