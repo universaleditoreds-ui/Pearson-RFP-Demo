@@ -1,57 +1,87 @@
-/* Section background */
-.section {
-  background: #f3f1f7; /* soft light purple */
-  padding: 80px 20px;
+/* ============================= */
+/* CONTENT TILE LINK SECTION */
+/* ============================= */
+
+.section.content-tile-link {
+  background-color: #eeecf4;
+  padding: 120px 0;
 }
 
-/* Content wrapper */
-.default-content-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
+/* Content alignment (left aligned like image) */
+.section.content-tile-link .default-content-wrapper {
+  max-width: 820px;
+  margin-left: 180px;
 }
 
-/* Title */
-.default-content-wrapper h2 {
-  font-size: 48px;
-  font-weight: 600;
-  color: #1f174a; /* deep purple */
-  margin-bottom: 32px;
-  line-height: 1.2;
+/* Heading */
+.section.content-tile-link h2 {
+  font-size: 64px;
+  font-weight: 500;
+  color: #1b115c;
+  line-height: 1.1;
+  margin-bottom: 40px;
 }
 
 /* Paragraphs */
-.default-content-wrapper p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 24px;
+.section.content-tile-link p {
+  font-size: 20px;
+  line-height: 1.9;
+  color: #2d2d2d;
+  margin-bottom: 28px;
 }
 
-/* Remove extra margin from last paragraph */
-.default-content-wrapper p:last-child {
-  margin-bottom: 0;
-}
-
-/* Request Information Link */
-.default-content-wrapper a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #5b2d90; /* Pearson purple */
-  text-decoration: none;
+/* CTA spacing */
+.section.content-tile-link p:last-child {
   margin-top: 20px;
 }
 
-/* Arrow style */
-.default-content-wrapper a::after {
-  content: "›";
-  font-size: 22px;
-  font-weight: bold;
+/* CTA link */
+.section.content-tile-link a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4b2aad;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.3s ease;
 }
 
-/* Hover effect */
-.default-content-wrapper a:hover {
-  opacity: 0.8;
+/* Arrow styling */
+.section.content-tile-link strong:last-child {
+  font-size: 22px;
+  color: #4b2aad;
+}
+
+/* Hover */
+.section.content-tile-link a:hover {
+  opacity: 0.75;
+}
+
+
+@media (max-width: 1200px) {
+  .section.content-tile-link .default-content-wrapper {
+    margin-left: 100px;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section.content-tile-link {
+    padding: 80px 20px;
+  }
+
+  .section.content-tile-link .default-content-wrapper {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .section.content-tile-link h2 {
+    font-size: 36px;
+  }
+
+  .section.content-tile-link p,
+  .section.content-tile-link a {
+    font-size: 16px;
+  }
 }
