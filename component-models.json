@@ -738,5 +738,54 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "content-tile-cards-icons",
+   "title": "content-tile-cards-icons",
+    "fields": [
+        {
+        "component": "richtext",
+        "name": "Heading",
+        "label": "Heading",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "Title",
+        "label": "Title",
+        "valueType": "string"
+        },
+      {
+        "component": "richtext",
+        "name": "Paragarph",
+        "label": "Paragraph",
+        "valueType": "string"
+        },
+       {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+        "component": "richtext",
+        "name": "cardtitle",
+        "label": "card title",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "cardparagraph",
+        "label": "card paragraph",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "link",
+        "label": "link text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
