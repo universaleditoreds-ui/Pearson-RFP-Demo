@@ -210,16 +210,13 @@
       {
         "component": "richtext",
         "name": "text",
-        "value": "",
-        "label": "HeroTitle",
+        "label": "Hero Title",
         "valueType": "string"
       },
-      
       {
         "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "HeroText",
+        "name": "text2",
+        "label": "Hero Description",
         "valueType": "string"
       }
     ]
