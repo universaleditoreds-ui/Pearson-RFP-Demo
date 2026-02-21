@@ -787,6 +787,13 @@
         "valueType": "string"
       },
       {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image2",
+          "label": "Image2",
+          "multi": false
+        },
+      {
         "component": "richtext",
         "name": "card2title",
         "label": "card2 title",
@@ -802,6 +809,31 @@
         "component": "richtext",
         "name": "link2",
         "label": "link2 text",
+        "valueType": "string"
+      },
+      {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image3",
+          "label": "Image3",
+          "multi": false
+        },
+      {
+        "component": "richtext",
+        "name": "card3title",
+        "label": "card3 title",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "card3paragraph",
+        "label": "card3 paragraph",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "link3",
+        "label": "link3 text",
         "valueType": "string"
       }
     ]
