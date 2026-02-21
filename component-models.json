@@ -985,9 +985,9 @@
       },
       {
         "component": "richtext",
-        "name": "Link",
+        "name": "LinkText",
         "value": "",
-        "label": "Link",
+        "label": "LinkText",
         "valueType": "string"
       }
     ]
