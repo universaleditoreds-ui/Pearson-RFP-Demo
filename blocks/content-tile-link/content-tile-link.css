@@ -1,19 +1,18 @@
 /* ===== SECTION BACKGROUND ===== */
 .section[data-section-status="loaded"] {
   background-color: #eeecf4;
-  padding: 120px 0 !important;
+  padding: 120px 20px;
 }
 
-/* ===== CONTENT WRAPPER ===== */
+/* ===== CENTERED CONTENT WRAPPER ===== */
 .section[data-section-status="loaded"] .default-content-wrapper {
-  max-width: 820px !important;
-  margin-left: 160px !important;
-  margin-right: 0 !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ===== HEADING ===== */
-.section[data-section-status="loaded"] .default-content-wrapper h2 {
-  font-size: 64px !important;
+.section[data-section-status="loaded"] h2 {
+  font-size: 60px;
   font-weight: 500;
   color: #1b115c;
   line-height: 1.1;
@@ -21,28 +20,31 @@
 }
 
 /* ===== PARAGRAPHS ===== */
-.section[data-section-status="loaded"] .default-content-wrapper p {
+.section[data-section-status="loaded"] p {
   font-size: 20px;
   line-height: 1.9;
   color: #2d2d2d;
   margin-bottom: 28px;
 }
 
-/* Remove underline added by <u> */
+/* Remove underline from <u> */
 .section[data-section-status="loaded"] u {
   text-decoration: none;
 }
 
 /* ===== CTA LINK ===== */
-.section[data-section-status="loaded"] .default-content-wrapper a {
+.section[data-section-status="loaded"] a {
   font-size: 20px;
   font-weight: 600;
   color: #4b2aad;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   transition: opacity 0.3s ease;
 }
 
-/* Arrow styling (existing > symbol) */
+/* Style arrow from HTML */
 .section[data-section-status="loaded"] strong:last-child {
   color: #4b2aad;
   font-size: 22px;
