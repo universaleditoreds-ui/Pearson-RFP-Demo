@@ -881,5 +881,25 @@
         "valueType": "string"
       }
     ]
+  },
+    {
+    "id": "content-tile",
+    "title": "content-tile",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Paragraph",
+        "value": "",
+        "label": "Paragraph",
+        "valueType": "string"
+      }
+    ]
   }
 ]
