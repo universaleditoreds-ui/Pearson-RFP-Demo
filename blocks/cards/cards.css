@@ -19,11 +19,35 @@
 
 .section.cards-container .cards.block ul {
   list-style: none;
-  padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px;
+  position: relative;
+  padding: 120px 0 0 0; /* space for top heading */
+}
+
+/* ========================================
+   SECTION HEADING (Pulled from first h3)
+======================================== */
+
+.section.cards-container .cards.block li:first-child h3 {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1c1459;
+  margin: 0 0 60px 0;
+}
+
+/* Hide h3 in second card */
+.section.cards-container .cards.block li:not(:first-child) h3 {
+  display: none;
 }
 
 /* ========================================
@@ -32,17 +56,12 @@
 
 .section.cards-container .cards.block li {
   background: #ffffff;
-  border-radius: 39px;
+  border-radius: 24px;
   padding: 48px 40px;
   text-align: left;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-}
-
-/* REMOVE duplicated h3 inside card */
-.section.cards-container .cards.block h3 {
-  display: none;
 }
 
 /* ========================================
@@ -54,7 +73,7 @@
 }
 
 .section.cards-container .cards-card-image img {
-  
+  width: 70px;
   height: auto;
 }
 
@@ -82,7 +101,7 @@
 }
 
 /* ========================================
-   DIVIDER
+   DIVIDER + LINK AREA
 ======================================== */
 
 .section.cards-container 
@@ -112,11 +131,17 @@
 ======================================== */
 
 @media (max-width: 900px) {
+
   .section.cards-container .cards.block ul {
     grid-template-columns: 1fr;
+    padding-top: 140px;
   }
 
   .section.cards-container {
     padding: 70px 20px;
+  }
+
+  .section.cards-container .cards.block li:first-child h3 {
+    font-size: 1.6rem;
   }
 }
