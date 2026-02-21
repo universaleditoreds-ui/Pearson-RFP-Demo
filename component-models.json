@@ -152,18 +152,29 @@
   {
     "id": "card",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
+        {
         "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
+        "name": "CardTitle",
+        "label": "card Title",
+        "valueType": "string"
+        },
+       {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+        "component": "richtext",
+        "name": "Text",
+        "label": "Text Description",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "link",
+        "label": "link text",
         "valueType": "string"
       }
     ]
