@@ -9,7 +9,7 @@
 
 /* Center wrapper */
 .section.cards-container .cards-wrapper {
-  max-width: 1150px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@
 
 .section.cards-container .cards.block li {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 39px;
   padding: 48px 40px;
   text-align: left;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
@@ -54,7 +54,7 @@
 }
 
 .section.cards-container .cards-card-image img {
-  width: 70px;
+  
   height: auto;
 }
 
