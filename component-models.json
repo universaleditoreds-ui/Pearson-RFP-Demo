@@ -741,7 +741,6 @@
   },
   {
     "id": "content-tile-cards-icons",
-   "title": "content-tile-cards-icons",
     "fields": [
         {
         "component": "richtext",
