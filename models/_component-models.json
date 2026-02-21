@@ -12,6 +12,9 @@
     "...": "./_text.json#/models"
   },
   {
+  "...": "./_section-nav.json#/models"
+},
+  {
     "...": "./_button.json#/models"
   },
   {
