@@ -786,5 +786,53 @@
         "valueType": "string"
       }
     ]
+  },
+   {
+    "id": "content-title-link",
+    "title": "content-title-link",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Title1",
+        "value": "",
+        "label": "Title1",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Title2",
+        "value": "",
+        "label": "Title2",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Title3",
+        "value": "",
+        "label": "Title3",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Title4",
+        "value": "",
+        "label": "Title4",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Title5",
+        "value": "",
+        "label": "Title5",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "Title6",
+        "value": "",
+        "label": "Title6",
+        "valueType": "string"
+      }    
+    ]
   }
 ]
