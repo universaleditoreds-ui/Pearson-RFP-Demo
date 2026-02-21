@@ -23,7 +23,7 @@
   position: relative;
   width: 100%;
   height: 80vh;   /* This increases image height properly */
-  min-height: 700px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   flex-direction: column;
