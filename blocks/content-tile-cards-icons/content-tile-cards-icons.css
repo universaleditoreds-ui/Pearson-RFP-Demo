@@ -2,119 +2,77 @@
    SECTION BACKGROUND
 ========================================= */
 
-.section.content-tile-cards-icons-container {
+.section.cards-container {
   background: #f3f2f8;
   padding: 100px 20px;
 }
 
-.content-tile-cards-icons-wrapper {
+.cards-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* =========================================
-   HEADER AREA (FIRST 4 ITEMS)
+   REMOVE DEFAULT LIST STYLE
 ========================================= */
 
-.content-tile-cards-icons.block > div:nth-child(1),
-.content-tile-cards-icons.block > div:nth-child(2),
-.content-tile-cards-icons.block > div:nth-child(3),
-.content-tile-cards-icons.block > div:nth-child(4) {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Benefits */
-.content-tile-cards-icons.block > div:nth-child(1) h2 {
-  font-size: 42px;
-  font-weight: 600;
-  color: #1c1459;
-  margin-bottom: 15px;
-}
-
-/* Subtitle */
-.content-tile-cards-icons.block > div:nth-child(2) h3 {
-  font-size: 26px;
-  font-weight: 600;
-  color: #1c1459;
-  margin-bottom: 20px;
-}
-
-/* Intro paragraph */
-.content-tile-cards-icons.block > div:nth-child(3) p {
-  max-width: 760px;
-  margin: 0 auto 60px auto;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #4b4b63;
-}
-
-/* Hide the standalone main image (if not needed visually) */
-.content-tile-cards-icons.block > div:nth-child(4) {
-  display: none;
-}
-
-/* =========================================
-   CARDS WRAPPER
-========================================= */
-
-.cards-wrapper {
-  display: flex;
+.cards.block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  justify-content: center;
-  align-items: stretch;
-  margin-top: 40px;
-  flex-wrap: wrap;
 }
 
 /* =========================================
-   INDIVIDUAL CARD
+   CARD STYLE
 ========================================= */
 
-.card {
-  flex: 1;
-  min-width: 300px;
-  max-width: 360px;
+.cards.block ul li {
   background: #ffffff;
-  border-radius: 24px;
-  padding: 40px 30px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  border-radius: 28px;
+  padding: 50px 35px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   transition: 0.3s ease;
 }
 
-.card:hover {
+.cards.block ul li:hover {
   transform: translateY(-10px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 /* =========================================
-   CARD IMAGE
+   IMAGE (ICON STYLE)
 ========================================= */
 
-.card img {
+.cards-card-image {
+  margin-bottom: 30px;
+}
+
+.cards-card-image img {
   width: 120px;
   height: auto;
-  margin-bottom: 25px;
 }
 
 /* =========================================
    CARD TITLE
 ========================================= */
 
-.card h2 {
-  font-size: 20px;
+.cards-card-body h2 {
+  font-size: 22px;
   font-weight: 600;
   color: #1c1459;
   margin-bottom: 15px;
 }
 
 /* =========================================
-   CARD TEXT
+   CARD PARAGRAPH
 ========================================= */
 
-.card p {
+.cards-card-body p {
   font-size: 15px;
   line-height: 1.7;
   color: #4b4b63;
@@ -125,13 +83,13 @@
    BUTTON AREA
 ========================================= */
 
-.card .button-container {
+.button-container {
   margin-top: auto;
   padding-top: 20px;
   border-top: 1px solid #e5e5f2;
 }
 
-.card .button.primary {
+.button.primary {
   background: none;
   border: none;
   padding: 0;
@@ -141,7 +99,7 @@
   font-size: 15px;
 }
 
-.card .button.primary:hover {
+.button.primary:hover {
   text-decoration: underline;
 }
 
@@ -150,13 +108,7 @@
 ========================================= */
 
 @media (max-width: 1024px) {
-  .cards-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    max-width: 500px;
-    width: 100%;
+  .cards.block ul {
+    grid-template-columns: 1fr;
   }
 }
