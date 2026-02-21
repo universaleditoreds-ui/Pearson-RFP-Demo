@@ -1,5 +1,5 @@
 /* ================================
-   HERO SECTION
+   HERO CONTAINER
 ================================ */
 
 .section.hero-container {
@@ -9,16 +9,19 @@
   overflow: hidden;
 }
 
-/* Make hero block full width */
+/* Hero block */
 .section.hero-container .hero.block {
   position: relative;
-  min-height: 600px;
+  min-height: 520px; /* reduce height */
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 /* ================================
-   IMAGE FULL BACKGROUND
+   BACKGROUND IMAGE
 ================================ */
 
 .section.hero-container .hero.block > div:first-child {
@@ -33,42 +36,46 @@
   object-fit: cover;
 }
 
-/* Dark overlay like your screenshot */
+/* Dark purple overlay */
 .section.hero-container .hero.block::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(20, 10, 60, 0.65);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 10, 60, 0.85) 0%,
+    rgba(20, 10, 60, 0.65) 40%,
+    rgba(20, 10, 60, 0.55) 100%
+  );
   z-index: 1;
 }
 
 /* ================================
-   TEXT CONTENT
+   TEXT LAYOUT
 ================================ */
 
 .section.hero-container .hero.block > div:nth-child(2),
 .section.hero-container .hero.block > div:nth-child(3) {
   position: relative;
   z-index: 2;
-  max-width: 650px;
-  margin-left: 8%;
+  max-width: 600px;
 }
 
-/* Title */
+/* TITLE */
 .section.hero-container .hero.block h1 {
-  font-size: clamp(3rem, 2vw + 2rem, 4.5rem);
-  line-height: 1.2;
+  font-size: clamp(2.8rem, 3vw, 4rem);
+  line-height: 1.1;
   font-weight: 700;
   color: #cfcafc;
+  margin: 0 0 20px 0;
   font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
-  margin-bottom: 20px;
 }
 
-/* Description */
+/* DESCRIPTION */
 .section.hero-container .hero.block h4 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 400;
   color: #e4e0ff;
-  max-width: 540px;
+  margin: 0;
 }
