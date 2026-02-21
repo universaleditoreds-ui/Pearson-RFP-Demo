@@ -167,8 +167,14 @@
         },
         {
         "component": "richtext",
-        "name": "Text",
-        "label": "Text Description",
+        "name": "card1title",
+        "label": "card1 title",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "card1paragraph",
+        "label": "card1 paragraph",
         "valueType": "string"
         },
         {
