@@ -1,79 +1,84 @@
+/* ============================================================
+   FILE: content-tile-cards-icons.css
+   SCOPE: .section.container-image-left.cards-container
+   This triple-class combo is UNIQUE to this block only.
+   Other card blocks won't have all three classes together.
+============================================================ */
+
 /* ================================
-   SECTION BACKGROUND
+   SECTION
 ================================ */
 .section.container-image-left.cards-container {
-  background-color: #e8e6f2;
+  background-color: #eae8f5;
   padding: 60px 80px 80px;
   box-sizing: border-box;
 }
 
+/* Hide the default-content-wrapper h1 */
 .section.container-image-left.cards-container
 .default-content-wrapper {
   display: none;
 }
 
 /* ================================
-   UL — two-phase layout:
-   intro row + cards row
+   CARDS WRAPPER
+================================ */
+.section.container-image-left.cards-container
+.cards-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   UL — 3 column grid
 ================================ */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 1200px;
-  display: grid;
-  /* 
-    3 equal columns.
-    First li spans all 3 cols (intro).
-    Then li:2 and li:3 each take 1 col.
-    But li:1 also has card content — we
-    push that down into the card row via
-    padding so it aligns with li:2 & li:3.
-  */
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto; /* row1=intro, row2=cards */
-  gap: 0 28px;
+  margin: 0;
 }
 
 /* ================================
    LI:FIRST-CHILD
-   Spans all 3 columns (intro block)
-   + contains card 1 content below
+   Contains:
+   - 3x .cards-card-body (intro: heading, subtitle, para)
+   - .cards-card-image        (card 1 image)
+   - .cards-card-body:nth-child(5) (card 1 title)
+   - .cards-card-body:nth-child(6) (card 1 paragraph)
+   - .cards-card-body:nth-child(7) (card 1 link)
 ================================ */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  /* Use sub-grid-like trick:
-     split this li into two zones:
-     top = intro text (full width centered)
-     bottom = 3-col grid (card 1 + placeholders) */
+  grid-column: 1 / -1;      /* span full width */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto; /* intro rows auto, then card row */
   column-gap: 28px;
   background: transparent;
-  padding: 0;
-  box-shadow: none;
   border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  list-style: none;
 }
 
 /* ——————————————————————————
-   INTRO: "Benefits" label
-   spans all 3 cols, row 1
+   INTRO ROW 1: "Benefits" h2
+   .cards-card-body:nth-child(1)
+   Contains: h2 > strong
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(1) {
+> .cards-card-body:nth-child(1) {
   grid-column: 1 / -1;
-  grid-row: 1;
   text-align: center;
   padding-bottom: 8px;
 }
@@ -82,24 +87,25 @@ ul > li:first-child
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(1) h2 {
-  font-size: 2.6rem;
+> .cards-card-body:nth-child(1) h2 {
+  font-size: 2.5rem;
   font-weight: 800;
   color: #0d004d;
   margin: 0;
+  line-height: 1.2;
 }
 
 /* ——————————————————————————
-   INTRO: subtitle h3
-   spans all 3 cols, row 2
+   INTRO ROW 2: subtitle h3
+   .cards-card-body:nth-child(2)
+   Contains: h3 > strong
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(2) {
+> .cards-card-body:nth-child(2) {
   grid-column: 1 / -1;
-  grid-row: 2;
   text-align: center;
   padding-bottom: 16px;
 }
@@ -108,8 +114,8 @@ ul > li:first-child
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(2) h3 {
-  font-size: 1.9rem;
+> .cards-card-body:nth-child(2) h3 {
+  font-size: 1.85rem;
   font-weight: 700;
   color: #0d004d;
   margin: 0;
@@ -117,16 +123,16 @@ ul > li:first-child
 }
 
 /* ——————————————————————————
-   INTRO: description paragraph
-   spans all 3 cols, row 3
+   INTRO ROW 3: description p
+   .cards-card-body:nth-child(3)
+   Contains: p
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(3) {
+> .cards-card-body:nth-child(3) {
   grid-column: 1 / -1;
-  grid-row: 3;
   text-align: center;
   padding-bottom: 40px;
 }
@@ -135,7 +141,7 @@ ul > li:first-child
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(3) p {
+> .cards-card-body:nth-child(3) p {
   font-size: 1rem;
   color: #444;
   line-height: 1.7;
@@ -144,162 +150,142 @@ ul > li:first-child
 }
 
 /* ——————————————————————————
-   CARD 1: image — col 1, row 4
-   (top portion of card 1)
+   CARD 1: IMAGE
+   .cards-card-image (4th child)
+   Contains: picture > img
+   → col 1 of the nested grid
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-image {
+> .cards-card-image {
   grid-column: 1;
-  grid-row: 4;
-  background: #fff;
+  background: #ffffff;
   border-radius: 16px 16px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 36px 28px 20px;
-  /* top + side shadow only */
-  box-shadow:
-    -8px -8px 20px rgba(0,0,0,0.06),
-     8px -8px 20px rgba(0,0,0,0.06),
-    -8px  0   0   rgba(255,255,255,1),
-     8px  0   0   rgba(255,255,255,1);
 }
 
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-image img {
+> .cards-card-image img {
   width: 150px;
   height: 150px;
   object-fit: contain;
-  border-radius: 0;
 }
 
 /* ——————————————————————————
-   CARD 1: title — col 1, row 5
+   CARD 1: TITLE
+   .cards-card-body:nth-child(5)
+   Contains: h2 > strong ("Broaden opportunities")
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(5) {
+> .cards-card-body:nth-child(5) {
   grid-column: 1;
-  grid-row: 5;
-  background: #fff;
+  background: #ffffff;
   padding: 16px 28px 0;
-  box-shadow:
-    -8px 0 0 rgba(255,255,255,1),
-     8px 0 0 rgba(255,255,255,1),
-    -8px 0 16px rgba(0,0,0,0.04),
-     8px 0 16px rgba(0,0,0,0.04);
 }
 
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(5) h2 {
-  font-size: 1.25rem;
+> .cards-card-body:nth-child(5) h2 {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #111;
-  margin: 0 0 10px;
+  color: #111111;
+  margin: 0;
   line-height: 1.3;
 }
 
 /* ——————————————————————————
-   CARD 1: paragraph — col 1, row 6
+   CARD 1: PARAGRAPH
+   .cards-card-body:nth-child(6)
+   Contains: p
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(6) {
+> .cards-card-body:nth-child(6) {
   grid-column: 1;
-  grid-row: 6;
-  background: #fff;
-  padding: 0 28px 0;
-  flex-grow: 1;
-  box-shadow:
-    -8px 0 0 rgba(255,255,255,1),
-     8px 0 0 rgba(255,255,255,1),
-    -8px 0 16px rgba(0,0,0,0.04),
-     8px 0 16px rgba(0,0,0,0.04);
+  background: #ffffff;
+  padding: 10px 28px 0;
 }
 
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(6) p {
+> .cards-card-body:nth-child(6) p {
   font-size: 0.92rem;
-  color: #555;
+  color: #555555;
   line-height: 1.65;
   margin: 0;
 }
 
 /* ——————————————————————————
-   CARD 1: button — col 1, row 7
-   (bottom of card 1, rounded bottom)
+   CARD 1: LINK
+   .cards-card-body:nth-child(7)
+   Contains: p.button-container > strong > a.button.primary
 —————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:first-child
-.cards-card-body:nth-child(7) {
+> .cards-card-body:nth-child(7) {
   grid-column: 1;
-  grid-row: 7;
-  background: #fff;
+  background: #ffffff;
   border-radius: 0 0 16px 16px;
-  padding: 20px 28px 28px;
+  padding: 0 28px 28px;
   border-top: 1px solid #e5e0f0;
-  margin-top: 20px;
-  box-shadow:
-    -8px  8px 20px rgba(0,0,0,0.07),
-     8px  8px 20px rgba(0,0,0,0.07),
-     0    8px 20px rgba(0,0,0,0.07),
-    -8px  0   0   rgba(255,255,255,1),
-     8px  0   0   rgba(255,255,255,1);
+  margin-top: 16px;
 }
 
 /* ================================
-   LI:2 and LI:3
-   Pin to card row (row 2 of ul grid)
-   Pin to col 2 and col 3
+   CARD 2 — li:nth-child(2)
+   Has 3 empty .cards-card-body divs
+   then: image, title, para, link
 ================================ */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:nth-child(2) {
-  grid-column: 2;
-  grid-row: 2;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   padding: 36px 28px 28px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ================================
+   CARD 3 — li:nth-child(3)
+   Same structure as card 2
+================================ */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 ul > li:nth-child(3) {
-  grid-column: 3;
-  grid-row: 2;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   padding: 36px 28px 28px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
@@ -309,46 +295,52 @@ ul > li:nth-child(2):hover,
 .cards.block
 ul > li:nth-child(3):hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.13);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
 }
 
-/* Hide the 3 empty body divs in li:2 & li:3 */
+/* ——————————————————————————
+   Hide 3 empty .cards-card-body
+   divs in card 2 and card 3
+—————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) .cards-card-body:nth-child(1),
+ul > li:nth-child(2) > .cards-card-body:nth-child(1),
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) .cards-card-body:nth-child(2),
+ul > li:nth-child(2) > .cards-card-body:nth-child(2),
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) .cards-card-body:nth-child(3),
+ul > li:nth-child(2) > .cards-card-body:nth-child(3),
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) .cards-card-body:nth-child(1),
+ul > li:nth-child(3) > .cards-card-body:nth-child(1),
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) .cards-card-body:nth-child(2),
+ul > li:nth-child(3) > .cards-card-body:nth-child(2),
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) .cards-card-body:nth-child(3) {
+ul > li:nth-child(3) > .cards-card-body:nth-child(3) {
   display: none;
 }
 
-/* Image in li:2 & li:3 */
+/* ——————————————————————————
+   CARD 2 & 3: IMAGE
+   .cards-card-image (4th child)
+—————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) .cards-card-image,
+ul > li:nth-child(2) > .cards-card-image,
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) .cards-card-image {
+ul > li:nth-child(3) > .cards-card-image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -358,57 +350,65 @@ ul > li:nth-child(3) .cards-card-image {
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) .cards-card-image img,
+ul > li:nth-child(2) > .cards-card-image img,
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) .cards-card-image img {
+ul > li:nth-child(3) > .cards-card-image img {
   width: 150px;
   height: 150px;
   object-fit: contain;
 }
 
-/* Title in li:2 & li:3 */
+/* ——————————————————————————
+   CARD 2 & 3: TITLE
+   .cards-card-body:nth-child(4) > div > h2
+—————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) h2,
+ul > li:nth-child(2) > .cards-card-body:nth-child(4) h2,
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) h2 {
-  font-size: 1.25rem;
+ul > li:nth-child(3) > .cards-card-body:nth-child(4) h2 {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #111;
+  color: #111111;
   margin: 0 0 10px;
   line-height: 1.3;
 }
 
-/* Paragraph in li:2 & li:3 */
+/* ——————————————————————————
+   CARD 2 & 3: PARAGRAPH
+   .cards-card-body:nth-child(5) > div > p
+—————————————————————————— */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(2) p:not(.button-container),
+ul > li:nth-child(2) > .cards-card-body:nth-child(5) p,
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-ul > li:nth-child(3) p:not(.button-container) {
+ul > li:nth-child(3) > .cards-card-body:nth-child(5) p {
   font-size: 0.92rem;
-  color: #555;
+  color: #555555;
   line-height: 1.65;
   margin: 0;
   flex-grow: 1;
 }
 
 /* ================================
-   READ MORE — all cards
+   READ MORE LINK — all 3 cards
+   a.button.primary inside
+   p.button-container
 ================================ */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
 .button-container {
   margin-top: 20px;
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid #e5e0f0;
   margin-bottom: 0;
 }
@@ -416,7 +416,7 @@ ul > li:nth-child(3) p:not(.button-container) {
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-.button.primary {
+a.button.primary {
   background: transparent;
   color: #3d2eaa;
   padding: 0;
@@ -426,15 +426,16 @@ ul > li:nth-child(3) p:not(.button-container) {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   margin-top: 0;
   transition: gap 0.2s ease, color 0.2s ease;
+  min-block-size: unset;
 }
 
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-.button.primary::after {
+a.button.primary::after {
   content: "›";
   font-size: 1.3rem;
   line-height: 1;
@@ -445,30 +446,32 @@ ul > li:nth-child(3) p:not(.button-container) {
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-.button.primary:hover {
+a.button.primary:hover {
   background: transparent;
   color: #0d004d;
-  gap: 9px;
+  gap: 10px;
+  transform: none;
 }
 
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-.button.primary:hover::after {
+a.button.primary:hover::after {
   transform: translateX(3px);
 }
 
+/* Strip underline from card 2 link (has <u> tag) */
 .section.container-image-left.cards-container
 .cards-wrapper
 .cards.block
-.button.primary u {
+a.button.primary u {
   text-decoration: none;
 }
 
 /* ================================
-   RESPONSIVE
+   RESPONSIVE — tablet
 ================================ */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .section.container-image-left.cards-container {
     padding: 40px 24px 60px;
   }
@@ -485,6 +488,7 @@ ul > li:nth-child(3) p:not(.button-container) {
   .cards-wrapper
   .cards.block
   ul > li:first-child {
+    grid-column: 1 / -1;
     grid-template-columns: 1fr;
   }
 
@@ -492,59 +496,35 @@ ul > li:nth-child(3) p:not(.button-container) {
   .cards-wrapper
   .cards.block
   ul > li:first-child
-  .cards-card-image,
+  > .cards-card-image,
   .section.container-image-left.cards-container
   .cards-wrapper
   .cards.block
   ul > li:first-child
-  .cards-card-body:nth-child(5),
+  > .cards-card-body:nth-child(5),
   .section.container-image-left.cards-container
   .cards-wrapper
   .cards.block
   ul > li:first-child
-  .cards-card-body:nth-child(6),
+  > .cards-card-body:nth-child(6),
   .section.container-image-left.cards-container
   .cards-wrapper
   .cards.block
   ul > li:first-child
-  .cards-card-body:nth-child(7) {
+  > .cards-card-body:nth-child(7) {
     grid-column: 1;
-  }
-
-  .section.container-image-left.cards-container
-  .cards-wrapper
-  .cards.block
-  ul > li:nth-child(2) {
-    grid-column: 1;
-    grid-row: 3;
-  }
-
-  .section.container-image-left.cards-container
-  .cards-wrapper
-  .cards.block
-  ul > li:nth-child(3) {
-    grid-column: 2;
-    grid-row: 3;
   }
 }
 
+/* ================================
+   RESPONSIVE — mobile
+================================ */
 @media (max-width: 600px) {
   .section.container-image-left.cards-container
   .cards-wrapper
   .cards.block
   ul {
     grid-template-columns: 1fr;
-  }
-
-  .section.container-image-left.cards-container
-  .cards-wrapper
-  .cards.block
-  ul > li:nth-child(2),
-  .section.container-image-left.cards-container
-  .cards-wrapper
-  .cards.block
-  ul > li:nth-child(3) {
-    grid-column: 1;
-    grid-row: auto;
+    gap: 16px;
   }
 }
