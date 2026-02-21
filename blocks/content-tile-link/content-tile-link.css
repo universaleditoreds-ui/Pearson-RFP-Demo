@@ -1,57 +1,53 @@
-/* Section background */
+/* Target the whole section wrapper */
 .section {
-  background: #f3f1f7; /* soft light purple */
-  padding: 80px 20px;
+  background: #f3f1f7;
+  padding: 100px 20px;
 }
 
-/* Content wrapper */
+/* Inner wrapper */
 .default-content-wrapper {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
 /* Title */
 .default-content-wrapper h2 {
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 600;
-  color: #1f174a; /* deep purple */
-  margin-bottom: 32px;
+  color: #1f174a;
+  margin-bottom: 36px;
   line-height: 1.2;
 }
 
-/* Paragraphs */
+/* Paragraph text */
 .default-content-wrapper p {
   font-size: 18px;
-  line-height: 1.8;
-  color: #333;
+  line-height: 1.9;
+  color: #333333;
   margin-bottom: 24px;
 }
 
-/* Remove extra margin from last paragraph */
-.default-content-wrapper p:last-child {
-  margin-bottom: 0;
+/* Remove underline coming from <u> */
+.default-content-wrapper u {
+  text-decoration: none;
 }
 
-/* Request Information Link */
+/* CTA link styling */
 .default-content-wrapper a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   font-size: 18px;
   font-weight: 600;
-  color: #5b2d90; /* Pearson purple */
+  color: #5b2d90;
   text-decoration: none;
-  margin-top: 20px;
+  transition: all 0.3s ease;
 }
 
-/* Arrow style */
-.default-content-wrapper a::after {
-  content: "›";
-  font-size: 22px;
-  font-weight: bold;
+/* Make arrow same style */
+.default-content-wrapper strong {
+  font-weight: 600;
+  color: #5b2d90;
 }
 
 /* Hover effect */
 .default-content-wrapper a:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
