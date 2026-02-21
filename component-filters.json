@@ -31,7 +31,8 @@
   {
     "id": "cards",
     "components": [
-      "card"
+      "card",
+      "content-tile-cards-icons"
     ]
   },
   {
