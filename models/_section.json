@@ -13,8 +13,23 @@
           }
         }
       }
+    },
+    {
+      "title": "Section Navigation",
+      "id": "section-nav",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "your-project/components/content/section-nav",
+            "template": {
+              "model": "section-nav"
+            }
+          }
+        }
+      }
     }
   ],
+
   "models": [
     {
       "id": "section",
@@ -37,8 +52,31 @@
           ]
         }
       ]
+    },
+    {
+      "id": "section-nav",
+      "fields": [
+        {
+          "component": "multifield",
+          "name": "items",
+          "label": "Navigation Items",
+          "fields": [
+            {
+              "component": "text",
+              "name": "label",
+              "label": "Label"
+            },
+            {
+              "component": "text",
+              "name": "link",
+              "label": "Link (Anchor or Path)"
+            }
+          ]
+        }
+      ]
     }
   ],
+
   "filters": [
     {
       "id": "section",
@@ -52,6 +90,10 @@
         "columns",
         "fragment"
       ]
+    },
+    {
+      "id": "section-nav",
+      "components": []
     }
   ]
 }
