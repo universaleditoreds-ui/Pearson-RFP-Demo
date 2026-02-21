@@ -1,23 +1,29 @@
-/* ================================
-   HERO CONTAINER
-================================ */
+
 
 .section.hero-container {
   position: relative;
   padding: 0;
   margin: 0;
   overflow: hidden;
+  width: 100%;
+}
+
+/* Remove wrapper width restriction if any */
+.section.hero-container .hero-wrapper {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /* Hero block */
 .section.hero-container .hero.block {
   position: relative;
-  min-height: 520px; /* reduce height */
+  min-height: 700px; /* Increased height */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 8%;
-  padding-right: 8%;
+  padding: 0; /* Removed side gap */
 }
 
 /* ================================
@@ -36,12 +42,12 @@
   object-fit: cover;
 }
 
-/* Dark purple overlay */
+/* Optional overlay (add if needed) */
 .section.hero-container .hero.block::after {
   content: "";
   position: absolute;
   inset: 0;
-    
+  background: rgba(20, 10, 60, 0.7);
   z-index: 1;
 }
 
@@ -49,26 +55,27 @@
    TEXT LAYOUT
 ================================ */
 
+/* Add inner spacing ONLY to text, not container */
 .section.hero-container .hero.block > div:nth-child(2),
 .section.hero-container .hero.block > div:nth-child(3) {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+  max-width: 650px;
+  padding-left: 8%;  /* move text inward */
 }
 
 /* TITLE */
 .section.hero-container .hero.block h1 {
-  font-size: clamp(2.8rem, 3vw, 4rem);
+  font-size: clamp(3rem, 4vw, 4.5rem);
   line-height: 1.1;
   font-weight: 700;
   color: #cfcafc;
-  margin: 0 0 20px 0;
-  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  margin-bottom: 20px;
 }
 
 /* DESCRIPTION */
 .section.hero-container .hero.block h4 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   font-weight: 400;
   color: #e4e0ff;
