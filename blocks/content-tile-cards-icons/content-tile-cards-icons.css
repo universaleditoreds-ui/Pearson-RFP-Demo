@@ -1,114 +1,99 @@
-/* =========================================
-   SECTION BACKGROUND
-========================================= */
-
-.section.cards-container {
-  background: #f3f2f8;
-  padding: 100px 20px;
-}
-
-.cards-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* =========================================
-   REMOVE DEFAULT LIST STYLE
-========================================= */
-
-.cards.block ul {
-  list-style: none;
-  padding: 0;
+/* ================================
+   SECTION WRAPPER
+================================ */
+.section.content-tile-cards-icons-container {
+  padding: 80px 0;
+  overflow: hidden;
   margin: 0;
+}
+
+/* Full width wrapper */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   CARDS GRID
+================================ */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons.block {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-/* =========================================
-   CARD STYLE
-========================================= */
-
-.cards.block ul li {
+/* Each Card */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons.block
+> div {
   background: #ffffff;
-  border-radius: 28px;
-  padding: 50px 35px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  transition: 0.3s ease;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.cards.block ul li:hover {
+/* Hover Effect */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons.block
+> div:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* =========================================
-   IMAGE (ICON STYLE)
-========================================= */
-
-.cards-card-image {
-  margin-bottom: 30px;
+/* ================================
+   ICON
+================================ */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons.block img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
-.cards-card-image img {
-  width: 120px;
-  height: auto;
-}
-
-/* =========================================
-   CARD TITLE
-========================================= */
-
-.cards-card-body h2 {
-  font-size: 22px;
+/* ================================
+   TITLE
+================================ */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons.block h3 {
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #1c1459;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  color: #0d004d;
 }
 
-/* =========================================
-   CARD PARAGRAPH
-========================================= */
-
-.cards-card-body p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #4b4b63;
-  margin-bottom: 25px;
+/* ================================
+   DESCRIPTION
+================================ */
+.section.content-tile-cards-icons-container
+.content-tile-cards-icons.block p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
 }
 
-/* =========================================
-   BUTTON AREA
-========================================= */
-
-.button-container {
-  margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid #e5e5f2;
-}
-
-.button.primary {
-  background: none;
-  border: none;
-  padding: 0;
-  color: #3d2ef0;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.button.primary:hover {
-  text-decoration: underline;
-}
-
-/* =========================================
+/* ================================
    RESPONSIVE
-========================================= */
+================================ */
+@media (max-width: 992px) {
+  .section.content-tile-cards-icons-container
+  .content-tile-cards-icons.block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-@media (max-width: 1024px) {
-  .cards.block ul {
+@media (max-width: 600px) {
+  .section.content-tile-cards-icons-container
+  .content-tile-cards-icons.block {
     grid-template-columns: 1fr;
   }
 }
