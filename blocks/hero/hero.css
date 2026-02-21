@@ -1,33 +1,36 @@
-
+/* ================================
+   HERO CONTAINER FULL WIDTH
+================================ */
 
 .section.hero-container {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
   width: 100%;
 }
 
-/* Remove wrapper width restriction if any */
+/* Remove any default section padding */
 .section.hero-container .hero-wrapper {
   max-width: 100%;
-  padding: 0;
   margin: 0;
-}
-
-/* Hero block */
-.section.hero-container .hero.block {
-  position: relative;
-  min-height: 700px; /* Increased height */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0; /* Removed side gap */
+  padding: 0;
 }
 
 /* ================================
-   BACKGROUND IMAGE
+   HERO BLOCK
+================================ */
+
+.section.hero-container .hero.block {
+  position: relative;
+  width: 100%;
+  height: 80vh;   /* This increases image height properly */
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ================================
+   BACKGROUND IMAGE FULL
 ================================ */
 
 .section.hero-container .hero.block > div:first-child {
@@ -40,44 +43,33 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Optional overlay (add if needed) */
+/* ❌ REMOVE OVERLAY COMPLETELY */
 .section.hero-container .hero.block::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 10, 60, 0.7);
-  z-index: 1;
+  display: none;
 }
 
 /* ================================
-   TEXT LAYOUT
+   TEXT
 ================================ */
 
-/* Add inner spacing ONLY to text, not container */
 .section.hero-container .hero.block > div:nth-child(2),
 .section.hero-container .hero.block > div:nth-child(3) {
   position: relative;
   z-index: 2;
+  padding-left: 8%;
   max-width: 650px;
-  padding-left: 8%;  /* move text inward */
 }
 
-/* TITLE */
 .section.hero-container .hero.block h1 {
   font-size: clamp(3rem, 4vw, 4.5rem);
-  line-height: 1.1;
-  font-weight: 700;
   color: #cfcafc;
   margin-bottom: 20px;
 }
 
-/* DESCRIPTION */
 .section.hero-container .hero.block h4 {
   font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 400;
   color: #e4e0ff;
-  margin: 0;
 }
