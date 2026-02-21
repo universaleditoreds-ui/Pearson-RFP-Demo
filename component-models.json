@@ -770,20 +770,38 @@
         },
         {
         "component": "richtext",
-        "name": "cardtitle",
-        "label": "card title",
+        "name": "card1title",
+        "label": "card1 title",
         "valueType": "string"
         },
         {
         "component": "richtext",
-        "name": "cardparagraph",
-        "label": "card paragraph",
+        "name": "card1paragraph",
+        "label": "card1 paragraph",
         "valueType": "string"
         },
         {
         "component": "richtext",
-        "name": "link",
-        "label": "link text",
+        "name": "link1",
+        "label": "link1 text",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "card2title",
+        "label": "card2 title",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "card2paragraph",
+        "label": "card2 paragraph",
+        "valueType": "string"
+        },
+        {
+        "component": "richtext",
+        "name": "link2",
+        "label": "link2 text",
         "valueType": "string"
       }
     ]
