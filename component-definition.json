@@ -291,6 +291,21 @@
               }
             }
           }
+        },
+        {
+          "title": "content-tile-cards-icons",
+          "id": "content-tile-cards-icons",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "content-tile-cards-icons",
+                  "model":"content-tile-cards-icons"
+                }
+              }
+            }
+          }
         }
       ]
     }
