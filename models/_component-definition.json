@@ -23,7 +23,8 @@
       "id": "sections",
       "components": [
         {
-          "...": "./_section.json#/definitions"
+          "...": "./_section.json#/definitions",
+           { "...": "./_section-nav.json#/definitions" }
         }
       ]
     },
