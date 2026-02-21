@@ -834,5 +834,32 @@
         "valueType": "string"
       }    
     ]
+  },
+  {
+    "id": "content-link",
+    "title": "content-link",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "Title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "paragraph",
+        "value": "",
+        "label": "paragraph",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "link text",
+        "value": "",
+        "label": "linkText",
+        "valueType": "string"
+      }
+    ]
   }
 ]
