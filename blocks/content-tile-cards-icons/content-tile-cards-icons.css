@@ -1,63 +1,48 @@
 /* ============================================================
    FILE: content-tile-cards-icons.css
-   SCOPE: .section.container-image-left.cards-container
 ============================================================ */
 
 /* ================================
    SECTION
 ================================ */
-.section.container-image-left.cards-container {
+.section.content-tile-cards-icons-container {
   background-color: #eae8f5;
   padding: 60px 80px 80px;
   box-sizing: border-box;
 }
 
-/* Hide the default-content-wrapper h1 */
-.section.container-image-left.cards-container
-.default-content-wrapper {
-  display: none;
-}
-
 /* ================================
-   CARDS WRAPPER
+   BLOCK WRAPPER
 ================================ */
-.section.container-image-left.cards-container
-.cards-wrapper {
+.content-tile-cards-icons.block {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* ================================
-   INTRO WRAPPER
-   — injected by JS above the ul
+   INTRO — heading, title, paragraph
 ================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-.cards-intro-wrapper {
+.content-tile-cards-icons.block
+.ctci-intro {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
-/* "Benefits" h2 */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-.cards-intro-wrapper
-.cards-card-body:nth-child(1) h2 {
+/* "Benefits" label */
+.content-tile-cards-icons.block
+.ctci-intro
+.ctci-heading {
   font-size: 2.5rem;
   font-weight: 800;
   color: #0d004d;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   line-height: 1.2;
 }
 
-/* Subtitle h3 */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-.cards-intro-wrapper
-.cards-card-body:nth-child(2) h3 {
+/* "Take the lead..." subtitle */
+.content-tile-cards-icons.block
+.ctci-intro
+.ctci-title {
   font-size: 1.85rem;
   font-weight: 700;
   color: #0d004d;
@@ -65,12 +50,10 @@
   line-height: 1.3;
 }
 
-/* Description p */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-.cards-intro-wrapper
-.cards-card-body:nth-child(3) p {
+/* Description paragraph */
+.content-tile-cards-icons.block
+.ctci-intro
+.ctci-paragraph {
   font-size: 1rem;
   color: #444;
   line-height: 1.7;
@@ -79,104 +62,78 @@
 }
 
 /* ================================
-   UL — clean 3 column grid
+   CARDS GRID — 3 columns
 ================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul {
+.content-tile-cards-icons.block
+.ctci-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 /* ================================
-   ALL CARDS — li.cards-card-item
-   Now all 3 li's are equal cards
+   SINGLE CARD
 ================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item {
+.content-tile-cards-icons.block
+.ctci-card {
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  padding: 36px 28px 28px;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item:hover {
+.content-tile-cards-icons.block
+.ctci-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
 }
 
 /* ================================
-   HIDE EMPTY BODY DIVS
-   Cards 2 & 3 have 3 empty divs
+   CARD IMAGE AREA
 ================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item
-> .cards-card-body:empty {
-  display: none;
-}
-
-/* ================================
-   CARD IMAGE — all 3 cards
-================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item
-> .cards-card-image {
+.content-tile-cards-icons.block
+.ctci-card-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
+  padding: 36px 28px 20px;
+  background: #ffffff;
 }
 
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item
-> .cards-card-image img {
+.content-tile-cards-icons.block
+.ctci-card-image img {
   width: 150px;
   height: 150px;
   object-fit: contain;
 }
 
 /* ================================
-   CARD TITLE h2 — all 3 cards
+   CARD CONTENT AREA
 ================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item
-h2 {
+.content-tile-cards-icons.block
+.ctci-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 28px 28px;
+}
+
+/* Card title */
+.content-tile-cards-icons.block
+.ctci-card-title {
   font-size: 1.2rem;
   font-weight: 700;
   color: #111111;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   line-height: 1.3;
 }
 
-/* ================================
-   CARD PARAGRAPH — all 3 cards
-================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-ul > li.cards-card-item
-p:not(.button-container) {
+/* Card paragraph */
+.content-tile-cards-icons.block
+.ctci-card-para {
   font-size: 0.92rem;
   color: #555555;
   line-height: 1.65;
@@ -184,87 +141,71 @@ p:not(.button-container) {
   flex-grow: 1;
 }
 
-/* ================================
-   READ MORE LINK — all 3 cards
-================================ */
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-.button-container {
-  margin-top: 20px;
-  padding-top: 16px;
+/* Divider line above link */
+.content-tile-cards-icons.block
+.ctci-card-divider {
   border-top: 1px solid #e5e0f0;
-  margin-bottom: 0;
+  margin: 20px 0 16px;
 }
 
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-a.button.primary {
-  background: transparent;
+/* ================================
+   CARD LINK — "Read more ›"
+================================ */
+.content-tile-cards-icons.block
+.ctci-card-link {
   color: #3d2eaa;
-  padding: 0;
-  border-radius: 0;
-  font-weight: 600;
   font-size: 0.92rem;
+  font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 0;
-  min-block-size: unset;
+  gap: 5px;
   transition: gap 0.2s ease, color 0.2s ease;
 }
 
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-a.button.primary::after {
-  content: "›";
+.content-tile-cards-icons.block
+.ctci-card-link .ctci-arrow {
   font-size: 1.3rem;
   line-height: 1;
-  display: inline-block;
   transition: transform 0.2s ease;
+  display: inline-block;
 }
 
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-a.button.primary:hover {
-  background: transparent;
+.content-tile-cards-icons.block
+.ctci-card-link:hover {
   color: #0d004d;
-  gap: 10px;
-  transform: none;
+  gap: 9px;
 }
 
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-a.button.primary:hover::after {
+.content-tile-cards-icons.block
+.ctci-card-link:hover .ctci-arrow {
   transform: translateX(3px);
-}
-
-.section.container-image-left.cards-container
-.cards-wrapper
-.cards.block
-a.button.primary u {
-  text-decoration: none;
 }
 
 /* ================================
    RESPONSIVE — tablet
 ================================ */
 @media (max-width: 900px) {
-  .section.container-image-left.cards-container {
+  .section.content-tile-cards-icons-container {
     padding: 40px 24px 60px;
   }
 
-  .section.container-image-left.cards-container
-  .cards-wrapper
-  .cards.block
-  ul {
+  .content-tile-cards-icons.block
+  .ctci-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .content-tile-cards-icons.block
+  .ctci-intro
+  .ctci-heading {
+    font-size: 2rem;
+  }
+
+  .content-tile-cards-icons.block
+  .ctci-intro
+  .ctci-title {
+    font-size: 1.5rem;
   }
 }
 
@@ -272,11 +213,21 @@ a.button.primary u {
    RESPONSIVE — mobile
 ================================ */
 @media (max-width: 600px) {
-  .section.container-image-left.cards-container
-  .cards-wrapper
-  .cards.block
-  ul {
+  .content-tile-cards-icons.block
+  .ctci-cards {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .content-tile-cards-icons.block
+  .ctci-intro
+  .ctci-heading {
+    font-size: 1.6rem;
+  }
+
+  .content-tile-cards-icons.block
+  .ctci-intro
+  .ctci-title {
+    font-size: 1.2rem;
   }
 }
