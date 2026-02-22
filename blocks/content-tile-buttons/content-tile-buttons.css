@@ -1,1 +1,296 @@
+/* ============================================================
+   FILE: content-tile-buttons.css
+   SCOPE: .section.content-tile-buttons-container
+============================================================ */
 
+/* ================================
+   SECTION
+================================ */
+.section.content-tile-buttons-container {
+  background-color: #eae8f5;
+  padding: 80px 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   WRAPPER
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 160px;
+}
+
+/* ================================
+   BLOCK
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+/* ================================
+   ROW 1: TITLE
+   div:nth-child(1) > div > div > h3
+   — centered
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(1) {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(1) h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0d004d;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(1) h3 strong {
+  font-weight: 700;
+}
+
+/* ================================
+   ROW 2: PARAGRAPH
+   div:nth-child(2) > div > div > p
+   — centered
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(2) {
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 780px;
+}
+
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(2) p {
+  font-size: 1rem;
+  color: #1a1a2e;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ================================
+   ROW 3 & 4: BUTTONS WRAPPER
+   — side by side, centered
+   Both divs sit as flex siblings
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(3),
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(4) {
+  display: inline-flex;
+  width: auto;
+}
+
+/* Make buttons sit in a row */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(3),
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(4) {
+  margin: 0 10px;
+}
+
+/* Group them on one line using flex on block */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block {
+  flex-direction: column;
+}
+
+/* Create a pseudo-row for the two button divs */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(3) {
+  display: flex;
+  order: 3;
+}
+
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(4) {
+  display: flex;
+  order: 3;
+}
+
+/* Wrap both buttons into one row */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(1),
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(2) {
+  flex: 0 0 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================================
+   BUTTON CONTAINERS
+   p.button-container inside each div
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(3) .button-container,
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(4) .button-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   OUTLINED PILL BUTTONS
+   a.button.primary — override
+   global button styles completely
+================================ */
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(3) a.button.primary,
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(4) a.button.primary {
+  /* Reset global */
+  background: transparent;
+  min-block-size: unset;
+  margin: 0;
+
+  /* Pill outline style */
+  color: #0d004d;
+  border: 2px solid #0d004d;
+  border-radius: 50px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(3) a.button.primary:hover,
+.section.content-tile-buttons-container
+.content-tile-buttons-wrapper
+.content-tile-buttons.block
+> div:nth-child(4) a.button.primary:hover {
+  background: #0d004d;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   RESPONSIVE — large
+================================ */
+@media (max-width: 1200px) {
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper {
+    padding: 0 100px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — tablet
+================================ */
+@media (max-width: 900px) {
+  .section.content-tile-buttons-container {
+    padding: 60px 0;
+  }
+
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper {
+    padding: 0 48px;
+  }
+
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper
+  .content-tile-buttons.block
+  > div:nth-child(1) h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ================================
+   RESPONSIVE — mobile
+================================ */
+@media (max-width: 600px) {
+  .section.content-tile-buttons-container {
+    padding: 50px 0;
+  }
+
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper {
+    padding: 0 24px;
+  }
+
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper
+  .content-tile-buttons.block
+  > div:nth-child(1) h3 {
+    font-size: 1.4rem;
+  }
+
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper
+  .content-tile-buttons.block
+  > div:nth-child(3),
+  .section.content-tile-buttons-container
+  .content-tile-buttons-wrapper
+  .content-tile-buttons.block
+  > div:nth-child(4) {
+    flex: 0 0 100%;
+    justify-content: center;
+    margin: 6px 0;
+  }
+}
