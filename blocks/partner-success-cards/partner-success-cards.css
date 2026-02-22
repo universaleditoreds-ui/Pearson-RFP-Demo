@@ -1,1 +1,217 @@
+/* ============================================================
+   FILE: partner-success-cards.css
+   SCOPE: .section.partner-success-cards-container
+============================================================ */
 
+/* ================================
+   SECTION
+================================ */
+.section.partner-success-cards-container {
+  background-color: #eae8f5;
+  padding: 60px 80px 80px;
+  box-sizing: border-box;
+}
+
+/* ================================
+   BLOCK
+================================ */
+.partner-success-cards.block {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   INTRO — heading + description
+================================ */
+.partner-success-cards.block
+.psc-intro {
+  margin-bottom: 36px;
+}
+
+/* Section heading — centered */
+.partner-success-cards.block
+.psc-intro
+.psc-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0d004d;
+  text-align: center;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+/* Description — left aligned below */
+.partner-success-cards.block
+.psc-intro
+.psc-description {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
+}
+
+/* ================================
+   CARDS GRID — 50/50
+================================ */
+.partner-success-cards.block
+.psc-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ================================
+   SINGLE CARD
+================================ */
+.partner-success-cards.block
+.psc-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-success-cards.block
+.psc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   CARD IMAGE — full width top
+================================ */
+.partner-success-cards.block
+.psc-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.partner-success-cards.block
+.psc-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.partner-success-cards.block
+.psc-card:hover
+.psc-card-image img {
+  transform: scale(1.04);
+}
+
+/* ================================
+   CARD CONTENT
+================================ */
+.partner-success-cards.block
+.psc-card-content {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Card title */
+.partner-success-cards.block
+.psc-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3d2eaa;
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+
+/* Card paragraph */
+.partner-success-cards.block
+.psc-card-para {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* ================================
+   DIVIDER
+================================ */
+.partner-success-cards.block
+.psc-card-divider {
+  border: none;
+  border-top: 1px solid #e5e0f0;
+  margin: 20px 0 16px;
+}
+
+/* ================================
+   LINK — "Read their story ↗"
+================================ */
+.partner-success-cards.block
+.psc-card-link {
+  color: #3d2eaa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.partner-success-cards.block
+.psc-card-link .psc-link-icon {
+  font-size: 1rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.partner-success-cards.block
+.psc-card-link:hover {
+  color: #0d004d;
+  gap: 8px;
+}
+
+.partner-success-cards.block
+.psc-card-link:hover .psc-link-icon {
+  transform: translate(2px, -2px);
+}
+
+/* ================================
+   RESPONSIVE — tablet
+================================ */
+@media (max-width: 900px) {
+  .section.partner-success-cards-container {
+    padding: 40px 32px 60px;
+  }
+
+  .partner-success-cards.block
+  .psc-intro
+  .psc-heading {
+    font-size: 1.9rem;
+  }
+}
+
+/* ================================
+   RESPONSIVE — mobile
+================================ */
+@media (max-width: 600px) {
+  .section.partner-success-cards-container {
+    padding: 40px 20px 50px;
+  }
+
+  .partner-success-cards.block
+  .psc-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .partner-success-cards.block
+  .psc-intro
+  .psc-heading {
+    font-size: 1.6rem;
+  }
+}
