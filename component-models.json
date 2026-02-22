@@ -994,7 +994,7 @@
   },
  {
     "id": "request-form",
-    "title": "request-form"
+    "title": "request-form",
     "fields": [
       {
         "component": "richtext",
