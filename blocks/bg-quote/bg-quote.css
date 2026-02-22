@@ -1,1 +1,126 @@
 
+/* ============================================================
+   FILE: bg-quote.css
+   SCOPE: .section.bg-quote-container
+============================================================ */
+
+/* ================================
+   SECTION — full width purple bg
+================================ */
+.section.bg-quote-container {
+  background-color: #a89de0;
+  padding: 80px 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ================================
+   WRAPPER
+================================ */
+.section.bg-quote-container
+.bg-quote-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px 0 300px;
+}
+
+/* ================================
+   BLOCK
+================================ */
+.section.bg-quote-container
+.bg-quote-wrapper
+.bg-quote.block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 780px;
+}
+
+/* ================================
+   ROW 1: QUOTE
+   div:nth-child(1) > div > div > h4
+================================ */
+.section.bg-quote-container
+.bg-quote-wrapper
+.bg-quote.block
+> div:nth-child(1) h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2d0f6e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.section.bg-quote-container
+.bg-quote-wrapper
+.bg-quote.block
+> div:nth-child(1) h4 strong {
+  font-weight: 600;
+}
+
+/* ================================
+   ROW 2: AUTHOR
+   div:nth-child(2) > div > div > p
+================================ */
+.section.bg-quote-container
+.bg-quote-wrapper
+.bg-quote.block
+> div:nth-child(2) p {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #2d0f6e;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ================================
+   RESPONSIVE — large
+================================ */
+@media (max-width: 1200px) {
+  .section.bg-quote-container
+  .bg-quote-wrapper {
+    padding: 0 60px 0 200px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — tablet
+================================ */
+@media (max-width: 900px) {
+  .section.bg-quote-container {
+    padding: 60px 0;
+  }
+
+  .section.bg-quote-container
+  .bg-quote-wrapper {
+    padding: 0 40px 0 80px;
+  }
+
+  .section.bg-quote-container
+  .bg-quote-wrapper
+  .bg-quote.block
+  > div:nth-child(1) h4 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ================================
+   RESPONSIVE — mobile
+================================ */
+@media (max-width: 600px) {
+  .section.bg-quote-container {
+    padding: 50px 0;
+  }
+
+  .section.bg-quote-container
+  .bg-quote-wrapper {
+    padding: 0 24px;
+  }
+
+  .section.bg-quote-container
+  .bg-quote-wrapper
+  .bg-quote.block
+  > div:nth-child(1) h4 {
+    font-size: 1.1rem;
+  }
+}
