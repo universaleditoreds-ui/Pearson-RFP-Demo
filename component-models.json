@@ -1106,5 +1106,81 @@
         "value": "By submitting this form, you agree to receiving personalized communications from Pearson."
       }
     ]
-  }
+  },
+  {
+  "id": "partner-success-cards",
+  "title": "partner-success-cards",
+  "fields": [
+    {
+      "component": "richtext",
+      "name": "heading",
+      "label": "Section Heading",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "description",
+      "label": "Section Description",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "media",
+      "name": "card1image",
+      "label": "Card 1 Image",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "card1title",
+      "label": "Card 1 Title",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "card1paragraph",
+      "label": "Card 1 Paragraph",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "card1link",
+      "label": "Card 1 Link",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "media",
+      "name": "card2image",
+      "label": "Card 2 Image",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "card2title",
+      "label": "Card 2 Title",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "card2paragraph",
+      "label": "Card 2 Paragraph",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "component": "richtext",
+      "name": "card2link",
+      "label": "Card 2 Link",
+      "valueType": "string",
+      "value": ""
+    }
+  ]
+ }
 ]
