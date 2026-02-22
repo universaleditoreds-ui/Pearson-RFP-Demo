@@ -1,72 +1,116 @@
 export default function decorate(block) {
-  const section = block.closest('.section');
+  // ============================================================
+  // AEM EDS writes each model field as a row:
+  // div:nth-child(1)  → heading
+  // div:nth-child(2)  → title
+  // div:nth-child(3)  → paragraph
+  // div:nth-child(4)  → card1 image
+  // div:nth-child(5)  → card1 title
+  // div:nth-child(6)  → card1 paragraph
+  // div:nth-child(7)  → card1 link
+  // div:nth-child(8)  → card2 image
+  // div:nth-child(9)  → card2 title
+  // div:nth-child(10) → card2 paragraph
+  // div:nth-child(11) → card2 link
+  // div:nth-child(12) → card3 image
+  // div:nth-child(13) → card3 title
+  // div:nth-child(14) → card3 paragraph
+  // div:nth-child(15) → card3 link
+  // ============================================================
 
-  // ============================================================
-  // VARIANT: content-tile-cards-icons
-  // Only runs when section has container-image-left class
-  // ============================================================
-  if (section && section.classList.contains('container-image-left')) {
-    decorateIconCards(block);
-    return;
+  const rows = [...block.querySelectorAll(':scope > div')];
+
+  const getHTML = (index) =>
+    rows[index]?.querySelector('div')?.innerHTML?.trim() || '';
+
+  const getText = (index) =>
+    rows[index]?.querySelector('div')?.textContent?.trim() || '';
+
+  const getImg = (index) => {
+    const img = rows[index]?.querySelector('img');
+    if (!img) return '';
+    return `<img src="${img.src}" alt="${img.alt || ''}" loading="lazy">`;
+  };
+
+  // ── Read all fields ──
+  const heading      = getText(0);
+  const title        = getText(1);
+  const paragraph    = getHTML(2);
+
+  const card1img     = getImg(3);
+  const card1title   = getText(4);
+  const card1para    = getHTML(5);
+  const card1link    = getHTML(6);
+
+  const card2img     = getImg(7);
+  const card2title   = getText(8);
+  const card2para    = getHTML(9);
+  const card2link    = getHTML(10);
+
+  const card3img     = getImg(11);
+  const card3title   = getText(12);
+  const card3para    = getHTML(13);
+  const card3link    = getHTML(14);
+
+  // ── Extract link href and text from richtext ──
+  function parseLink(html) {
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    const a = temp.querySelector('a');
+    if (a) return { href: a.href, text: a.textContent.trim() };
+    return { href: '#', text: temp.textContent.trim() || 'Read more' };
   }
 
-  // ============================================================
-  // DEFAULT: all other card blocks — do nothing extra
-  // (your existing cards CSS handles them)
-  // ============================================================
-}
+  const link1 = parseLink(card1link);
+  const link2 = parseLink(card2link);
+  const link3 = parseLink(card3link);
 
-function decorateIconCards(block) {
-  const ul = block.querySelector('ul');
-  if (!ul) return;
+  // ── Build HTML ──
+  block.innerHTML = `
+    <div class="ctci-intro">
+      <p class="ctci-heading">${heading}</p>
+      <h2 class="ctci-title">${title}</h2>
+      <p class="ctci-paragraph">${paragraph}</p>
+    </div>
 
-  const firstLi = ul.querySelector('li:first-child');
-  if (!firstLi) return;
+    <div class="ctci-cards">
 
-  // ── STEP 1: Grab the first 3 .cards-card-body divs ──
-  // These are the intro content divs:
-  // [0] → .cards-card-body containing h2 "Benefits"
-  // [1] → .cards-card-body containing h3 "Take the lead..."
-  // [2] → .cards-card-body containing p description
-  const cardBodyDivs = [
-    ...firstLi.querySelectorAll(':scope > .cards-card-body'),
-  ];
+      <div class="ctci-card">
+        <div class="ctci-card-image">${card1img}</div>
+        <div class="ctci-card-content">
+          <h3 class="ctci-card-title">${card1title}</h3>
+          <p class="ctci-card-para">${card1para}</p>
+          <div class="ctci-card-divider"></div>
+          <a href="${link1.href}" class="ctci-card-link">
+            ${link1.text} <span class="ctci-arrow">›</span>
+          </a>
+        </div>
+      </div>
 
-  const introBody1 = cardBodyDivs[0]; // h2
-  const introBody2 = cardBodyDivs[1]; // h3
-  const introBody3 = cardBodyDivs[2]; // p
+      <div class="ctci-card">
+        <div class="ctci-card-image">${card2img}</div>
+        <div class="ctci-card-content">
+          <h3 class="ctci-card-title">${card2title}</h3>
+          <p class="ctci-card-para">${card2para}</p>
+          <div class="ctci-card-divider"></div>
+          <a href="${link2.href}" class="ctci-card-link">
+            ${link2.text} <span class="ctci-arrow">›</span>
+          </a>
+        </div>
+      </div>
 
-  if (!introBody1 || !introBody2 || !introBody3) {
-    console.warn('cards.js: could not find intro divs in li:first-child');
-    return;
-  }
+      <div class="ctci-card">
+        <div class="ctci-card-image">${card3img}</div>
+        <div class="ctci-card-content">
+          <h3 class="ctci-card-title">${card3title}</h3>
+          <p class="ctci-card-para">${card3para}</p>
+          <div class="ctci-card-divider"></div>
+          <a href="${link3.href}" class="ctci-card-link">
+            ${link3.text} <span class="ctci-arrow">›</span>
+          </a>
+        </div>
+      </div>
 
-  // ── STEP 2: Create intro wrapper ──
-  const introWrapper = document.createElement('div');
-  introWrapper.className = 'cards-intro-wrapper';
-  introWrapper.appendChild(introBody1);
-  introWrapper.appendChild(introBody2);
-  introWrapper.appendChild(introBody3);
-
-  // ── STEP 3: Insert intro wrapper BEFORE the ul ──
-  block.insertBefore(introWrapper, ul);
-
-  // ── STEP 4: Tag all li's as card items ──
-  [...ul.querySelectorAll('li')].forEach((li) => {
-    li.classList.add('cards-card-item');
-  });
-
-  // ── STEP 5: Hide empty .cards-card-body divs ──
-  // Cards 2 & 3 have 3 empty divs at the top
-  [...ul.querySelectorAll('.cards-card-body')].forEach((div) => {
-    if (!div.textContent.trim() && !div.querySelector('img')) {
-      div.style.display = 'none';
-    }
-  });
-
-  // ── STEP 6: Log for debug ──
-  console.log('cards.js: icon cards decorated', {
-    introWrapper,
-    cards: ul.querySelectorAll('li.cards-card-item').length,
-  });
+    </div>
+  `;
 }
