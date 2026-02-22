@@ -32,14 +32,14 @@
       "content-tile-bullets",
       "content-tile-buttons",
       "content-tile-bullets-link",
-      "request-form"
+      "request-form",
+      "content-tile-cards-icons"
     ]
   },
   {
     "id": "cards",
     "components": [
-      "card",
-      "content-tile-cards-icons"
+      "card"
     ]
   },
   {
