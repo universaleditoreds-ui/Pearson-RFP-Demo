@@ -1,1 +1,250 @@
+/* ============================================================
+   FILE: content-tile-bullets-link.css
+   SCOPE: .section.content-tile-bullets-link-container
+============================================================ */
 
+/* ================================
+   SECTION
+================================ */
+.section.content-tile-bullets-link-container {
+  background-color: #eae8f5;
+  padding: 80px 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   WRAPPER
+================================ */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 160px;
+}
+
+/* ================================
+   BLOCK
+================================ */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ================================
+   ROW 1: TITLE
+   div:nth-child(1) > div > div > h2
+   — centered
+================================ */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(1) {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(1) h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #0d004d;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(1) h2 strong {
+  font-weight: 700;
+}
+
+/* ================================
+   ROW 2: PARAGRAPH + UL
+   div:nth-child(2) > div > div > p
+   div:nth-child(2) > div > div > ul
+   — left aligned
+================================ */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(2) {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+/* Intro paragraph */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(2) p {
+  font-size: 1rem;
+  color: #1a1a2e;
+  line-height: 1.75;
+  margin: 0 0 20px;
+}
+
+/* UL */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(2) ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* LI */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(2) ul li {
+  font-size: 1rem;
+  color: #1a1a2e;
+  line-height: 1.6;
+  padding-left: 8px;
+}
+
+/* Bullet marker color */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(2) ul li::marker {
+  color: #1a1a2e;
+}
+
+/* ================================
+   ROW 3: LONG TEXT LINK
+   div:nth-child(3) > div > div >
+   p.button-container > strong >
+   a.button.primary
+   — bold purple text link with
+     external icon via ::after
+================================ */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(3) {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(3) .button-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* Override global button — make it a text link */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(3) a.button.primary {
+  /* Reset global button */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  min-block-size: unset;
+  margin: 0;
+
+  /* Text link style */
+  color: #3d2eaa;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+}
+
+/* External link icon via ::after */
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(3) a.button.primary::after {
+  content: " \2197"; /* ↗ north-east arrow */
+  font-size: 0.95rem;
+  display: inline;
+  margin-left: 4px;
+  font-weight: 400;
+}
+
+.section.content-tile-bullets-link-container
+.content-tile-bullets-link-wrapper
+.content-tile-bullets-link.block
+> div:nth-child(3) a.button.primary:hover {
+  background: transparent;
+  color: #0d004d;
+  transform: none;
+  text-decoration: underline;
+}
+
+/* ================================
+   RESPONSIVE — large
+================================ */
+@media (max-width: 1200px) {
+  .section.content-tile-bullets-link-container
+  .content-tile-bullets-link-wrapper {
+    padding: 0 100px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — tablet
+================================ */
+@media (max-width: 900px) {
+  .section.content-tile-bullets-link-container {
+    padding: 60px 0;
+  }
+
+  .section.content-tile-bullets-link-container
+  .content-tile-bullets-link-wrapper {
+    padding: 0 48px;
+  }
+
+  .section.content-tile-bullets-link-container
+  .content-tile-bullets-link-wrapper
+  .content-tile-bullets-link.block
+  > div:nth-child(1) h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ================================
+   RESPONSIVE — mobile
+================================ */
+@media (max-width: 600px) {
+  .section.content-tile-bullets-link-container {
+    padding: 50px 0;
+  }
+
+  .section.content-tile-bullets-link-container
+  .content-tile-bullets-link-wrapper {
+    padding: 0 24px;
+  }
+
+  .section.content-tile-bullets-link-container
+  .content-tile-bullets-link-wrapper
+  .content-tile-bullets-link.block
+  > div:nth-child(1) h2 {
+    font-size: 1.6rem;
+  }
+
+  .section.content-tile-bullets-link-container
+  .content-tile-bullets-link-wrapper
+  .content-tile-bullets-link.block
+  > div:nth-child(2) ul {
+    gap: 10px;
+  }
+}
