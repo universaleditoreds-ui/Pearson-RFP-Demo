@@ -1,19 +1,30 @@
+/* ============================================================
+   FILE: content-link.css
+   SCOPE: .section.content-link-container
+============================================================ */
 
+/* ================================
+   SECTION
+================================ */
 .section.content-link-container {
   background-color: #eae8f5;
   padding: 80px 0;
   box-sizing: border-box;
 }
 
-
+/* ================================
+   WRAPPER
+================================ */
 .section.content-link-container
 .content-link-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 80px 0 300px;
 }
 
-
+/* ================================
+   BLOCK
+================================ */
 .section.content-link-container
 .content-link-wrapper
 .content-link.block {
@@ -24,7 +35,10 @@
   gap: 0;
 }
 
-
+/* ================================
+   ROW 1: TITLE
+   div:nth-child(1) > div > div > h2
+================================ */
 .section.content-link-container
 .content-link-wrapper
 .content-link.block
@@ -50,7 +64,10 @@
   font-weight: 700;
 }
 
-
+/* ================================
+   ROW 2: PARAGRAPHS
+   div:nth-child(2) > div > div > p
+================================ */
 .section.content-link-container
 .content-link-wrapper
 .content-link.block
@@ -75,7 +92,12 @@
   margin-bottom: 0;
 }
 
-
+/* ================================
+   ROW 3: LINK
+   div:nth-child(3) > div > div >
+   p.button-container > strong >
+   a.button.primary > u
+================================ */
 .section.content-link-container
 .content-link-wrapper
 .content-link.block
@@ -95,14 +117,11 @@
 .content-link-wrapper
 .content-link.block
 > div:nth-child(3) a.button.primary {
-  /* Reset any global button styles */
   background: transparent;
   border: none;
   border-radius: 0;
   padding: 0;
   min-block-size: unset;
-
-  /* Link styles */
   color: #3d2eaa;
   font-size: 1rem;
   font-weight: 700;
@@ -113,7 +132,6 @@
   transition: gap 0.2s ease, color 0.2s ease;
 }
 
-/* Arrow via pseudo-element */
 .section.content-link-container
 .content-link-wrapper
 .content-link.block
@@ -142,7 +160,6 @@
   transform: translateX(3px);
 }
 
-/* Strip <u> underline inside the link */
 .section.content-link-container
 .content-link-wrapper
 .content-link.block
@@ -150,11 +167,27 @@
   text-decoration: none;
 }
 
-
-@media (max-width: 900px) {
+/* ================================
+   RESPONSIVE — large screens
+================================ */
+@media (max-width: 1200px) {
   .section.content-link-container
   .content-link-wrapper {
-    padding: 0 40px;
+    padding: 0 60px 0 200px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — tablet
+================================ */
+@media (max-width: 900px) {
+  .section.content-link-container {
+    padding: 60px 0;
+  }
+
+  .section.content-link-container
+  .content-link-wrapper {
+    padding: 0 40px 0 80px;
   }
 
   .section.content-link-container
@@ -165,6 +198,9 @@
   }
 }
 
+/* ================================
+   RESPONSIVE — mobile
+================================ */
 @media (max-width: 600px) {
   .section.content-link-container {
     padding: 50px 0;
