@@ -19,11 +19,11 @@
 .section.hero-container .hero.block {
   position: relative;
   width: 100%;
-  height: 80vh;
-  min-height: 500px;
+  height: calc(100vh - 120px); /* full viewport minus header */
+  min-height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;        /* ← MIDDLE vertically */
+  justify-content: center;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -54,8 +54,8 @@
 }
 
 /* ================================
-   OVERLAY — very subtle left-only
-   Image must remain clearly visible
+   OVERLAY — subtle left-only
+   Image remains clearly visible
 ================================ */
 .section.hero-container .hero.block::after {
   content: "";
@@ -63,7 +63,6 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  /* Very subtle — just darkens left where text sits */
   background: linear-gradient(
     to right,
     rgba(10, 0, 60, 0.45) 0%,
@@ -95,12 +94,11 @@
 
 /* ================================
    H1 — "Virtual Schools"
-   Live site: pure white, 800 weight
 ================================ */
 .section.hero-container .hero.block h1 {
   font-size: clamp(2.8rem, 5vw, 4.5rem);
   font-weight: 800;
-  color: #ffffff;               /* pure white — matches live site */
+  color: #ffffff;
   margin: 0;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -112,20 +110,19 @@
 }
 
 /* ================================
-   H6 — description paragraph
-   Live site: light lavender, 400 weight
+   H6 — description
 ================================ */
 .section.hero-container .hero.block h6 {
   font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-  font-weight: 400;             /* NOT bold */
-  color: #cfcafc;               /* light lavender — exact match */
+  font-weight: 400;
+  color: #cfcafc;
   margin: 0;
   line-height: 1.5;
   letter-spacing: 0;
 }
 
 .section.hero-container .hero.block h6 strong {
-  font-weight: 400;             /* override strong tag — should NOT be bold */
+  font-weight: 400;
   color: #cfcafc;
 }
 
@@ -134,8 +131,8 @@
 ================================ */
 @media (max-width: 900px) {
   .section.hero-container .hero.block {
-    height: 70vh;
-    min-height: 420px;
+    height: 85vh;
+    min-height: 500px;
   }
 
   .section.hero-container .hero.block > div:nth-child(2),
@@ -150,8 +147,8 @@
 ================================ */
 @media (max-width: 600px) {
   .section.hero-container .hero.block {
-    height: 65vh;
-    min-height: 380px;
+    height: 75vh;
+    min-height: 450px;
   }
 
   .section.hero-container .hero.block > div:nth-child(2),
