@@ -1,82 +1,117 @@
 export default function decorate(block) {
   const section = block.closest('.section.hero-container');
-  if (!section) return;
 
   // ============================================================
-  // STEP 1: Set hero height via JS — CSS height not picking up
+  // STEP 1: Fix section + wrapper
   // ============================================================
-  function setHeroHeight() {
-    const headerEl = document.querySelector('header');
-    const headerHeight = headerEl ? headerEl.offsetHeight : 120;
-    const viewportHeight = window.innerHeight;
-    const heroHeight = viewportHeight - headerHeight;
+  if (section) {
+    section.style.cssText = 'padding: 0 !important; margin: 0 !important; width: 100%;';
+  }
 
-    block.style.height = `${heroHeight}px`;
+  const wrapper = block.closest('.hero-wrapper');
+  if (wrapper) {
+    wrapper.style.cssText = 'max-width: 100%; margin: 0; padding: 0;';
+  }
+
+  // ============================================================
+  // STEP 2: Set block layout
+  // ============================================================
+  block.style.position = 'relative';
+  block.style.width = '100%';
+  block.style.display = 'flex';
+  block.style.flexDirection = 'column';
+  block.style.justifyContent = 'center';
+  block.style.overflow = 'hidden';
+
+  // ============================================================
+  // STEP 3: Height calculation — wait for full page load
+  // so header renders completely before measuring
+  // ============================================================
+  function setHeight() {
+    const header = document.querySelector('header');
+    // Use getBoundingClientRect for accurate height
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const vh = window.innerHeight;
+    const heroHeight = Math.max(vh - headerHeight, 600);
+
+    block.style.height = heroHeight + 'px';
     block.style.minHeight = '600px';
   }
 
-  setHeroHeight();
-  window.addEventListener('resize', setHeroHeight);
+  // Run after everything loads to get accurate header height
+  if (document.readyState === 'complete') {
+    setHeight();
+  } else {
+    window.addEventListener('load', setHeight);
+  }
+
+  // Also run on resize
+  window.addEventListener('resize', setHeight);
 
   // ============================================================
-  // STEP 2: Force image to fill block
+  // STEP 4: Fix image — extra <div> wraps the <picture>
+  // Structure: div:first-child > div > picture > img
   // ============================================================
-  const imgWrapper = block.querySelector(':scope > div:first-child');
-  const picture = block.querySelector(':scope > div:first-child picture');
-  const img = block.querySelector(':scope > div:first-child img');
+  const imgOuterDiv = block.querySelector(':scope > div:first-child');
+  const imgInnerDiv = block.querySelector(':scope > div:first-child > div');
+  const picture     = block.querySelector(':scope > div:first-child picture');
+  const img         = block.querySelector(':scope > div:first-child img');
 
-  if (imgWrapper) {
-    imgWrapper.style.cssText = `
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
+  if (imgOuterDiv) {
+    imgOuterDiv.style.cssText = `
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    `;
+  }
+
+  // THIS is the fix — the extra inner div must also be full size
+  if (imgInnerDiv) {
+    imgInnerDiv.style.cssText = `
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      padding: 0 !important;
+      margin: 0 !important;
     `;
   }
 
   if (picture) {
     picture.style.cssText = `
-      display: block;
-      width: 100%;
-      height: 100%;
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
     `;
   }
 
   if (img) {
     img.style.cssText = `
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
     `;
   }
 
   // ============================================================
-  // STEP 3: Apply block layout styles
+  // STEP 5: Overlay div
   // ============================================================
-  block.style.cssText = `
-    position: relative;
-    width: 100%;
-    height: ${window.innerHeight - (document.querySelector('header')?.offsetHeight || 120)}px;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  `;
+  // Remove existing overlay if JS ran before
+  const existingOverlay = block.querySelector('.hero-overlay');
+  if (existingOverlay) existingOverlay.remove();
 
-  // ============================================================
-  // STEP 4: Add overlay div (since ::after z-index may not work)
-  // ============================================================
   const overlay = document.createElement('div');
   overlay.className = 'hero-overlay';
   overlay.style.cssText = `
     position: absolute;
     inset: 0;
     z-index: 1;
+    pointer-events: none;
     background: linear-gradient(
       to right,
       rgba(10, 0, 60, 0.45) 0%,
@@ -84,83 +119,60 @@ export default function decorate(block) {
       rgba(10, 0, 60, 0.10) 60%,
       rgba(10, 0, 60, 0.00) 100%
     );
-    pointer-events: none;
   `;
   block.appendChild(overlay);
 
   // ============================================================
-  // STEP 5: Style text divs
+  // STEP 6: Text divs
   // ============================================================
   const titleDiv = block.querySelector(':scope > div:nth-child(2)');
   const descDiv  = block.querySelector(':scope > div:nth-child(3)');
 
-  const textStyles = `
-    position: relative;
-    z-index: 2;
-    padding-left: 64px;
-    padding-right: 0;
-    max-width: 600px;
+  const sharedTextStyle = `
+    position: relative !important;
+    z-index: 2 !important;
+    padding-left: 64px !important;
+    padding-right: 40px !important;
+    max-width: 620px !important;
   `;
 
   if (titleDiv) {
-    titleDiv.style.cssText = textStyles + 'margin-bottom: 20px;';
+    titleDiv.style.cssText = sharedTextStyle + 'margin-bottom: 16px !important;';
 
     const h1 = titleDiv.querySelector('h1');
     if (h1) {
       h1.style.cssText = `
-        font-size: clamp(2.8rem, 5vw, 4.5rem);
-        font-weight: 800;
-        color: #ffffff;
-        margin: 0;
-        line-height: 1.05;
-        letter-spacing: -0.02em;
+        font-size: clamp(2.8rem, 5vw, 4.5rem) !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin: 0 !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.02em !important;
       `;
       const strong = h1.querySelector('strong');
       if (strong) {
-        strong.style.color = '#ffffff';
-        strong.style.fontWeight = '800';
+        strong.style.cssText = 'color: #ffffff !important; font-weight: 800 !important;';
       }
     }
   }
 
   if (descDiv) {
-    descDiv.style.cssText = textStyles + 'margin-bottom: 0;';
+    descDiv.style.cssText = sharedTextStyle + 'margin-bottom: 0 !important;';
 
     const h6 = descDiv.querySelector('h6');
     if (h6) {
       h6.style.cssText = `
-        font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-        font-weight: 400;
-        color: #cfcafc;
-        margin: 0;
-        line-height: 1.5;
-        letter-spacing: 0;
+        font-size: clamp(1.1rem, 1.8vw, 1.5rem) !important;
+        font-weight: 400 !important;
+        color: #cfcafc !important;
+        margin: 0 !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0 !important;
       `;
       const strong = h6.querySelector('strong');
       if (strong) {
-        strong.style.color = '#cfcafc';
-        strong.style.fontWeight = '400';
+        strong.style.cssText = 'color: #cfcafc !important; font-weight: 400 !important;';
       }
     }
-  }
-
-  // ============================================================
-  // STEP 6: Section styles
-  // ============================================================
-  if (section) {
-    section.style.cssText = `
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    `;
-  }
-
-  const wrapper = block.closest('.hero-wrapper');
-  if (wrapper) {
-    wrapper.style.cssText = `
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-    `;
   }
 }
