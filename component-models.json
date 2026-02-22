@@ -764,11 +764,11 @@
         "valueType": "string",
         "value": " "
       },
-      {
-        "component": "richtext",
+       {
+        "component": "reference",
         "name": "card1image",
         "label": "Card 1 Image",
-        "valueType": "string"
+        "multi": false
       },
       {
         "component": "richtext",
@@ -792,10 +792,10 @@
         "value": ""
       },
       {
-        "component": "richtext",
+        "component": "reference",
         "name": "card2image",
         "label": "Card 2 Image",
-        "valueType": "string"
+        "multi": false
       },
       {
         "component": "richtext",
@@ -819,10 +819,10 @@
         "value": "<a href='#'>Read more</a>"
       },
       {
-        "component": "richtext",
+        "component": "reference",
         "name": "card3image",
         "label": "Card 3 Image",
-        "valueType": "string"
+        "multi": false
       },
       {
         "component": "richtext",
