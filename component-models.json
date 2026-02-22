@@ -991,5 +991,60 @@
         "valueType": "string"
       }
     ]
+  },
+ {
+    "id": "request-form",
+    "title": "request-form"
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "heading",
+        "label": "Form Heading",
+        "valueType": "string",
+        "value": "Request more information"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description Text",
+        "valueType": "string",
+        "value": "Want to learn more about our online learning solutions?"
+      },
+      {
+        "component": "richtext",
+        "name": "parentStudentLink",
+        "label": "Parent/Student Link",
+        "valueType": "string",
+        "value": "<a href='#'>click here</a>"
+      },
+      {
+        "component": "richtext",
+        "name": "roleOptions",
+        "label": "Role Options (one per line)",
+        "valueType": "string",
+        "value": "Administrator\nTeacher\nParent\nStudent\nOther"
+      },
+      {
+        "component": "richtext",
+        "name": "submitLabel",
+        "label": "Submit Button Label",
+        "valueType": "string",
+        "value": "Submit"
+      },
+      {
+        "component": "richtext",
+        "name": "submitEndpoint",
+        "label": "Form Submit Endpoint URL",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "disclaimer",
+        "label": "Disclaimer Text",
+        "valueType": "string",
+        "value": "By submitting this form, you agree to receiving personalized communications from Pearson."
+      }
+    ]
   }
 ]
