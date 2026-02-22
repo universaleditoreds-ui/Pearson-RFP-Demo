@@ -1126,12 +1126,11 @@
       "value": ""
     },
     {
-      "component": "media",
-      "name": "card1image",
-      "label": "Card 1 Image",
-      "valueType": "string",
-      "value": ""
-    },
+        "component": "reference",
+        "name": "card1image",
+        "label": "card1image",
+        "multi": false
+      },
     {
       "component": "richtext",
       "name": "card1title",
@@ -1154,12 +1153,11 @@
       "value": ""
     },
     {
-      "component": "media",
-      "name": "card2image",
-      "label": "Card 2 Image",
-      "valueType": "string",
-      "value": ""
-    },
+        "component": "reference",
+        "name": "card2image",
+        "label": "card2image",
+        "multi": false
+      },
     {
       "component": "richtext",
       "name": "card2title",
