@@ -20,21 +20,23 @@
   position: relative;
   width: 100%;
   height: 80vh;
-  min-height: 480px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* text sits at BOTTOM */
-  padding-bottom: 80px;
+  justify-content: center;        /* ← MIDDLE vertically */
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* ================================
-   BACKGROUND IMAGE — full bleed
+   BACKGROUND IMAGE — absolute fill
 ================================ */
 .section.hero-container .hero.block > div:first-child {
   position: absolute;
   inset: 0;
   z-index: 0;
-  padding: 0; /* remove old padding-top */
+  padding: 0;
+  margin: 0;
 }
 
 .section.hero-container .hero.block > div:first-child picture {
@@ -47,46 +49,44 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 
 /* ================================
-   DARK PURPLE GRADIENT OVERLAY
-   — matches live Pearson site exactly
-   Left side darker, fades right
+   OVERLAY — very subtle left-only
+   Image must remain clearly visible
 ================================ */
 .section.hero-container .hero.block::after {
   content: "";
-  display: block; /* RE-ENABLE overlay */
+  display: block;
   position: absolute;
   inset: 0;
   z-index: 1;
+  /* Very subtle — just darkens left where text sits */
   background: linear-gradient(
     to right,
-    rgba(13, 0, 77, 0.72) 0%,
-    rgba(13, 0, 77, 0.55) 35%,
-    rgba(13, 0, 77, 0.25) 65%,
-    rgba(13, 0, 77, 0.05) 100%
+    rgba(10, 0, 60, 0.45) 0%,
+    rgba(10, 0, 60, 0.35) 30%,
+    rgba(10, 0, 60, 0.10) 60%,
+    rgba(10, 0, 60, 0.00) 100%
   );
 }
 
 /* ================================
-   TEXT CONTAINERS
-   — bottom-left, z-index above overlay
+   TEXT DIVS — middle-left position
 ================================ */
 .section.hero-container .hero.block > div:nth-child(2),
 .section.hero-container .hero.block > div:nth-child(3) {
   position: relative;
   z-index: 2;
-  padding-left: 64px; /* ~4rem — matches live site */
+  padding-left: 64px;
   padding-right: 0;
-  max-width: 680px;
+  max-width: 600px;
 }
 
-/* Small gap between h1 and h4 */
 .section.hero-container .hero.block > div:nth-child(2) {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .section.hero-container .hero.block > div:nth-child(3) {
@@ -95,39 +95,38 @@
 
 /* ================================
    H1 — "Virtual Schools"
-   Live site: ~72px, 800 weight
+   Live site: pure white, 800 weight
 ================================ */
 .section.hero-container .hero.block h1 {
-  font-size: clamp(2.8rem, 5vw, 4.5rem); /* 72px at 1440px wide */
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
   font-weight: 800;
-  color: #e8e4ff;           /* slightly warmer white-purple */
+  color: #ffffff;               /* pure white — matches live site */
   margin: 0;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  font-family: "Plus Jakarta Sans", Helvetica, Arial, sans-serif;
 }
 
-/* strong tag inside h1 — remove default bold since h1 is already 800 */
 .section.hero-container .hero.block h1 strong {
   font-weight: 800;
+  color: #ffffff;
 }
 
 /* ================================
-   H6 / DESCRIPTION
-   Live site: ~26-28px, normal/semibold
+   H6 — description paragraph
+   Live site: light lavender, 400 weight
 ================================ */
 .section.hero-container .hero.block h6 {
-  font-size: clamp(1.1rem, 2vw, 1.65rem); /* ~26px at 1440px */
-  font-weight: 400;
-  color: #cfcafc;           /* light lavender — matches screenshot */
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;             /* NOT bold */
+  color: #cfcafc;               /* light lavender — exact match */
   margin: 0;
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-  font-family: "Plus Jakarta Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 .section.hero-container .hero.block h6 strong {
-  font-weight: 400; /* live site description is NOT bold */
+  font-weight: 400;             /* override strong tag — should NOT be bold */
+  color: #cfcafc;
 }
 
 /* ================================
@@ -136,21 +135,13 @@
 @media (max-width: 900px) {
   .section.hero-container .hero.block {
     height: 70vh;
-    padding-bottom: 60px;
+    min-height: 420px;
   }
 
   .section.hero-container .hero.block > div:nth-child(2),
   .section.hero-container .hero.block > div:nth-child(3) {
     padding-left: 36px;
-    max-width: 520px;
-  }
-
-  .section.hero-container .hero.block h1 {
-    font-size: clamp(2.2rem, 5vw, 3rem);
-  }
-
-  .section.hero-container .hero.block h6 {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    max-width: 480px;
   }
 }
 
@@ -159,9 +150,8 @@
 ================================ */
 @media (max-width: 600px) {
   .section.hero-container .hero.block {
-    height: 60vh;
+    height: 65vh;
     min-height: 380px;
-    padding-bottom: 40px;
   }
 
   .section.hero-container .hero.block > div:nth-child(2),
@@ -172,19 +162,18 @@
   }
 
   .section.hero-container .hero.block h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .section.hero-container .hero.block h6 {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
-  /* Stronger overlay on mobile for readability */
   .section.hero-container .hero.block::after {
     background: linear-gradient(
       to bottom,
-      rgba(13, 0, 77, 0.2) 0%,
-      rgba(13, 0, 77, 0.65) 100%
+      rgba(10, 0, 60, 0.15) 0%,
+      rgba(10, 0, 60, 0.45) 100%
     );
   }
 }
