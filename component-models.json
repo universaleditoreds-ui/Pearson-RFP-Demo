@@ -741,49 +741,109 @@
   },
   {
     "id": "content-tile-cards-icons",
+    "title": "content-tile-cards-icons",
     "fields": [
-        {
-        "component": "richtext",
-        "name": "Heading",
-        "label": "Heading",
-        "valueType": "string"
-        },
-        {
-        "component": "richtext",
-        "name": "Title",
-        "label": "Title",
-        "valueType": "string"
-        },
       {
         "component": "richtext",
-        "name": "Paragarph",
-        "label": "Paragraph",
-        "valueType": "string"
-        },
-       {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
+        "name": "heading",
+        "label": "Section Heading",
+        "valueType": "string",
+        "value": "Benefits"
+      },
+      {
         "component": "richtext",
-        "name": "cardtitle",
-        "label": "card title",
-        "valueType": "string"
-        },
-        {
+        "name": "title",
+        "label": "Section Title",
+        "valueType": "string",
+        "value": "Take the lead and shape the future"
+      },
+      {
         "component": "richtext",
-        "name": "cardparagraph",
-        "label": "card paragraph",
-        "valueType": "string"
-        },
-        {
+        "name": "paragraph",
+        "label": "Section Paragraph",
+        "valueType": "string",
+        "value": " "
+      },
+      {
         "component": "richtext",
-        "name": "link",
-        "label": "link text",
+        "name": "card1image",
+        "label": "Card 1 Image",
         "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "card1title",
+        "label": "Card 1 Title",
+        "valueType": "string",
+        "value": "Broaden opportunities"
+      },
+      {
+        "component": "richtext",
+        "name": "card1paragraph",
+        "label": "Card 1 Paragraph",
+        "valueType": "string",
+        "value": " "
+      },
+      {
+        "component": "richtext",
+        "name": "card1link",
+        "label": "Card 1 Link",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "card2image",
+        "label": "Card 2 Image",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "card2title",
+        "label": "Card 2 Title",
+        "valueType": "string",
+        "value": "Become a district of choice"
+      },
+      {
+        "component": "richtext",
+        "name": "card2paragraph",
+        "label": "Card 2 Paragraph",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "card2link",
+        "label": "Card 2 Link",
+        "valueType": "string",
+        "value": "<a href='#'>Read more</a>"
+      },
+      {
+        "component": "richtext",
+        "name": "card3image",
+        "label": "Card 3 Image",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "card3title",
+        "label": "Card 3 Title",
+        "valueType": "string",
+        "value": "Get A-Z solutions and support"
+      },
+      {
+        "component": "richtext",
+        "name": "card3paragraph",
+        "label": "Card 3 Paragraph",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "card3link",
+        "label": "Card 3 Link",
+        "valueType": "string",
+        "value": "<a href='#'>Read more</a>"
       }
     ]
   },
