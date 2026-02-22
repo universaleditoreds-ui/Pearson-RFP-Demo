@@ -25,11 +25,9 @@ export default function decorate(block) {
 
   // ============================================================
   // STEP 3: Height calculation — wait for full page load
-  // so header renders completely before measuring
   // ============================================================
   function setHeight() {
     const header = document.querySelector('header');
-    // Use getBoundingClientRect for accurate height
     const headerHeight = header ? header.getBoundingClientRect().height : 0;
     const vh = window.innerHeight;
     const heroHeight = Math.max(vh - headerHeight, 600);
@@ -38,18 +36,16 @@ export default function decorate(block) {
     block.style.minHeight = '600px';
   }
 
-  // Run after everything loads to get accurate header height
   if (document.readyState === 'complete') {
     setHeight();
   } else {
     window.addEventListener('load', setHeight);
   }
 
-  // Also run on resize
   window.addEventListener('resize', setHeight);
 
   // ============================================================
-  // STEP 4: Fix image — extra <div> wraps the <picture>
+  // STEP 4: Fix image
   // Structure: div:first-child > div > picture > img
   // ============================================================
   const imgOuterDiv = block.querySelector(':scope > div:first-child');
@@ -69,7 +65,6 @@ export default function decorate(block) {
     `;
   }
 
-  // THIS is the fix — the extra inner div must also be full size
   if (imgInnerDiv) {
     imgInnerDiv.style.cssText = `
       width: 100% !important;
@@ -101,7 +96,6 @@ export default function decorate(block) {
   // ============================================================
   // STEP 5: Overlay div
   // ============================================================
-  // Remove existing overlay if JS ran before
   const existingOverlay = block.querySelector('.hero-overlay');
   if (existingOverlay) existingOverlay.remove();
 
@@ -142,16 +136,16 @@ export default function decorate(block) {
     const h1 = titleDiv.querySelector('h1');
     if (h1) {
       h1.style.cssText = `
-        font-size: clamp(2.8rem, 5vw, 4.5rem) !important;
-        font-weight: 800 !important;
-        color: #ffffff !important;
+        font-size: clamp(2rem, 3.5vw, 3.2rem) !important;
+        font-weight: 600 !important;
+        color: #cfcafc !important;
         margin: 0 !important;
         line-height: 1.05 !important;
         letter-spacing: -0.02em !important;
       `;
       const strong = h1.querySelector('strong');
       if (strong) {
-        strong.style.cssText = 'color: #ffffff !important; font-weight: 800 !important;';
+        strong.style.cssText = 'color: #cfcafc !important; font-weight: 600 !important;';
       }
     }
   }
