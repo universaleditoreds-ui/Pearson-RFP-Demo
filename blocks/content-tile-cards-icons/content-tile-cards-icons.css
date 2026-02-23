@@ -105,7 +105,7 @@
 
 .content-tile-cards-icons.block
 .ctci-card-image img {
-  width: 150px;
+  width: 500px;
   height: 150px;
   object-fit: contain;
 }
