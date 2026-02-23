@@ -1180,5 +1180,59 @@
       "value": ""
     }
   ]
- }
+ },
+  {
+  "id": "site-nav",
+    "title": "site-nav",
+  "fields": [
+    {
+       "component": "reference",
+      "name": "logo",
+      "label": "Logo Image",
+     "multi": false
+    },
+    {
+      "component": "richtext",
+      "name": "nav1",
+      "label": "Nav Item 1",
+      "valueType": "string",
+      "value": "Virtual Schools"
+    },
+    {
+      "component": "richtext",
+      "name": "nav2",
+      "label": "Nav Item 2",
+      "valueType": "string",
+      "value": "College & Career Readiness"
+    },
+    {
+      "component": "richtext",
+      "name": "nav3",
+      "label": "Nav Item 3",
+      "valueType": "string",
+      "value": "Browse by Subject"
+    },
+    {
+      "component": "richtext",
+      "name": "searchPlaceholder",
+      "label": "Search Placeholder",
+      "valueType": "string",
+      "value": "What can we help you find?"
+    },
+    {
+      "component": "richtext",
+      "name": "ctaLabel",
+      "label": "CTA Button Label",
+      "valueType": "string",
+      "value": "Sign in"
+    },
+    {
+      "component": "richtext",
+      "name": "ctaLink",
+      "label": "CTA Button Link",
+      "valueType": "string",
+      "value": "#"
+    }
+  ]
+}
 ]
