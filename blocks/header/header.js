@@ -220,10 +220,11 @@ export default async function decorate(block) {
 
     '</div></div></div></section>',
   ].join('');
-  if (headercontainer) {
-    headercontainer.insertAdjacentHTML('beforeend', headerHTML);
-  }
+ const siteNavExists = document.querySelector('.site-nav.block[data-block-name="site-nav"]');
 
+if (headercontainer && !siteNavExists) {
+  headercontainer.insertAdjacentHTML('beforeend', headerHTML);
+}
  
 function initStickyHeader() {
   const headerEL = document.querySelector('header');
