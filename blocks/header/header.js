@@ -113,7 +113,7 @@ export default async function decorate(block) {
     '</section>',
   ].join('');
 
-//  block.innerHTML = headerTopHTML;
+ block.innerHTML = headerTopHTML;
 
   const headercontainer = document.querySelector('.header.block');
   const headerHTML = [
