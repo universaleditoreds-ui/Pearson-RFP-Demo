@@ -127,7 +127,7 @@ export default function decorate(block) {
     z-index: 2 !important;
     padding-left: 64px !important;
     padding-right: 40px !important;
-    max-width: 620px !important;
+    max-width: 500px !important;
   `;
 
   if (titleDiv) {
