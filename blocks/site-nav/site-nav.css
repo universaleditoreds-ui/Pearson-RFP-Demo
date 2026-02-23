@@ -495,3 +495,27 @@
     font-size: 0.75rem;
   }
 }
+/* When scrolled (breadcrumb hidden), move up */
+.sn-nav.is-scrolled ~ .section.content-title-link-container,
+body.is-scrolled .section.content-title-link-container {
+  top: 72px;
+}
+
+/* Default (breadcrumb visible) */
+.section.content-title-link-container {
+  position: sticky;
+  top: 116px; /* 72px nav + 44px breadcrumb */
+  z-index: 999;
+  background: #ffffff;
+}
+/* ================================
+   CONTENT TITLE LINK — sticky below site-nav
+================================ */
+.section.content-title-link-container {
+  position: sticky;
+  top: 72px; /* height of your sn-main-row */
+  z-index: 999;
+  background: #ffffff; /* or whatever your background color is */
+  margin: 0 !important;
+  padding: 0 !important;
+}
