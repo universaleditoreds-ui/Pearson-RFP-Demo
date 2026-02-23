@@ -25,6 +25,18 @@ export default function decorate(block) {
   const sections = sectionSelectors.map((sel) => document.querySelector(sel));
 
   // ============================================================
+  // HELPER — get current combined sticky height
+  // (site-nav + this title nav)
+  // ============================================================
+  function getTotalStickyHeight() {
+    const siteNavEl = document.querySelector('.site-nav-wrapper');
+    const titleNavEl = block.closest('.section');
+    const siteNavH = siteNavEl ? siteNavEl.offsetHeight : 116;
+    const titleNavH = titleNavEl ? titleNavEl.offsetHeight : 72;
+    return siteNavH + titleNavH;
+  }
+
+  // ============================================================
   // SET ACTIVE NAV ITEM
   // ============================================================
   function setActive(index) {
@@ -43,9 +55,9 @@ export default function decorate(block) {
     item.addEventListener('click', () => {
       const target = sections[index];
       if (target) {
-        // Account for sticky nav height (72px)
-        const navHeight = block.closest('.section')?.offsetHeight || 72;
-        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+        const totalOffset = getTotalStickyHeight();
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - totalOffset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
       setActive(index);
@@ -54,28 +66,69 @@ export default function decorate(block) {
 
   // ============================================================
   // INTERSECTION OBSERVER — highlight on scroll
+  // Recalculates rootMargin dynamically on resize
   // ============================================================
-  const observerOptions = {
-    root: null,
-    // Top margin accounts for sticky nav (72px)
-    // Trigger when section hits ~30% from top
-    rootMargin: '-72px 0px -60% 0px',
-    threshold: 0,
-  };
+  let observer = null;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const index = sections.indexOf(entry.target);
-        if (index !== -1) {
-          setActive(index);
+  function buildObserver() {
+    if (observer) observer.disconnect();
+
+    const totalOffset = getTotalStickyHeight();
+    const rootMarginTop = `-${totalOffset}px`;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: `${rootMarginTop} 0px -60% 0px`,
+      threshold: 0,
+    };
+
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = sections.indexOf(entry.target);
+          if (index !== -1) {
+            setActive(index);
+          }
         }
-      }
-    });
-  }, observerOptions);
+      });
+    }, observerOptions);
 
-  // Observe all mapped sections
-  sections.forEach((section) => {
-    if (section) observer.observe(section);
+    // Observe all mapped sections
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+  }
+
+  // Build observer on load
+  buildObserver();
+
+  // Rebuild on resize (handles breadcrumb show/hide changing site-nav height)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildObserver, 150);
   });
+
+  // ============================================================
+  // DYNAMIC TOP — update sticky top when site-nav height changes
+  // (breadcrumb row collapses on scroll, reducing site-nav height)
+  // ============================================================
+  const titleSection = block.closest('.section');
+
+  function updateStickyTop() {
+    const siteNavEl = document.querySelector('.site-nav-wrapper');
+    const siteNavH = siteNavEl ? siteNavEl.offsetHeight : 116;
+    if (titleSection) {
+      titleSection.style.top = `${siteNavH}px`;
+    }
+  }
+
+  // Set on load
+  updateStickyTop();
+
+  // Update on scroll (breadcrumb collapse changes site-nav height)
+  window.addEventListener('scroll', updateStickyTop, { passive: true });
+
+  // Update on resize
+  window.addEventListener('resize', updateStickyTop, { passive: true });
 }
