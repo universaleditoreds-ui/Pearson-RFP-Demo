@@ -10,6 +10,7 @@
   background-color: #eae8f5;
   padding: 80px 0;
   box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
 }
 
 /* ================================
@@ -29,16 +30,16 @@
 .content-tile-buttons-wrapper
 .content-tile-buttons.block {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   gap: 0;
   text-align: center;
 }
 
 /* ================================
    ROW 1: TITLE
-   div:nth-child(1) > div > div > h3
-   — centered
 ================================ */
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
@@ -46,12 +47,17 @@
 > div:nth-child(1) {
   margin-bottom: 20px;
   width: 100%;
+  flex: 0 0 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
 .content-tile-buttons.block
 > div:nth-child(1) h3 {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
   color: #0d004d;
@@ -63,37 +69,39 @@
 .content-tile-buttons-wrapper
 .content-tile-buttons.block
 > div:nth-child(1) h3 strong {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   font-weight: 700;
 }
 
 /* ================================
    ROW 2: PARAGRAPH
-   div:nth-child(2) > div > div > p
-   — centered
 ================================ */
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
 .content-tile-buttons.block
 > div:nth-child(2) {
   margin-bottom: 32px;
-  width: 100%;
-  max-width: 780px;
+  flex: 0 0 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
 }
 
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
 .content-tile-buttons.block
 > div:nth-child(2) p {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   font-size: 1rem;
   color: #1a1a2e;
   line-height: 1.75;
   margin: 0;
+  max-width: 780px;
 }
 
 /* ================================
-   ROW 3 & 4: BUTTONS WRAPPER
-   — side by side, centered
-   Both divs sit as flex siblings
+   ROW 3 & 4: BUTTONS
 ================================ */
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
@@ -105,71 +113,12 @@
 > div:nth-child(4) {
   display: inline-flex;
   width: auto;
-}
-
-/* Make buttons sit in a row */
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block
-> div:nth-child(3),
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block
-> div:nth-child(4) {
   margin: 0 10px;
-}
-
-/* Group them on one line using flex on block */
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block {
-  flex-direction: column;
-}
-
-/* Create a pseudo-row for the two button divs */
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block
-> div:nth-child(3) {
-  display: flex;
   order: 3;
-}
-
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block
-> div:nth-child(4) {
-  display: flex;
-  order: 3;
-}
-
-/* Wrap both buttons into one row */
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block {
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block
-> div:nth-child(1),
-.section.content-tile-buttons-container
-.content-tile-buttons-wrapper
-.content-tile-buttons.block
-> div:nth-child(2) {
-  flex: 0 0 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
 }
 
 /* ================================
    BUTTON CONTAINERS
-   p.button-container inside each div
 ================================ */
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
@@ -185,8 +134,6 @@
 
 /* ================================
    OUTLINED PILL BUTTONS
-   a.button.primary — override
-   global button styles completely
 ================================ */
 .section.content-tile-buttons-container
 .content-tile-buttons-wrapper
@@ -196,12 +143,10 @@
 .content-tile-buttons-wrapper
 .content-tile-buttons.block
 > div:nth-child(4) a.button.primary {
-  /* Reset global */
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   background: transparent;
   min-block-size: unset;
   margin: 0;
-
-  /* Pill outline style */
   color: #0d004d;
   border: 2px solid #0d004d;
   border-radius: 50px;
