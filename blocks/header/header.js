@@ -225,5 +225,19 @@ export default async function decorate(block) {
   }
 
  
+function initStickyHeader() {
+  const headerEL = document.querySelector('header');
+  const stickyEl = document.querySelector('.he-pr-nav__wrapper');
+  if (!headerEL || !stickyEl) return;
+  const stickyOffset = stickyEl.offsetTop;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= stickyOffset) {
+      headerEL.classList.add('isSticky');
+    } else {
+      headerEL.classList.remove('isSticky');
+    }
+  });
+}
+initStickyHeader();
 
 }
