@@ -1,1 +1,418 @@
+/* ============================================================
+   FILE: site-nav.css
+============================================================ */
 
+/* ================================
+   SECTION RESET
+================================ */
+.section.site-nav-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.section.site-nav-container .site-nav-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.section.site-nav-container .site-nav.block {
+  padding: 0;
+  margin: 0;
+}
+
+/* ================================
+   NAV ROOT
+================================ */
+.site-nav.block .sn-nav {
+  background-color: #1a0f5e;  /* dark navy purple — matches Pearson */
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Shadow on scroll */
+.site-nav.block .sn-nav.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   INNER ROW — flex layout
+================================ */
+.site-nav.block .sn-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 72px;
+  padding: 0 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ================================
+   LOGO
+================================ */
+.site-nav.block .sn-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 28px;
+}
+
+.site-nav.block .sn-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.site-nav.block .sn-logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* ================================
+   NAV LINKS — center
+================================ */
+.site-nav.block .sn-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.site-nav.block .sn-item {
+  display: flex;
+  align-items: center;
+  height: 72px;
+}
+
+.site-nav.block .sn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 14px;
+  height: 100%;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+  border-radius: 0;
+}
+
+.site-nav.block .sn-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-nav.block .sn-chevron {
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.site-nav.block .sn-link[aria-expanded="true"] .sn-chevron {
+  transform: rotate(180deg);
+}
+
+/* ================================
+   RIGHT SIDE
+================================ */
+.site-nav.block .sn-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ================================
+   SEARCH BOX
+================================ */
+.site-nav.block .sn-search-wrap {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  height: 40px;
+  padding: 0 4px 0 0;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  overflow: hidden;
+}
+
+.site-nav.block .sn-search-wrap.is-focused {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Scope selector — "School ▾" */
+.site-nav.block .sn-search-scope {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.site-nav.block .sn-scope-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 10px 0 14px;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.site-nav.block .sn-scope-divider {
+  display: block;
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+/* Search input */
+.site-nav.block .sn-search-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 0.88rem;
+  width: 180px;
+  padding: 0 8px;
+  height: 100%;
+}
+
+.site-nav.block .sn-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Search icon button */
+.site-nav.block .sn-search-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 100%;
+  transition: color 0.2s ease;
+}
+
+.site-nav.block .sn-search-btn:hover {
+  color: #ffffff;
+}
+
+/* ================================
+   HELP ICON
+================================ */
+.site-nav.block .sn-icon-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.site-nav.block .sn-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ================================
+   CTA BUTTON — "Sign in"
+================================ */
+.site-nav.block .sn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #1a0f5e;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 8px 22px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.site-nav.block .sn-cta:hover {
+  background: #e8e4ff;
+  transform: translateY(-1px);
+}
+
+/* ================================
+   HAMBURGER — mobile only
+================================ */
+.site-nav.block .sn-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.site-nav.block .sn-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-nav.block .sn-hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-nav.block .sn-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-nav.block .sn-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ================================
+   MOBILE MENU
+================================ */
+.site-nav.block .sn-mobile-menu {
+  display: none;
+  background: #1a0f5e;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.site-nav.block .sn-mobile-menu.is-open {
+  max-height: 400px;
+}
+
+.site-nav.block .sn-mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-nav.block .sn-mobile-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 14px 24px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.site-nav.block .sn-mobile-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-nav.block .sn-mobile-cta {
+  display: block;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 24px;
+  margin: 8px 16px 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.site-nav.block .sn-mobile-cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ================================
+   RESPONSIVE — tablet
+================================ */
+@media (max-width: 1100px) {
+  .site-nav.block .sn-search-input {
+    width: 120px;
+  }
+
+  .site-nav.block .sn-link {
+    font-size: 0.88rem;
+    padding: 0 10px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — mobile
+================================ */
+@media (max-width: 768px) {
+  .site-nav.block .sn-links {
+    display: none;
+  }
+
+  .site-nav.block .sn-search-wrap {
+    display: none;
+  }
+
+  .site-nav.block .sn-help-btn {
+    display: none;
+  }
+
+  .site-nav.block .sn-hamburger {
+    display: flex;
+  }
+
+  .site-nav.block .sn-mobile-menu {
+    display: block;
+  }
+
+  .site-nav.block .sn-inner {
+    padding: 0 16px;
+  }
+}
