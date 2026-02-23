@@ -1,8 +1,6 @@
 export default function decorate(block) {
-  // Read fields from block content
-  // UE writes fields as div rows
   const rows = [...block.querySelectorAll(':scope > div')];
-  
+
   const getValue = (index) => {
     const el = rows[index]?.querySelector('div');
     return el ? el.textContent.trim() : '';
@@ -15,7 +13,17 @@ export default function decorate(block) {
   const roleOptions    = getValue(4) || 'Administrator,Teacher,Parent,Student,Other';
   const submitLabel    = getValue(5) || 'Submit';
   const submitEndpoint = getValue(6) || '';
-  const disclaimer     = getValue(7) || '';
+
+  // ← Default disclaimer matches live Pearson site
+  const disclaimer = getValue(7) ||
+    `By submitting this form, you agree to receiving personalized communications from Pearson. 
+     You also confirm that you are 18+ years old and have read our 
+     <a href="/en-us/legal-information/terms-of-use.html" class="rf-disclaimer-link">terms of use</a> 
+     and 
+     <a href="/en-us/privacy-center/privacy-notices.html" class="rf-disclaimer-link">privacy notice</a>. 
+     You may 
+     <a href="/en-us/privacy-center/privacy-notices.html" class="rf-disclaimer-link">opt-out</a> 
+     of these communications at any time.`;
 
   // Build role options HTML
   const roles = roleOptions.split(',').map((r) =>
@@ -45,7 +53,7 @@ export default function decorate(block) {
     <p class="rf-description">${description}</p>
 
     <p class="rf-parent-link">
-      If you are a parent or student, 
+      If you are a parent or student,
       <a href="${linkUrl}" class="rf-inline-link">${linkText}</a>.
     </p>
 
@@ -67,7 +75,7 @@ export default function decorate(block) {
 
       <div class="rf-field">
         <label class="rf-label">
-          What best describes your role? 
+          What best describes your role?
           <span class="rf-required">*</span>
         </label>
         <div class="rf-select-wrapper">
@@ -87,7 +95,7 @@ export default function decorate(block) {
 
       <div class="rf-field">
         <label class="rf-label">
-          District/Organization 
+          District/Organization
           <span class="rf-required">*</span>
         </label>
         <input type="text" name="district" class="rf-input" required />
@@ -110,7 +118,7 @@ export default function decorate(block) {
         <input type="text" name="zip" class="rf-input" />
       </div>
 
-      <div class="rf-field rf-error-msg" style="display:none; color:#c00; font-size:0.85rem;">
+      <div class="rf-field rf-error-msg" style="display:none;">
         Please fill in all required fields.
       </div>
 
@@ -127,7 +135,6 @@ export default function decorate(block) {
     e.preventDefault();
     const errorMsg = form.querySelector('.rf-error-msg');
 
-    // Basic validation
     const requiredFields = formEl.querySelectorAll('[required]');
     let valid = true;
     requiredFields.forEach((field) => {
