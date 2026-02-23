@@ -8,6 +8,7 @@
 header.header-wrapper {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+        background-color: #0d004d;
 }
 
 main {
@@ -91,7 +92,7 @@ main {
 }
 
 .site-nav.block .sn-logo-img {
-  height: 28px;
+ height: 60px;
   width: auto;
   display: block;
 }
