@@ -6,8 +6,9 @@
   padding: 0;
   margin: 0;
   position: sticky;
-  top: 0;
-  z-index: 999;
+  /* top is set dynamically via JS (site-nav height changes on scroll) */
+  top: 116px; /* fallback: 72px site-nav + 44px breadcrumb */
+  z-index: 998; /* below site-nav (1000) but above page content */
   border-bottom: 1px solid #e2e2e2;
   font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
 }
@@ -120,5 +121,10 @@
   .content-title-link.block p {
     font-size: 16px;
     font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  }
+
+  /* On mobile, site-nav is just 72px (no breadcrumb shown) */
+  .section.content-title-link-container {
+    top: 72px;
   }
 }
