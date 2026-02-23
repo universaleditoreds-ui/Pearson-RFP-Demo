@@ -170,8 +170,8 @@
 .content-tile-buttons-wrapper
 .content-tile-buttons.block
 > div:nth-child(4) a.button.primary:hover {
-  background: #0d004d;
-  color: #060609;
+  background: #060609;
+  color: #fff;
   transform: translateY(-2px);
 }
 
