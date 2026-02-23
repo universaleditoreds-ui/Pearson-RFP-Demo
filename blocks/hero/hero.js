@@ -136,6 +136,7 @@ export default function decorate(block) {
     const h1 = titleDiv.querySelector('h1');
     if (h1) {
       h1.style.cssText = `
+        font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
         font-size: clamp(2rem, 3.5vw, 3.2rem) !important;
         font-weight: 600 !important;
         color: #cfcafc !important;
@@ -145,7 +146,11 @@ export default function decorate(block) {
       `;
       const strong = h1.querySelector('strong');
       if (strong) {
-        strong.style.cssText = 'color: #cfcafc !important; font-weight: 600 !important;';
+        strong.style.cssText = `
+          font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
+          color: #cfcafc !important;
+          font-weight: 600 !important;
+        `;
       }
     }
   }
@@ -156,6 +161,7 @@ export default function decorate(block) {
     const h6 = descDiv.querySelector('h6');
     if (h6) {
       h6.style.cssText = `
+        font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
         font-size: clamp(1.1rem, 1.8vw, 1.5rem) !important;
         font-weight: 400 !important;
         color: #cfcafc !important;
@@ -165,7 +171,11 @@ export default function decorate(block) {
       `;
       const strong = h6.querySelector('strong');
       if (strong) {
-        strong.style.cssText = 'color: #cfcafc !important; font-weight: 400 !important;';
+        strong.style.cssText = `
+          font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
+          color: #cfcafc !important;
+          font-weight: 400 !important;
+        `;
       }
     }
   }
