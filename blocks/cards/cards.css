@@ -1,10 +1,10 @@
 /* ========================================
    SECTION
 ======================================== */
-
 .section.cards-container {
   background: #f3f2f8;
   padding: 100px 20px;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
 }
 
 /* Center wrapper */
@@ -16,7 +16,6 @@
 /* ========================================
    GRID
 ======================================== */
-
 .section.cards-container .cards.block ul {
   list-style: none;
   margin: 0;
@@ -24,13 +23,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 48px;
   position: relative;
-  padding: 120px 0 0 0; /* space for top heading */
+  padding: 120px 0 0 0;
 }
 
 /* ========================================
-   SECTION HEADING (Pulled from first h3)
+   SECTION HEADING
 ======================================== */
-
 .section.cards-container .cards.block li:first-child h3 {
   display: block;
   position: absolute;
@@ -39,6 +37,7 @@
   transform: translateX(-50%);
   width: 100%;
   text-align: center;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: #1c1459;
@@ -53,7 +52,6 @@
 /* ========================================
    CARD
 ======================================== */
-
 .section.cards-container .cards.block li {
   background: #ffffff;
   border-radius: 30px;
@@ -67,21 +65,19 @@
 /* ========================================
    ICON
 ======================================== */
-
 .section.cards-container .cards-card-image {
   margin-bottom: 24px;
 }
 
 .section.cards-container .cards-card-image img {
-  
   height: auto;
 }
 
 /* ========================================
    CARD TITLE
 ======================================== */
-
 .section.cards-container .cards.block h4 {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   color: #1c1459;
@@ -92,8 +88,8 @@
 /* ========================================
    PARAGRAPH
 ======================================== */
-
 .section.cards-container .cards.block p {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #4b4b63;
@@ -103,9 +99,8 @@
 /* ========================================
    DIVIDER + LINK AREA
 ======================================== */
-
-.section.cards-container 
-.cards.block li 
+.section.cards-container
+.cards.block li
 .cards-card-body:last-child {
   margin-top: auto;
   padding-top: 24px;
@@ -113,25 +108,55 @@
 }
 
 /* ========================================
-   LINK
+   LINK PARAGRAPH — "Learn more about..."
+   plain text color, not purple
 ======================================== */
+.section.cards-container
+.cards.block li
+.cards-card-body:last-child p {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+  font-size: 0.95rem;
+  color: #4b4b63;       /* plain text color */
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
 
+/* ========================================
+   LINK — purple bold + external icon ↗
+======================================== */
 .section.cards-container .cards.block a {
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
   color: #3d2ef0;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
+  display: inline;
+}
+
+/* External arrow icon after link */
+.section.cards-container .cards.block a::after {
+  content: " \2197"; /* ↗ */
+  font-size: 0.95rem;
+  display: inline;
+  margin-left: 2px;
+  font-weight: 700;
+  color: #3d2ef0;
 }
 
 .section.cards-container .cards.block a:hover {
   text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Strip underline from <u> tag inside link */
+.section.cards-container .cards.block a u {
+  text-decoration: none;
 }
 
 /* ========================================
    RESPONSIVE
 ======================================== */
-
 @media (max-width: 900px) {
-
   .section.cards-container .cards.block ul {
     grid-template-columns: 1fr;
     padding-top: 140px;
