@@ -16,9 +16,8 @@ export default function decorate(block) {
   const ctaLink    = getValue(6) || '#';
 
   // Breadcrumb items — read from row 7 as comma separated
-  // e.g. "Home,Schools,Products and services,Pearson Virtual Schools"
-  const breadcrumbRaw = getValue(7) || 'Home,Schools,Products and services,Pearson Virtual Schools';
-  const breadcrumbLinks = getValue(8) || '#,#,#,#'; // comma separated hrefs
+  const breadcrumbRaw   = getValue(7) || 'Home,Schools,Products and services,Pearson Virtual Schools';
+  const breadcrumbLinks = getValue(8) || '#,#,#,#';
   const breadcrumbItems = breadcrumbRaw.split(',').map(b => b.trim());
   const breadcrumbHrefs = breadcrumbLinks.split(',').map(h => h.trim());
 
@@ -43,10 +42,6 @@ export default function decorate(block) {
   nav.setAttribute('aria-label', 'Main navigation');
 
   nav.innerHTML = `
-
-    <!-- ========================
-         MAIN NAV ROW (sticky)
-    ======================== -->
     <div class="sn-main-row">
       <div class="sn-inner">
 
@@ -54,7 +49,7 @@ export default function decorate(block) {
         <a href="/" class="sn-logo" aria-label="Pearson Home">
           ${logoSrc
             ? `<img src="${logoSrc}" alt="${logoAlt}" class="sn-logo-img">`
-            : `<span class="sn-logo-text">)Pearson</span>`
+            : `<span class="sn-logo-text">Pearson</span>`
           }
         </a>
 
@@ -120,10 +115,7 @@ export default function decorate(block) {
       </div>
     </div>
 
-    <!-- ========================
-         BREADCRUMB ROW
-         hides on scroll
-    ======================== -->
+    <!-- BREADCRUMB ROW -->
     <div class="sn-breadcrumb-row" aria-label="Breadcrumb">
       <div class="sn-breadcrumb-inner">
         <nav class="sn-breadcrumb" aria-label="breadcrumb">
@@ -144,13 +136,39 @@ export default function decorate(block) {
   `;
 
   // ============================================================
-  // Replace block
+  // Replace block content
   // ============================================================
   block.innerHTML = '';
   block.appendChild(nav);
 
   // ============================================================
-  // Section sticky
+  // FIX GAP: collapse navigation-container section above
+  // ============================================================
+  const navContainerSection = document.querySelector('.section.navigation-container');
+  if (navContainerSection) {
+    navContainerSection.style.cssText = 'display:none !important; height:0 !important; margin:0 !important; padding:0 !important; overflow:hidden !important;';
+  }
+
+  // ============================================================
+  // FIX GAP: zero out any margin/padding on header-wrapper
+  // ============================================================
+  const headerWrapper = document.querySelector('header.header-wrapper');
+  if (headerWrapper) {
+    headerWrapper.style.marginBottom = '0';
+    headerWrapper.style.paddingBottom = '0';
+  }
+
+  // ============================================================
+  // FIX GAP: zero out main element top spacing
+  // ============================================================
+  const mainEl = document.querySelector('main');
+  if (mainEl) {
+    mainEl.style.marginTop = '0';
+    mainEl.style.paddingTop = '0';
+  }
+
+  // ============================================================
+  // Section sticky — attach flush to header
   // ============================================================
   const section = block.closest('.section');
   if (section) {
@@ -164,11 +182,20 @@ export default function decorate(block) {
 
   // ============================================================
   // SCROLL — hide breadcrumb, add shadow
+  // Also updates content-title-link top dynamically
   // ============================================================
-  const navEl          = block.querySelector('.sn-nav');
-  const breadcrumbRow  = block.querySelector('.sn-breadcrumb-row');
-  let lastScrollY      = window.scrollY;
-  let ticking          = false;
+  const navEl         = block.querySelector('.sn-nav');
+  const breadcrumbRow = block.querySelector('.sn-breadcrumb-row');
+  let lastScrollY     = window.scrollY;
+  let ticking         = false;
+
+  function updateTitleNavTop() {
+    const titleSection = document.querySelector('.section.content-title-link-container');
+    if (titleSection) {
+      const siteNavH = section ? section.offsetHeight : 116;
+      titleSection.style.top = `${siteNavH}px`;
+    }
+  }
 
   function onScroll() {
     lastScrollY = window.scrollY;
@@ -181,6 +208,8 @@ export default function decorate(block) {
           navEl.classList.remove('is-scrolled');
           breadcrumbRow.classList.remove('is-hidden');
         }
+        // Always sync title nav top to current site-nav height
+        updateTitleNavTop();
         ticking = false;
       });
       ticking = true;
@@ -188,6 +217,10 @@ export default function decorate(block) {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateTitleNavTop, { passive: true });
+
+  // Set correct top on load (after a tick to ensure layout is painted)
+  requestAnimationFrame(updateTitleNavTop);
 
   // ============================================================
   // HAMBURGER
