@@ -3,6 +3,28 @@
 ============================================================ */
 
 /* ================================
+   FIX GAP — collapse AEM header spacing
+================================ */
+header.header-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Hide the navigation-container section (it's data only, not visible UI) */
+.section.navigation-container {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ================================
    SECTION RESET
 ================================ */
 .section.site-nav-container {
@@ -312,16 +334,12 @@
 
 /* ================================
    BREADCRUMB ROW
-   — visible by default
-   — slides up + fades on scroll
 ================================ */
 .site-nav.block .sn-breadcrumb-row {
   background-color: #1a0f5e;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
   overflow: hidden;
-
-  /* Animate height + opacity */
   max-height: 44px;
   opacity: 1;
   transition:
@@ -330,7 +348,6 @@
     padding 0.3s ease;
 }
 
-/* Hidden state on scroll */
 .site-nav.block .sn-breadcrumb-row.is-hidden {
   max-height: 0;
   opacity: 0;
@@ -350,7 +367,6 @@
   flex-wrap: wrap;
 }
 
-/* Breadcrumb links */
 .site-nav.block .sn-bc-link {
   color: rgba(255, 255, 255, 0.75);
   font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
@@ -365,7 +381,6 @@
   text-decoration: underline;
 }
 
-/* Current page — bold white */
 .site-nav.block .sn-bc-current {
   color: #ffffff;
   font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
@@ -373,7 +388,6 @@
   font-weight: 600;
 }
 
-/* Separator › */
 .site-nav.block .sn-bc-sep {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.85rem;
@@ -445,6 +459,22 @@
 }
 
 /* ================================
+   CONTENT TITLE LINK — sticky below site-nav
+   top is set dynamically by site-nav.js
+   but we set a CSS fallback here
+================================ */
+.section.content-title-link-container {
+  background: #f5f5f7;
+  padding: 0;
+  margin: 0;
+  position: sticky;
+  top: 116px; /* fallback: 72px sn-main-row + 44px breadcrumb */
+  z-index: 998; /* below site-nav (1000) */
+  border-bottom: 1px solid #e2e2e2;
+  font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
+}
+
+/* ================================
    RESPONSIVE — tablet
 ================================ */
 @media (max-width: 1100px) {
@@ -494,28 +524,9 @@
   .site-nav.block .sn-bc-current {
     font-size: 0.75rem;
   }
-}
-/* When scrolled (breadcrumb hidden), move up */
-.sn-nav.is-scrolled ~ .section.content-title-link-container,
-body.is-scrolled .section.content-title-link-container {
-  top: 72px;
-}
 
-/* Default (breadcrumb visible) */
-.section.content-title-link-container {
-  position: sticky;
-  top: 116px; /* 72px nav + 44px breadcrumb */
-  z-index: 999;
-  background: #ffffff;
-}
-/* ================================
-   CONTENT TITLE LINK — sticky below site-nav
-================================ */
-.section.content-title-link-container {
-  position: sticky;
-  top: 72px; /* height of your sn-main-row */
-  z-index: 999;
-  background: #ffffff; /* or whatever your background color is */
-  margin: 0 !important;
-  padding: 0 !important;
+  /* On mobile, breadcrumb is hidden so site-nav is just 72px */
+  .section.content-title-link-container {
+    top: 72px;
+  }
 }
