@@ -51,7 +51,7 @@ main {
    NAV ROOT
 ================================ */
 .site-nav.block .sn-nav {
-  background-color:#0e0049;
+  background-color: #0e0049 !important;
   width: 100%;
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif;
