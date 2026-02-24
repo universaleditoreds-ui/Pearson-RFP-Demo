@@ -1,9 +1,120 @@
 export default function decorate(block) {
-  const section = block.closest('.section.hero-container');
+
+  // ============================================================
+  // AEM Universal Editor detection
+  // Skip all dynamic logic to prevent zoom loop in author mode
+  // ============================================================
+  const isAEMEditor = (
+    document.body.hasAttribute('data-aue-resource') ||
+    window.self !== window.top
+  );
+
+  if (isAEMEditor) {
+    block.style.cssText = `
+      position: relative;
+      width: 100%;
+      height: 500px;
+      min-height: 500px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    `;
+
+    const imgs = block.querySelectorAll('img');
+    imgs.forEach((img) => {
+      img.style.cssText = `
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        display: block !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+      `;
+    });
+
+    const pictures = block.querySelectorAll('picture');
+    pictures.forEach((pic) => {
+      pic.style.cssText = `
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important;
+        animation: none !important;
+      `;
+    });
+
+    // Still apply text styles so content is readable in editor
+    const titleDiv = block.querySelector(':scope > div:nth-child(2)');
+    const descDiv  = block.querySelector(':scope > div:nth-child(3)');
+
+    const sharedTextStyle = `
+      position: relative !important;
+      z-index: 2 !important;
+      padding-left: 64px !important;
+      padding-right: 40px !important;
+      max-width: 500px !important;
+    `;
+
+    if (titleDiv) {
+      titleDiv.style.cssText = sharedTextStyle + 'margin-bottom: 16px !important;';
+      const h1 = titleDiv.querySelector('h1');
+      if (h1) {
+        h1.style.cssText = `
+          font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
+          font-size: clamp(2rem, 3.5vw, 3.2rem) !important;
+          font-weight: 600 !important;
+          color: #cfcafc !important;
+          margin: 0 !important;
+          line-height: 1.05 !important;
+          letter-spacing: -0.02em !important;
+        `;
+        const strong = h1.querySelector('strong');
+        if (strong) {
+          strong.style.cssText = `
+            font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
+            color: #cfcafc !important;
+            font-weight: 600 !important;
+          `;
+        }
+      }
+    }
+
+    if (descDiv) {
+      descDiv.style.cssText = sharedTextStyle + 'margin-bottom: 0 !important;';
+      const h6 = descDiv.querySelector('h6');
+      if (h6) {
+        h6.style.cssText = `
+          font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
+          font-size: clamp(1.1rem, 1.8vw, 1.5rem) !important;
+          font-weight: 400 !important;
+          color: #cfcafc !important;
+          margin: 0 !important;
+          line-height: 1.5 !important;
+          letter-spacing: 0 !important;
+        `;
+        const strong = h6.querySelector('strong');
+        if (strong) {
+          strong.style.cssText = `
+            font-family: "Plus Jakarta Sans", Helvetica, Verdana, sans-serif !important;
+            color: #cfcafc !important;
+            font-weight: 400 !important;
+          `;
+        }
+      }
+    }
+
+    // Exit — do NOT run resize listeners or dynamic height in editor
+    return;
+  }
 
   // ============================================================
   // STEP 1: Fix section + wrapper
   // ============================================================
+  const section = block.closest('.section.hero-container');
+
   if (section) {
     section.style.cssText = 'padding: 0 !important; margin: 0 !important; width: 100%;';
   }
