@@ -92,7 +92,7 @@ main {
 }
 
 .site-nav.block .sn-logo-img {
- height: 30px;
+ height: 30px !important;
   width: auto;
   display: block;
 }
